@@ -680,9 +680,9 @@ button {
 #team figure:hover > .team-caption {
     opacity: 1;
 }
-#team figure:hover > img {
+/* #team figure:hover > img {
     filter: blur(2px);
-}
+} */
 .team-name {
     font-size: 1.5rem;
     padding-bottom: 0;
