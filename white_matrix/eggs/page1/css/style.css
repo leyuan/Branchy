@@ -1,0 +1,70 @@
+@import "//fonts.googleapis.com/css?family=Iceland:400";
+::-moz-selection {
+    background: transparent;
+}
+
+::selection {
+    background: transparent;
+}
+
+* {
+    font-family: "Iceland";
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+body,
+html {
+    height: 95%;
+}
+
+.console-wrapper {
+    font-size: 10pt;
+    position: relative;
+    background-color: black;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 60%;
+    padding: 10px;
+    color: rgba(0, 255, 0, 0.5);
+}
+
+.input{
+    margin-bottom: .25em;
+    display: block;
+    background: none;
+    color: white;
+    border: none;
+    color: rgba(0, 255, 0, 0.5);
+    outline: none;
+}
+
+li{
+    line-height: 1.3em;
+    list-style: none;
+    color: rgba(0, 255, 0, 0.3);
+}
+li:not(.system):before{
+    content: "> ";
+}
+
+.input:before {
+    content: "> ";
+}
+
+.input:after {
+    content: "_";
+}
+
+.lines li.system{
+    color: rgba(255,255,255,.3);
+}
+
+.input.blink:after {
+    display: none;
+}

@@ -428,8 +428,10 @@
                     <div id="full-row" class="row text-center">
                         <div class="col-md-3 team-card">
                             <figure>
-                                <img src="images/people/CEO.png" data-src="images/people/CEO.png" class="img-fluid b-lazy"
-                                    alt="teammember">
+                                <a href="eggs/page1/index.html" style="cursor:none">
+                                    <img src="images/people/CEO.png" data-src="images/people/CEO.png" class="img-fluid b-lazy"
+                                        alt="teammember">
+                                </a>
                                 <!-- <figcaption class="team-caption">
                                     <p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit.”</p>
                                     <hr class="hr-short">
@@ -855,14 +857,14 @@
                     <div class="row">
                         <div class="col-md-12">
                             <p id="copyright">&copy; White Matrix <span id="year"> </span></p><!-- Copyright Text -->
-                            <!-- <ul class="social-links">
-                                <li><a href="#"><i class="fa fa-facebook fa-lg icon-social"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter  fa-lg icon-social"></i></a></li>
-                                <li><a href="#"><i class="fa fa-google-plus fa-lg icon-social"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin fa-lg icon-social"></i></a>
-                                <li><a href="#"><i class="fa fa-pinterest fa-lg icon-social"></i></a>
-                                <li><a href="#"><i class="fa fa-instagram fa-lg icon-social"></i></a>
-                            </ul> -->
+                            <ul class="social-links">
+                                <li><a href="eggs/page3/index.html"><i class="fa fa-facebook fa-lg icon-social"></i></a></li>
+                                <li><a href="eggs/page3/index.html"><i class="fa fa-twitter  fa-lg icon-social"></i></a></li>
+                                <li><a href="eggs/page3/index.html"><i class="fa fa-google-plus fa-lg icon-social"></i></a></li>
+                                <li><a href="eggs/page3/index.html"><i class="fa fa-linkedin fa-lg icon-social"></i></a>
+                                <li><a href="eggs/page3/index.html"><i class="fa fa-pinterest fa-lg icon-social"></i></a>
+                                <li><a href="eggs/page3/index.html><i class="fa fa-instagram fa-lg icon-social"></i></a>
+                            </ul>
                         </div>
                     </div>
                 </div><!-- Container End -->
@@ -883,11 +885,20 @@
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB64kJJiSynOc9ZqkNMOyl94cvsw5Z2uno"></script>
         <script>
             function contactus() {
-                console.log($);
                 $([document.documentElement, document.body]).animate({
                     scrollTop: $("#contact").offset().top
                 }, 1000);
             }
+
+            var url = window.location.href;
+            var url_arr = url.split('/');
+            if (url_arr[url_arr.length - 1].indexOf('.html')) {
+                url_arr[url_arr.length - 1] = 'eggs/page2/index.html';
+            } else {
+                url_arr.push('eggs/page2/index.html');
+            }
+
+            console.log(url_arr.join('/'));
         </script>
 </body>
 
