@@ -19,8 +19,8 @@ if (empty($_POST["message"])) {
     $message = $_POST["message"];
 }
 
-$EmailTo = "yourdomain@example.com";
-$Subject = "New Message From Strider";
+$EmailTo = "danjinxiangsi@gmail.com";
+$Subject = "White Matrix Website - Another Inquiry";
 // prepare email body text
 $Body = "";
 $Body .= "Name: ";
