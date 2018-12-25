@@ -1,0 +1,471 @@
+.bg {
+    --color-text: #fff;
+    --color-bg: #000;
+    --color-link: #fff;
+    --color-link-hover: #ac1122;
+    --color-info: #ac1122;
+    --color-title: #fff;
+    --color-subtitle: #fff;
+    --color-subtitle-bg: #ac1122;
+}
+
+.content__title {
+    font-family: 'Playfair Display', serif;
+    font-size: 10vw;
+    font-weight: normal;
+    color: var(--color-title);
+    text-align: center;
+    margin: 0;
+    pointer-events: none;
+}
+
+.content__subtitle {
+    font-size: 1.25em;
+    background: var(--color-subtitle-bg);
+    color: var(--color-subtitle);
+    padding: 0.45em 0.5em;
+    line-height: 1;
+    margin: 0;
+    letter-spacing: 0.5em;
+    text-indent: 0.5em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.info {
+    background: #3c3c3c;
+    color: #bbffff;
+    padding: 0.45em 0.5em;
+    opacity: 0.4;
+    width: 800px;
+    height: 500px;
+}
+
+.content__start {
+    font-size: 1.5em;
+    background: #e8e8e8;
+    color: #000;
+    padding: 0.45em 0.5em;
+    line-height: 1;
+    margin: 0;
+    letter-spacing: 0.5em;
+    text-indent: 0.5em;
+    font-weight: bold;
+    text-transform: uppercase;
+
+}
+
+@media screen and (max-width: 55em) {
+    .content__title {
+        font-size: 3em;
+    }
+
+    .content__subtitle {
+        font-size: 0.85em;
+    }
+}
+
+.topkong {
+    height: 100px;
+    /*width: 600px;*/
+
+}
+
+.generaldata {
+    position: absolute;
+    padding-right: 0px;
+    z-index: 5;
+    background: url(../img/2.png);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    width: 100%;
+    height: 400px;
+    /*    border:1px solid #00F;*/
+    /*    padding: 0.45em 0.5em;*/
+    /*    float:left;*/
+
+}
+
+/*.generaldata img {*/
+/*position: relative;*/
+/*display: inline-block;*/
+/*width: 100%;*/
+/*height: auto;*/
+/*}*/
+
+.worlddata {
+    padding-right: 0px;
+    z-index: 6;
+    /*       border:1px solid #00F;*/
+    background: url(../img/bottominfo.png);
+    max-height: 400px;
+    width: 100%;
+    /*      opacity:0.9;filter(alpha=90)*/
+    /*    padding: 0.45em 0.5em;*/
+    /*    float:left;*/
+
+}
+
+.playinfoicon {
+    padding-top: 50px;
+    /*padding-left: 1150px;*/
+    z-index: 9;
+    position: fixed;
+}
+
+.functionTextBlock {
+    float: left;
+    z-index: 10;
+    max-width: 50px;
+    max-height: 80px;
+    text-align: center;
+    font-size: 12px;
+}
+
+.bottomTextBlock {
+    z-index: 10;
+    max-width: 45px;
+    max-height: 60px;
+    text-align: center;
+    font-size: x-small;
+    float: left;
+}
+
+.bottomTextBlock img{
+    width: 45px;
+    height: 45px;
+}
+
+.functiontext {
+    z-index: 10;
+}
+
+.fanzhitextpos {
+    position: absolute;
+    padding-left: 37px;
+    padding-top: 0px;
+    float: left;
+}
+
+.evolutiontextpos {
+    position: absolute;
+    padding-left: 143px;
+    padding-top: 0px;
+    float: left;
+}
+
+.mutationtextpos {
+    position: absolute;
+    padding-left: 245px;
+    padding-top: 0px;
+    float: left;
+}
+
+.sleeptextpos {
+    position: absolute;
+    padding-left: 345px;
+    padding-top: 0px;
+    float: left;
+}
+
+.aptextpos {
+    position: absolute;
+    padding-left: 455px;
+    padding-top: 0px;
+    float: left;
+}
+
+.inheritancetextpos {
+    position: absolute;
+    padding-left: 558px;
+    padding-top: 0px;
+    float: left;
+}
+
+.worldinfopos {
+    padding-top: 20px;
+    z-index: 7;
+
+    /*          border:1px solid #00F;*/
+    /*    padding: 0.45em 0.5em;*/
+    /*    float:left;*/
+
+}
+
+img {
+    opacity: 0.6;
+filter(alpha = 60)
+}
+
+img:hover {
+    opacity: 1;
+filter(alpha = 100)
+}
+
+/*.bhover img{}*/
+/*.bhover img:hover*/
+/*{*/
+/*/*   background-color:yellow; color:red;*/
+
+
+
+/* background:url(../img/btn3l.png);*/
+/* height="120px"; width="120px";*/
+/*/*    background:url("img/btn3l.png"); */
+
+
+
+/*}*/
+
+.datapos {
+    position: absolute;
+    /*        border:1px solid #00F;*/
+    /*    padding-top:100px;*/
+    z-index: 5;
+}
+
+.functionrel {
+    position: absolute;
+    padding-left: 100px;
+}
+
+.imgpos {
+    padding-top: 60px;
+    padding-left: 300px;
+    z-index: 2;
+    position: relative;
+}
+
+.imgrel {
+    padding-top: 60px;
+    padding-left: 300px;
+    z-index: 2;
+    position: relative;
+}
+
+.textpos {
+    padding: 55px 0 0 25px;
+    z-index: 2;
+    position: relative;
+    width: 100%;
+    height: auto;
+    float: left;
+}
+
+.textrel {
+    position: relative;
+    float: left;
+    color: #66b3ff;
+    padding-left: 42px;
+}
+
+.firstLine {
+    padding-top: 8px;
+}
+
+.secondLine {
+    padding-top: 56px;
+}
+
+.infoBlockFirst{
+    padding-left: 36px;
+    z-index: 2;
+    color: #66b3ff;
+    font-size: xx-small;
+    float: left;
+    width: 90px;
+}
+
+.infoBlockSecond{
+    padding-left: 3px;
+    z-index: 2;
+    color: #66b3ff;
+    font-size: xx-small;
+    float: left;
+}
+
+.infoBlock{
+    padding-left: 12px;
+    z-index: 2;
+    color: #66b3ff;
+    font-size: xx-small;
+    float: left;
+}
+
+.daysurvive {
+    z-index: 2;
+    color: #66b3ff;
+    font-size: xx-small;
+    text-align: center;
+}
+
+.cellno {
+    z-index: 2;
+    color: #66b3ff;
+    font-size: xx-small;
+    text-align: center;
+}
+
+.environment {
+    z-index: 2;
+    color: #66b3ff;
+    font-size: xx-small;
+    text-align: center;
+}
+
+.daytx {
+    z-index: 2;
+    color: #66b3ff;
+    font-size: xx-small;
+    text-align: center;
+}
+
+.cellnotx {
+    z-index: 2;
+    color: #66b3ff;
+    font-size: xx-small;
+    text-align: center;
+}
+
+.environmentnotx {
+    z-index: 2;
+    color: #66b3ff;
+    font-size: xx-small;
+    text-align: center;
+}
+
+.adaptionpostx {
+    z-index: 2;
+    color: #66b3ff;
+    font-size: xx-small;
+    text-align: center;
+}
+
+.adaptionno {
+    z-index: 2;
+    color: #66b3ff;
+    font-size: xx-small;
+    text-align: center;
+}
+
+.survivepostx {
+    z-index: 2;
+    color: #66b3ff;
+    font-size: xx-small;
+    text-align: center;
+}
+
+.surviveno {
+    z-index: 2;
+    color: #66b3ff;
+    font-size: xx-small;
+    text-align: center;
+}
+
+.divisionpostx {
+    z-index: 2;
+    color: #66b3ff;
+    font-size: xx-small;
+    text-align: center;
+}
+
+.lifecyclepostx {
+    z-index: 2;
+    color: #66b3ff;
+    font-size: xx-small;
+    text-align: center;
+}
+
+.lifecyclenotx {
+    z-index: 2;
+    color: #66b3ff;
+    font-size: xx-small;
+    text-align: center;
+}
+
+.divisionnotx {
+    z-index: 2;
+    color: #66b3ff;
+    font-size: xx-small;
+    text-align: center;
+}
+
+.playinfo {
+    position: absolute;
+    padding-top: 20px;
+    z-index: 2;
+    color: #66b3ff;
+    float: left;
+    font-size: xx-small;
+}
+
+.bottomInfo {
+    float: left;
+    position: absolute;
+    padding-top: 10px;
+    z-index: 2;
+    left: 25%;
+    right: 25%;
+}
+
+p {
+    color: #FF3366;
+}
+
+.expa {
+    height: 300px;
+    /*width: 600px;*/
+    background-repeat: no-repeat;
+    background-position: center;
+    /*        border:1px solid #00F;*/
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 1;
+
+}
+
+.popupwindow {
+
+    /*    background:url(../img/menban.png);*/
+    color: #000;
+    background-color: #000;
+    text-align: center;
+}
+
+.qpos {
+
+    padding-top: -220px;
+    padding-left: 1070px;
+    position: absolute;
+    float: left;
+
+    z-index: 2;
+    color: #66b3ff;
+
+}
+
+a {
+    color: #66b3ff;
+    cursor: pointer;
+}
+
+.playinfotext {
+    font-family: 'Playfair Display', serif;
+    color: #000;
+    font-size: 1em;
+    padding-left: 0px;
+    float: left;
+}
+
+.imgiconpos {
+    z-index: 3;
+    padding-top: 150px;
+    /*padding-left: 1150px;*/
+}
+
+.playimg {
+    position: absolute;
+    float: left;
+    z-index: 3;
+}

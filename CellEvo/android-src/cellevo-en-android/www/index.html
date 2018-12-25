@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Page-Enter" CONTENT="RevealTrans(Duration=4,Transition=13)"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>细胞进化(Cell Evolution)</title>
+    <link href="https://fonts.googleapis.com/css?family=Barlow:400,500,700|Playfair+Display" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/base.css"/>
+    <link rel="stylesheet" type="text/css" href="css/demo1.css"/>
+    <link rel="shortcut icon" href="favicon.ico?" type="image/x-icon">
+    <link rel="icon" href="favicon.ico?" type="image/x-icon">
+    <script>document.documentElement.className = "js";
+    var supportsCssVars = function () {
+        var e, t = document.createElement("style");
+        return t.innerHTML = "root: { --tmp-var: bold; }", document.head.appendChild(t), e = !!(window.CSS && window.CSS.supports && window.CSS.supports("font-weight", "var(--tmp-var)")), t.parentNode.removeChild(t), e
+    };
+    supportsCssVars() || alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
+</head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119669423-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'UA-119669423-1');
+
+    // myAudio = new Audio('bg.ogg');
+    // myAudio.addEventListener('ended', function() {
+    //     this.currentTime = 0;
+    //     this.play();
+    // }, false);
+    // myAudio.play();
+</script>
+
+<body class="bg">
+<embed src="silent.mp3" height=0 width=0 autostart="true" loop="true" volume="0"></embed>
+<audio src="bg.mp3" autoplay="autoplay" loop="true">    </audio>
+<!--<embed src="bg.ogg" height=0 width=0 autostart="true" loop="true">-->
+
+<!--<audio controls loop autoplay hidden>-->
+<!--<source src="bg.ogg" type="video/ogg">-->
+<!--<source src="bg.mp3" type="audio/mpeg">-->
+<!--</audio>-->
+
+<svg class="hidden">
+    <symbol id="icon-arrow" viewBox="0 0 24 24">
+        <polygon points="6.3,12.8 20.9,12.8 20.9,11.2 6.3,11.2 10.2,7.2 9,6 3.1,12 9,18 10.2,16.8 "/>
+    </symbol>
+    <symbol id="icon-drop" viewBox="0 0 24 24">
+
+        <path d="M12,21c-3.6,0-6.6-3-6.6-6.6C5.4,11,10.8,4,11.4,3.2C11.6,3.1,11.8,3,12,3s0.4,0.1,0.6,0.3c0.6,0.8,6.1,7.8,6.1,11.2C18.6,18.1,15.6,21,12,21zM12,4.8c-1.8,2.4-5.2,7.4-5.2,9.6c0,2.9,2.3,5.2,5.2,5.2s5.2-2.3,5.2-5.2C17.2,12.2,13.8,7.3,12,4.8z"/>
+        <path d="M12,18.2c-0.4,0-0.7-0.3-0.7-0.7s0.3-0.7,0.7-0.7c1.3,0,2.4-1.1,2.4-2.4c0-0.4,0.3-0.7,0.7-0.7c0.4,0,0.7,0.3,0.7,0.7C15.8,16.5,14.1,18.2,12,18.2z"/>
+    </symbol>
+
+
+    <path d="M16.3,0C7.3,0,0,7.3,0,16.3c0,7.2,4.7,13.3,11.1,15.5c0.8,0.1,1.1-0.4,1.1-0.8c0-0.4,0-1.4,0-2.8c-4.5,1-5.5-2.2-5.5-2.2c-0.7-1.9-1.8-2.4-1.8-2.4c-1.5-1,0.1-1,0.1-1c1.6,0.1,2.5,1.7,2.5,1.7c1.5,2.5,3.8,1.8,4.7,1.4c0.1-1.1,0.6-1.8,1-2.2c-3.6-0.4-7.4-1.8-7.4-8.1c0-1.8,0.6-3.2,1.7-4.4C7.4,10.7,6.8,9,7.7,6.8c0,0,1.4-0.4,4.5,1.7c1.3-0.4,2.7-0.5,4.1-0.5c1.4,0,2.8,0.2,4.1,0.5c3.1-2.1,4.5-1.7,4.5-1.7c0.9,2.2,0.3,3.9,0.2,4.3c1,1.1,1.7,2.6,1.7,4.4c0,6.3-3.8,7.6-7.4,8c0.6,0.5,1.1,1.5,1.1,3c0,2.2,0,3.9,0,4.5c0,0.4,0.3,0.9,1.1,0.8c6.5-2.2,11.1-8.3,11.1-15.5C32.6,7.3,25.3,0,16.3,0z"/>
+    </symbol>
+    <symbol id="icon-keyboard" viewBox="0 0 100 70">
+
+        <path d="M 60.94,1.83 39.22,1.83 C 36.71,1.83 34.67,3.86 34.67,6.376 L 34.67,28.1 C 34.67,30.61 36.71,32.65 39.22,32.65 L 60.94,32.65 C 63.45,32.65 65.5,30.61 65.5,28.1 L 65.5,6.376 C 65.5,3.86 63.45,1.83 60.94,1.83 Z M 44.79,18.63 50.08,11.74 55.37,18.63 Z"
+              opacity="0.2"/>
+        <path d="M 60.86,36.75 39.14,36.75 C 36.63,36.75 34.59,38.79 34.59,41.3 L 34.59,63.02 C 34.59,65.53 36.63,67.57 39.14,67.57 L 60.86,67.57 C 63.38,67.57 65.41,65.53 65.41,63.02 L 65.41,41.3 C 65.42,38.79 63.38,36.75 60.86,36.75 Z M 50.08,57.45 44.79,50.55 55.37,50.55 Z"
+              opacity="0.2"/>
+        <path d="M 95.45,36.75 73.73,36.75 C 71.22,36.75 69.18,38.79 69.18,41.3 L 69.18,63.02 C 69.18,65.53 71.22,67.57 73.73,67.57 L 95.45,67.57 C 97.97,67.57 100,65.53 100,63.02 L 100,41.3 C 100,38.79 97.97,36.75 95.45,36.75 Z M 83.4,57.45 83.4,46.86 90.3,52.16 Z"/>
+        <path d="M 26.27,36.75 4.55,36.75 C 2.037,36.75 0,38.79 0,41.3 L 0,63.02 C 0,65.53 2.037,67.57 4.55,67.57 L 26.27,67.57 C 28.78,67.57 30.82,65.53 30.82,63.02 L 30.82,41.3 C 30.82,38.79 28.78,36.75 26.27,36.75 Z M 16.69,57.45 9.79,52.16 16.69,46.86 Z"/>
+    </symbol>
+</svg>
+<main>
+    <div class="content content--fixed">
+
+        <!--                <a class="github" href="https://github.com/Mamboleoo/DecorativeBackgrounds/" title="Find this project on GitHub" target="_blank"><svg class="icon icon--github"><use xlink:href="#icon-github"></use></svg></a>-->
+
+    </div>
+    <div class="content">
+        <canvas class="scene scene--full" id="scene"></canvas>
+
+        <script type="x-shader/x-vertex" id="wrapVertexShader">
+					attribute float size;
+					attribute vec3 color;
+					varying vec3 vColor;
+					void main() {
+						vColor = color;
+						vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
+						gl_PointSize = size * ( 350.0 / - mvPosition.z );
+						gl_Position = projectionMatrix * mvPosition;
+					}
+
+        </script>
+        <script type="x-shader/x-fragment" id="wrapFragmentShader">
+					varying vec3 vColor;
+					uniform sampler2D texture;
+					void main(){
+						vec4 textureColor = texture2D( texture, gl_PointCoord );
+						if ( textureColor.a < 0.3 ) discard;
+						vec4 color = vec4(vColor.xyz, 1.0) * textureColor;
+						gl_FragColor = color;
+					}
+
+        </script>
+        <div class="content__inner" id="firstpage">
+
+            <h2 class="content__title" id="maintitle">Evolution</h2>
+            <h3 class="content__subtitle" id="subtitle">Cells and humanity</h3><br><br><br><br><br>
+            <a class="content__start" id="startbtn">Start</a>
+
+        </div>
+
+        <div class="content__inner" id="gamemain" style="display:none">
+            <div class="playinfoicon">
+            </div>
+            <div class="expa">
+            </div>
+
+            <br>
+
+            <div class="functiontext">
+
+                <div class="functionTextBlock" id="fanzhiimg">
+                    <img src="img/btn3l.png">Divide</img>
+                </div>
+                <div class="functionTextBlock" id="jinhua">
+                    <img src="img/btn1l.png">Evolve</img>
+                </div>
+                <div class="functionTextBlock" id="mutimg">
+                    <img src="img/btn4l.png">Mutate</img>
+                </div>
+                <div class="functionTextBlock" id="xiumianimg">
+                    <img src="img/btn2l.png">Sleep</img>
+                </div>
+                <div class="functionTextBlock" id="apoptosis">
+                    <img src="img/btn5l.png">Apoptosis</img>
+                </div>
+                <div class="functionTextBlock" id="inheritance">
+                    <img src="img/btn6l.png">Inherit</img>
+                </div>
+
+                <!--<img src="img/btn3l.png" id="fanzhiimg"></img>-->
+                <!--<img src="img/btn1l.png" id="jinhua"></img>-->
+                <!--<img src="img/btn4l.png" id="mutimg"></img>-->
+                <!--<img src="img/btn2l.png" id="xiumianimg"></img>-->
+                <!--<img src="img/btn5l.png" id="apoptosis"></img>-->
+                <!--<img src="img/btn6l.png" id="inheritance"></img>-->
+
+                <!--<div class="fanzhitextpos">繁殖</div>-->
+                <!--<div class="evolutiontextpos">进化</div>-->
+                <!--<div class="mutationtextpos">变异</div>-->
+                <!--<div class="sleeptextpos">休眠</div>-->
+                <!--<div class="aptextpos">凋亡</div>-->
+                <!--<div class="inheritancetextpos">遗传</div>-->
+            </div>
+
+            <div class="worldinfopos">
+
+                <img src="img/btn5.png" height="50px" width="150px" id="worlddata"></img>
+                <img src="img/btn6.png" height="50px" width="150px" id="cellinfo"></img>
+            </div>
+            <div class="worlddata">
+
+                <div class="playinfo">
+                    <div>
+                       Cell Evolution is the first puzzle sandbox dapp base on Nebulas, each player act as a cell group. Players need to balance the Adaptability, Reproductivity and Survivability in the game. When player finished the game, they can choose to do the DNA merging, this function will upload the data into the whole ethnic group. This is not only a game, but also a read social experiment. If the whole ethnic group have unbalance data, the whole world will destroy. Millions of the cells will decide the whole destiny of the world. Welcome to Cell Evo, a game about cells and humanity;
+                    </div>
+                    <div class="bottomInfo">
+                        <div class="bottomTextBlock">
+                            <img src="img/aboutus.png" height="35" width="35" id="aboutus">More Info</img>
+                        </div>
+                        <div class="bottomTextBlock" style="float: right !important;">
+                            <img src="img/question.png" height="60" width="60" id="playinfoexplain">About</img>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="generaldata">
+                <div class="textpos">
+                    <div class="firstLine">
+                        <div class="infoBlockFirst">
+                            <div class="daysurvive">Day:</div>
+                            <div id="daytx" class="daytx"> 1</div>
+                        </div>
+                        <div class="infoBlock">
+                            <div class="cellno">Cell Number:</div>
+                            <div id="celltx" class="cellnotx"> 0</div>
+                        </div>
+                        <div class="infoBlock">
+                            <div class="environment">Environment:</div>
+                            <div id="environmenttx" class="environmentnotx">0</div>
+                        </div>
+                    </div>
+
+                    <div class="secondLine">
+                        <div class="infoBlockSecond">
+                            <div class="divisionpostx">Reproductivity:</div>
+                            <div id="divisiontx" class="divisionnotx"> 0</div>
+                        </div>
+                        <div class="infoBlock">
+                            <div class="adaptionpostx">Adaptability:</div>
+                            <div id="adaptiontx" class="adaptionno"> 0</div>
+                        </div>
+                        <div class="infoBlock">
+                            <div class="survivepostx">Survivability:</div>
+                            <div id="surviveabilitytx" class="surviveno"> 0</div>
+                        </div>
+                        <div class="infoBlock">
+                            <div class="lifecyclepostx">Life cycles:</div>
+                            <div id="lifecycletx" class="lifecyclenotx">20</div>
+                        </div>
+                    </div>
+                </div>
+                <!--<img src="img/2.png"></img>-->
+            </div>
+        </div>
+
+    </div>
+
+</main>
+<script src="js/bgr.js"></script>
+<script src="js/nebPay.js"></script>
+<script src="js/three.min.js"></script>
+
+
+<script src="js/division.js"></script>
+<script src=js/nebulas.js></script><script src="js/TweenMax.min.js"></script>
+<script src="js/bg.js"></script>
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="layer/layer.js"></script>
+<script src="js/game.js"></script>
+
+</body>
+</html>

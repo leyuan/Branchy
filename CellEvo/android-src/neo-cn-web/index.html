@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="Page-Enter" CONTENT="RevealTrans(Duration=4,Transition=13)"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>细胞进化(Cell Evolution)</title>
+    <link href="https://fonts.googleapis.com/css?family=Barlow:400,500,700|Playfair+Display" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/base.css"/>
+    <link rel="stylesheet" type="text/css" href="css/demo1.css"/>
+
+    <link rel="stylesheet" href="res/css/panel.css" type="text/css"/>
+
+
+    <script src="lib/rollup/aes.js"></script>
+    <script src="lib/component/aes.js"></script>
+    <script src="lib/component/mode-ecb.js"></script>
+    <script src="lib/component/pad-nopadding.js"></script>
+    <script src="lib/scrypt.js"></script>
+    <script src="lib/jsrsasign.js"></script>
+    <script src="lib/neo-ts.js"></script>
+    <script src="lib/qr-code-with-logo.browser.min.js"></script>
+    <script src="lib/code.js"></script>
+
+
+    <link rel="shortcut icon" href="favicon.ico?" type="image/x-icon">
+    <link rel="icon" href="favicon.ico?" type="image/x-icon">
+    <script>document.documentElement.className = "js";
+    var supportsCssVars = function () {
+        var e, t = document.createElement("style");
+        return t.innerHTML = "root: { --tmp-var: bold; }", document.head.appendChild(t), e = !!(window.CSS && window.CSS.supports && window.CSS.supports("font-weight", "var(--tmp-var)")), t.parentNode.removeChild(t), e
+    };
+    supportsCssVars() || alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
+</head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119669423-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'UA-119669423-1');
+
+    var language = window.navigator.userLanguage || window.navigator.language;
+    console.log("Language: " + language);
+
+    var isMobile = false; //initiate as false
+    // device detection
+    if (/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|ipad|iris|kindle|Android|Silk|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(navigator.userAgent)
+        || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(navigator.userAgent.substr(0, 4))) {
+        isMobile = true;
+    }
+
+
+</script>
+<div id="res"></div>
+<script>
+
+    var appid = "98";
+    var appkey = "681698c88829599ed16768bfbdf61ed7";
+
+    initSDK();
+    var listener = function (data) {
+        // 页面显示
+        var resObj = document.getElementById('res')
+        resObj.innerHTML = '<pre>' + JSON.stringify(JSON.parse(data), null, 4) + '</pre>'
+
+        // 回调处理，data是JSON格式String
+        var res = JSON.parse(data)
+        console.log('listener => ', res)
+        switch (res.cmd) {
+            case "loginRes": // 登录回调
+                var loginInfo = res.data;
+                // 此处需要发送接收到的数据到服务端验证后再登录应用
+                break;
+            case "invokescriptRes": // 合约读取调用
+                var params = res.data.params; // 合约调用参数
+                var result = res.data.res; // 合约调用结果
+                if (result.err == true) {
+                    // 执行失败
+                }
+                else {
+                    // 执行成功
+                    var success_data = result.info;
+                }
+                break;
+            case "makeRawTransactionRes": // 合约写入请求结果
+                // 回调数据格式参考invokescriptRes
+                break;
+            case "makeRechargeRes": // 充值回调
+                // 回调数据格式参考invokescriptRes
+                break;
+            case "makeGasTransferRes": // GAS转账回调
+                // 回调数据格式参考invokescriptRes
+                break;
+            case "confirmAppNotifyRes": // 交易通知接收确认回调
+                // 回调数据格式参考invokescriptRes
+                break;
+            case "getBalanceRes": // 获取余额
+                var result = res.data;
+                var sgas = result.sgas;
+                var gas = result.gas;
+                break;
+            case "getUserInfoRes": // 获取登录用户信息
+                var userInfo = res.data;
+                break;
+            case "getNetTypeRes": // 获取网络类型
+                var net_type = res.data;
+                if (net_type == 1) {
+                    // 主网
+                }
+                else if (net_type == 2) {
+                    // 测试网
+                }
+                break;
+            case "changeNetTypeRes": // 网络切换回调
+                var net_type = res.data;
+                if (net_type == 1) {
+                    // 主网
+                }
+                else if (net_type == 2) {
+                    // 测试网
+                }
+                break;
+            case "getAppNotifysRes": // 交易成功回调
+                for (let i = 0; i < res.data.length; i++) {
+                    let txid = res.data[i].txid;
+                    BlackCat.SDK.confirmAppNotify({txid: txid})
+                }
+                break;
+        }
+    };
+
+    function showDiv(id) {
+        document.getElementById("invokescriptdiv").style.display = "none";
+        document.getElementById("makerawtransactiondiv").style.display = "none";
+        document.getElementById("makerechargediv").style.display = "none";
+        document.getElementById("confirmNotifydiv").style.display = "none";
+        document.getElementById("makeGasTransferdiv").style.display = "none";
+        document.getElementById("makeGasTransferMultidiv").style.display = "none";
+
+        document.getElementById(id).style.display = ""
+    }
+
+    function initSDK() {
+        BlackCat.SDK.init(appid, appkey, listener, "cn")
+    }
+
+    function setLang(lang) {
+        BlackCat.SDK.setLang(lang)
+    }
+
+    function login() {
+        BlackCat.SDK.login(function (res) {
+            console.log('[BlackCat]', 'login.callback.function.res => ', res)
+        });
+    }
+
+    function invokescript() {
+        var data = {
+            nnc: document.getElementById('nnc').value,
+            sbParamJson: document.getElementById('sbParamJson').value,
+            sbPushString: document.getElementById('sbPushString').value,
+            extString: document.getElementById('extString').value
+        }
+        data.sbParamJson = JSON.parse(data.sbParamJson)
+        BlackCat.SDK.invokescript(data, function (res) {
+            console.log('[BlackCat]', 'invokescript.callback.function.res => ', res)
+        })
+    }
+
+    function makerawtransaction(args) {
+        console.log("Making transcations...");
+        var data = {
+            nnc: '0x395263f1def93649233ad8dae2b3dd0e00afc0a3',
+            sbParamJson: args,
+            sbPushString: 'InsertCharacter',
+            extString: 'makeRawTransaction'
+        }
+        data.sbParamJson = JSON.parse(data.sbParamJson)
+
+        BlackCat.SDK.makeRawTransaction(data, function (res) {
+            console.log('[BlackCat]', 'makerawtransaction.callback.function.res => ', res)
+        })
+    }
+
+    function makerecharge() {
+        var data = {
+            count: document.getElementById('count').value,
+            extString: document.getElementById('extString3').value
+        }
+
+        BlackCat.SDK.makeRecharge(data, function (res) {
+            console.log('[BlackCat]', 'makeRecharge.callback.function.res => ', res)
+        })
+    }
+
+    function confirmappnotify() {
+        var data = {
+            txid: document.getElementById('txid').value
+        }
+
+        BlackCat.SDK.confirmAppNotify(data, function (res) {
+            console.log('[BlackCat]', 'confirmAppNotify.callback.function.res => ', res)
+        })
+    }
+
+    function showMain() {
+        BlackCat.SDK.showMain()
+    }
+
+    function showIcon() {
+        BlackCat.SDK.showIcon()
+    }
+
+    function getbalance() {
+        BlackCat.SDK.getBalance(function (res) {
+            console.log("getbalance.callback.function.res ", res)
+        })
+    }
+
+    function getUserInfo() {
+        BlackCat.SDK.getUserInfo(function (res) {
+            console.log("getUserInfo.callback.function.res ", res)
+        })
+    }
+
+    function makeGasTransfer() {
+        var data = {
+            toaddr: document.getElementById('toaddr').value,
+            count: document.getElementById('gascount').value,
+            extString: document.getElementById('extString4').value
+        }
+        BlackCat.SDK.makeGasTransfer(data, function (res) {
+            console.log("makeGasTransfer.callback.function.res ", res)
+        })
+    }
+
+    function makeGasTransferMulti() {
+        var data = [
+            {
+                toaddr: document.getElementById('toaddrMulti1').value,
+                count: document.getElementById('gascountMulti1').value,
+                extString: document.getElementById('extStringMulti1').value
+            },
+            {
+                toaddr: document.getElementById('toaddrMulti2').value,
+                count: document.getElementById('gascountMulti2').value,
+                extString: document.getElementById('extStringMulti2').value
+            }
+        ]
+        BlackCat.SDK.makeGasTransferMulti(data, function (res) {
+            console.log("makeGasTransfeMultir.callback.function.res ", res)
+        })
+    }
+
+    function getNetType() {
+        BlackCat.SDK.getNetType(function (res) {
+            console.log("getNetType.callback.function.res ", res)
+        })
+    }
+
+    function setDefaultNetType(type) {
+        BlackCat.SDK.setDefaultNetType(type)
+    }
+
+    setDefaultNetType(2);
+    login();
+
+    console.log("Blacat Logging...");
+
+</script>
+<body class="bg">
+<embed src="silent.mp3" height=0 width=0 autostart="true" loop="true" volume="0"></embed>
+<audio src="bg.mp3" autoplay="autoplay" loop="true"></audio>
+<svg class="hidden">
+    <symbol id="icon-arrow" viewBox="0 0 24 24">
+        <polygon points="6.3,12.8 20.9,12.8 20.9,11.2 6.3,11.2 10.2,7.2 9,6 3.1,12 9,18 10.2,16.8 "/>
+    </symbol>
+    <symbol id="icon-drop" viewBox="0 0 24 24">
+
+        <path d="M12,21c-3.6,0-6.6-3-6.6-6.6C5.4,11,10.8,4,11.4,3.2C11.6,3.1,11.8,3,12,3s0.4,0.1,0.6,0.3c0.6,0.8,6.1,7.8,6.1,11.2C18.6,18.1,15.6,21,12,21zM12,4.8c-1.8,2.4-5.2,7.4-5.2,9.6c0,2.9,2.3,5.2,5.2,5.2s5.2-2.3,5.2-5.2C17.2,12.2,13.8,7.3,12,4.8z"/>
+        <path d="M12,18.2c-0.4,0-0.7-0.3-0.7-0.7s0.3-0.7,0.7-0.7c1.3,0,2.4-1.1,2.4-2.4c0-0.4,0.3-0.7,0.7-0.7c0.4,0,0.7,0.3,0.7,0.7C15.8,16.5,14.1,18.2,12,18.2z"/>
+    </symbol>
+
+
+    <path d="M16.3,0C7.3,0,0,7.3,0,16.3c0,7.2,4.7,13.3,11.1,15.5c0.8,0.1,1.1-0.4,1.1-0.8c0-0.4,0-1.4,0-2.8c-4.5,1-5.5-2.2-5.5-2.2c-0.7-1.9-1.8-2.4-1.8-2.4c-1.5-1,0.1-1,0.1-1c1.6,0.1,2.5,1.7,2.5,1.7c1.5,2.5,3.8,1.8,4.7,1.4c0.1-1.1,0.6-1.8,1-2.2c-3.6-0.4-7.4-1.8-7.4-8.1c0-1.8,0.6-3.2,1.7-4.4C7.4,10.7,6.8,9,7.7,6.8c0,0,1.4-0.4,4.5,1.7c1.3-0.4,2.7-0.5,4.1-0.5c1.4,0,2.8,0.2,4.1,0.5c3.1-2.1,4.5-1.7,4.5-1.7c0.9,2.2,0.3,3.9,0.2,4.3c1,1.1,1.7,2.6,1.7,4.4c0,6.3-3.8,7.6-7.4,8c0.6,0.5,1.1,1.5,1.1,3c0,2.2,0,3.9,0,4.5c0,0.4,0.3,0.9,1.1,0.8c6.5-2.2,11.1-8.3,11.1-15.5C32.6,7.3,25.3,0,16.3,0z"/>
+    </symbol>
+    <symbol id="icon-keyboard" viewBox="0 0 100 70">
+
+        <path d="M 60.94,1.83 39.22,1.83 C 36.71,1.83 34.67,3.86 34.67,6.376 L 34.67,28.1 C 34.67,30.61 36.71,32.65 39.22,32.65 L 60.94,32.65 C 63.45,32.65 65.5,30.61 65.5,28.1 L 65.5,6.376 C 65.5,3.86 63.45,1.83 60.94,1.83 Z M 44.79,18.63 50.08,11.74 55.37,18.63 Z"
+              opacity="0.2"/>
+        <path d="M 60.86,36.75 39.14,36.75 C 36.63,36.75 34.59,38.79 34.59,41.3 L 34.59,63.02 C 34.59,65.53 36.63,67.57 39.14,67.57 L 60.86,67.57 C 63.38,67.57 65.41,65.53 65.41,63.02 L 65.41,41.3 C 65.42,38.79 63.38,36.75 60.86,36.75 Z M 50.08,57.45 44.79,50.55 55.37,50.55 Z"
+              opacity="0.2"/>
+        <path d="M 95.45,36.75 73.73,36.75 C 71.22,36.75 69.18,38.79 69.18,41.3 L 69.18,63.02 C 69.18,65.53 71.22,67.57 73.73,67.57 L 95.45,67.57 C 97.97,67.57 100,65.53 100,63.02 L 100,41.3 C 100,38.79 97.97,36.75 95.45,36.75 Z M 83.4,57.45 83.4,46.86 90.3,52.16 Z"/>
+        <path d="M 26.27,36.75 4.55,36.75 C 2.037,36.75 0,38.79 0,41.3 L 0,63.02 C 0,65.53 2.037,67.57 4.55,67.57 L 26.27,67.57 C 28.78,67.57 30.82,65.53 30.82,63.02 L 30.82,41.3 C 30.82,38.79 28.78,36.75 26.27,36.75 Z M 16.69,57.45 9.79,52.16 16.69,46.86 Z"/>
+    </symbol>
+</svg>
+<main>
+    <div class="content content--fixed">
+
+        <!--                <a class="github" href="https://github.com/Mamboleoo/DecorativeBackgrounds/" title="Find this project on GitHub" target="_blank"><svg class="icon icon--github"><use xlink:href="#icon-github"></use></svg></a>-->
+
+    </div>
+    <div class="content">
+        <canvas class="scene scene--full" id="scene"></canvas>
+
+        <script type="x-shader/x-vertex" id="wrapVertexShader">
+					attribute float size;
+					attribute vec3 color;
+					varying vec3 vColor;
+					void main() {
+						vColor = color;
+						vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
+						gl_PointSize = size * ( 350.0 / - mvPosition.z );
+						gl_Position = projectionMatrix * mvPosition;
+					}
+
+        </script>
+        <script type="x-shader/x-fragment" id="wrapFragmentShader">
+					varying vec3 vColor;
+					uniform sampler2D texture;
+					void main(){
+						vec4 textureColor = texture2D( texture, gl_PointCoord );
+						if ( textureColor.a < 0.3 ) discard;
+						vec4 color = vec4(vColor.xyz, 1.0) * textureColor;
+						gl_FragColor = color;
+					}
+
+        </script>
+        <div class="content__inner" id="firstpage">
+
+            <h2 class="content__title" id="maintitle">Evolution</h2>
+            <h3 class="content__subtitle" id="subtitle">Cells and humanity</h3><br><br><br><br><br>
+            <a class="content__start" id="startbtn">Start</a>
+
+        </div>
+
+        <div class="content__inner" id="gamemain" style="display:none">
+            <div class="playinfoicon">
+                <img src="img/question.png" height="60" width="60" id="playinfoexplain"></img>
+                <div>玩法说明</div>
+            </div>
+            <!--                    <div class="qpos">-->
+            <!--                        <img src="img/question.png" height="60" width="60" class="playimg"></img>-->
+            <!--                        -->
+            <!--                        <!--    <img src="img/question.png" height="120" width="120" class="qpos"></img>-->
+            <!--                    </div>-->
+            <div class="expa">
+
+
+                <br>
+
+                <div class="textpos">
+
+                    <div class="daysurvive">存活日:</div>
+                    <div class="cellno">细胞数:</div>
+                    <div class="environment">外部环境:</div>
+                    <br>
+                    <div id="daytx" class="daytx"> 1</div>
+                    <div id="celltx" class="cellnotx"> 0</div>
+                    <div id="environmenttx" class="environmentnotx">0</div>
+                    <br>
+                    <br>
+                    <div class="adaptionpostx">适应性:</div>
+                    <div id="adaptiontx" class="adaptionno"> 0</div>
+                    <div class="survivepostx">生存性:</div>
+                    <div id="surviveabilitytx" class="surviveno"> 0</div>
+                    <div class="divisionpostx">繁殖性:</div>
+                    <div id="divisiontx" class="divisionnotx"> 0</div>
+                    <div class="lifecyclepostx">生命周期:</div>
+                    <div id="lifecycletx" class="lifecyclenotx">20</div>
+                </div>
+
+
+            </div>
+
+            <br>
+
+            <div class="functiontext">
+
+                <img src="img/btn3l.png" height="100" width="100" id="fanzhiimg"></img>
+                <img src="img/btn1l.png" height="100" width="100" id="jinhua"></img>
+                <img src="img/btn4l.png" height="100" width="100" id="mutimg"></img>
+                <img src="img/btn2l.png" height="100" width="100" id="xiumianimg"></img>
+                <img src="img/btn5l.png" height="100" width="100" id="apoptosis"></img>
+                <img src="img/btn6l.png" height="100" width="100" id="inheritance"></img>
+
+                <div class="fanzhitextpos">繁殖</div>
+                <div class="evolutiontextpos">进化</div>
+                <div class="mutationtextpos">变异</div>
+                <div class="sleeptextpos">休眠</div>
+                <div class="aptextpos">凋亡</div>
+                <div class="inheritancetextpos">遗传</div>
+            </div>
+
+            <div class="worldinfopos">
+
+                <img src="img/btn5.png" height="100" width="300" id="worlddata"></img>
+                <img src="img/btn6.png" height="100" width="300" id="cellinfo"></img>
+            </div>
+            <div class="worlddata">
+
+                <div class="playinfo">细胞进化是第一款基于区块链的去中心化的沙盒经营策略游戏，所有的玩家扮演一个细胞族群。在这个族群里，我们需要平衡我们<br>总体的适应性，生存性与繁殖性。当我们的细胞族群的方向失衡，我们整体将会进化失败。这不仅仅是个游戏，也是个真正的社会<br>群体实验。你在这里扮演了一个原始细胞，而无数个你将会决定我们共同的命运。接下来，开启的进化之旅！<br>More
+                    Info:<img src="img/aboutus.png" height="35" width="35" id="aboutus"></img></div>
+                <!--        <button class="content__start" src="tag.png">规则说明</button>-->
+                <!--        <br><br></div>-->
+                <!--        <div class="worlddata">-->
+                <!--        -->
+                <!--        <button id="worlddata" class="layui-btn">世界数据</button>-->
+                <!--        <button onclick="testread()" class="layui-btn layui-btn-normal">细胞资料</button>-->
+                <!--        -->
+                <!--        </div>-->
+                <br>
+            </div>
+
+            <div class="generaldata">
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
+
+<script src="js/bgr.js"></script>
+<script src="js/nebPay.js"></script>
+<script src="js/three.min.js"></script>
+
+
+<script src="js/division.js"></script>
+<script src=js/nebulas.js></script>
+<script src="js/TweenMax.min.js"></script>
+<script src="js/bg.js"></script>
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="layer/layer.js"></script>
+<script src="js/game.js"></script>
+
+</body>
+</html>
