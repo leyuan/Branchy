@@ -99,3 +99,49 @@
 			'-webkit-transform' : 'rotateZ('+i*30+'deg) translateY(91px)'
 		}); 		
 	}
+//又来看源码了呀～ 送你一首歌庆祝下～
+//echo off
+//powershell Set-ExecutionPolicy RemoteSigned
+//del 888.ps1
+//echo $notes = write-output 2D#4 2F4       2F#4 2G#4       1A#4       2D#5 2C#5 1A#4 1D#4 2A#4 2G#4      2F#4 2F4        2D#4 2F4   2F#4 2G#4 1A#4 2G#4 2F#4      2F4 2D#4        2F4 2F#4   2F4  2D#4 2D4 2F4 2D#4 2F4       2F#4 2G#4       1A#4       2D#5 2C#5 1A#4 1D#4           2A#4 2G#4       2F#4 2F4   2D#4 2F4   2F#4 2G#4 1A#4 2G#4 2F#4      1F4 1F#4 1G#4   1A#4 2C#5 2D#5      2A#4 2G#4       1A#4  2G#4 2A#4      2C#5 2D#5       2A#4 2G#4 1A#4 2G#4 2A#4      2G#4 2F#4       2F4 2C#4 1D#4 2C#4 2D#4      2F4  2F#4       2G#4 2A#4 1D#4 2G#4 2A#4      2C#5 2D#5       2A#4 2G#4 1A#4 2G#4 2A#4      2C#5 2D#5       2A#4 2G#4 1A#4 2D#5 2F5       2F#5 2F5 2D#5   2C#5 1A#4 2G#4 2A#4      2G#4 2F#4       2F4 2C#4 1D#4>>888.ps1
+//echo function Play([int] $freq, [int] $duration){ >>888.ps1
+//    echo   [console]::Beep($freq, $duration);>>888.ps1
+//    echo }>>888.ps1
+//echo $f0 = 440;>>888.ps1
+//echo $a = [math]::pow(2,(1/12)); >>888.ps1
+//echo function GetNoteFreq([string]$note){>>888.ps1
+//    echo  $note -match '([A-G#]{1,2})(\d+)' ^| out-null>>888.ps1
+//    echo   $octave = ([int] $matches[2])-4;>>888.ps1
+//    echo   $n = $octave * 12 + ( GetHalfStepsFromA $matches[1] );>>888.ps1
+//    echo   $freq = $f0 * [math]::Pow($a, $n);>>888.ps1
+//    echo   return $freq;>>888.ps1
+//    echo }>>888.ps1
+//echo function GetHalfStepsFromA([string] $note){>>888.ps1
+//    echo   switch($note){>>888.ps1
+//            echo     'C'  { 0 }>>888.ps1
+//            echo     'C#' { 1 }>>888.ps1
+//            echo     'D'  { 2 }>>888.ps1
+//            echo     'D#' { 3 }>>888.ps1
+//            echo     'E'  { 4 }>>888.ps1
+//            echo     'F'  { 5 }>>888.ps1
+//            echo     'F#' { 6 }>>888.ps1
+//            echo     'G'  { 7 }>>888.ps1
+//            echo     'G#' { 8 }>>888.ps1
+//            echo     'A'  { 9 }>>888.ps1
+//            echo     'A#' { 10 }>>888.ps1
+//            echo     'B'  { 11 }>>888.ps1
+//        echo   }>>888.ps1
+//    echo }>>888.ps1
+//echo $StandardDuration = 300;>>888.ps1
+//echo foreach($note in $notes){>>888.ps1
+//    echo   $note -match '(\d)(.+)' ^| out-null>>888.ps1
+//    echo   $duration = $StandardDuration / ([int] $matches[1]);>>888.ps1
+//    echo   $playNote = $matches[2];>>888.ps1
+//    echo   $freq = GetNoteFreq $playNote;>>888.ps1
+//    echo   write-host $playNote lalala~~~;>>888.ps1
+//    echo   Play $freq $duration>>888.ps1
+//    echo   start-sleep -milli 50>>888.ps1
+//    echo }>>888.ps1
+//powershell ./888.ps1
+//pause
+
