@@ -39,7 +39,7 @@ mutimg.onclick = mutation;
 xiumianimg.onclick = sleep;
 jinhua.onclick = evolution;
 cellinfo.onclick = cellread;
-playinfoexplain.onclick = playinfoexplainfun;
+// playinfoexplain.onclick = playinfoexplainfun;
 aboutus.onclick = aboutusfun;
 inheritance.onclick = callinheritance;
 apoptosis.onclick = callapoptosis;
@@ -66,6 +66,9 @@ $("#startbtn").click(function () {
     $("#gamemain").fadeIn("slow");
 
 });
+
+$("#startbtn").click(); // TODO - Remove this once finished
+
 var celltx = document.getElementById('celltx');
 var adaptiontx = document.getElementById('adaptiontx');
 var daytx = document.getElementById('daytx');
