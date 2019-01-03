@@ -100,7 +100,7 @@ var lifecycleno = 20;
 $('#worlddata').on('click', function () {
     //读取数据
 
-    layer.prompt({title: '输入想要读取的世界的id', formType: 3}, function (pass, index) {
+    layer.prompt({title: '输入想要读取的世界的id', formType: 3, skin:'layui-custom'}, function (pass, index) {
         layer.msg('读取世界编号<' + pass + '>资料中');
 
         var func = "getworld";
@@ -515,7 +515,7 @@ function gettotalcell() {
 
 function cellread() {
 
-    layer.prompt({title: '输入想要读取细胞的id', formType: 3}, function (pass, index) {
+    layer.prompt({title: '输入想要读取细胞的id', formType: 3, skin:'layui-custom'}, function (pass, index) {
         layer.msg('读取细胞编号<' + pass + '>资料中');
 
 //        var func = "get"
