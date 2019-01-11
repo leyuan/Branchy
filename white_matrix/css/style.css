@@ -33,13 +33,13 @@ Content:	#FFF; (white)
 Footer:		#070707; (black)
 
 a (standard):	#F5F5F5; (white)
-a (hover): #E84118; (orange)
-a (visited):	#E84118;
-a (active):	#E84118;
+a (hover): #dc2d49; (orange)
+a (visited):	#dc2d49;
+a (active):	#dc2d49;
 
 [Colors]
 
-Primary Color: #E84118;
+Primary Color: #dc2d49;
 -------------------------------------------------------------------*/
 
 @import url('https://fonts.googleapis.com/css?family=Raleway:300,400,500'); /* Raleway Font */
@@ -48,15 +48,23 @@ Primary Color: #E84118;
     font-family: 'Anurati';
     src: url('../fonts/Anurati-Regular.otf');
 }
+@font-face {
+    font-family: ZaoZiGongFangDianHeiChaoXiTi;
+    src: url('../fonts/Lanting.ttf');	
+}
 
+@font-face {
+    font-family: Baskerville;
+    src: url('../fonts/Baskerville.ttc');	
+}
 /* --------------------------- /////////// I. GENERAL /////////// --------------------------- */
 /* -Color- */
 .colored {
-    color: #E84118;
+    color: #dc2d49;
 }
 /* -Link Styling- */
 a {
-    color: #E84118;
+    color: #dc2d49;
     font-family: Raleway, sans-serif;
 	text-decoration: none;
 }
@@ -65,19 +73,30 @@ a:visited {
     text-decoration: none;
 }
 a:hover {
-    color: #E84118;
+    color: #dc2d49;
 	text-decoration: underline;
 }
 a:active {
-    color: #E84118;
+    color: #dc2d49;
     text-decoration: underline;
 }
 a:focus {
-    color: #E84118;
+    color: #dc2d49;
     text-decoration: none;
 }
 /* -Resets- */
 html, body {
+    background-color: ##1ac9e8;
+    background: linear-gradient(rgba(56, 0, 54, 0.05), rgba(255, 255, 255, 0.05)), url(../images/bg.png);
+    background-repeat: repeat;
+    color:rgba(255, 255, 255, 0.6);
+    font-size: 16px;
+    line-height: 1.5rem; /* 24px */
+    max-width: 100%;
+	overflow-x: hidden;
+}
+
+/* html, body {
     background-color: #111;
     background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url(../images/bg.png);
     background-repeat: repeat;
@@ -86,7 +105,7 @@ html, body {
     line-height: 1.5rem; /* 24px */
     max-width: 100%;
 	overflow-x: hidden;
-}
+} */
 /* -Full width fluid container- */
 .full-width {
     padding-left: 0;
@@ -122,7 +141,7 @@ h4 {
     font-weight: 300;
 }
 p {
-    font-family: Open Sans, sans-serif;
+    font-family: Xi;
     font-size: 0.9375rem; /* 15px */
     padding: 5px 5px 5px 0;
     margin: 0;
@@ -178,7 +197,7 @@ ul {
 hr {
     width: 100%;
     height: 2px;
-    background: #E84118;
+    background: #dc2d49;
     margin: 20px 0;
     border: none;
 }
@@ -189,7 +208,7 @@ hr {
 }
 .short-hr-left::after {
     border-top: 2px solid;
-    border-color: #E84118;
+    border-color: #dc2d49;
     content: "";
     display: block;
     height: 1px;
@@ -198,7 +217,7 @@ hr {
 }
 .short-hr-center::after {
     border-top: 2px solid;
-    border-color: #E84118;
+    border-color: #dc2d49;
     content: "";
     display: block;
     height: 1px;
@@ -232,7 +251,7 @@ button {
     outline: none !important;
 }
 .button {
-	background: #E84118;
+	background: #dc2d49;
     border: none;
     border-radius: 2px;
     color: #FFF;
@@ -276,7 +295,7 @@ button {
 #progress {
     width: 0;
     height: 2px;
-    background: #E84118;
+    background: #dc2d49;
     position: relative;
     top: 45%;
 }
@@ -328,13 +347,13 @@ button {
     color: #222;
 }
 .navbar-light .navbar-nav .nav-link:hover {
-    color: #E84118;
+    color: #dc2d49;
 }
 .navbar-light .navbar-nav .nav-link:active {
-    color: #E84118;
+    color: #dc2d49;
 }
 .navbar-light .navbar-nav .nav-link:focus {
-    color: #E84118;
+    color: #dc2d49;
 }
 .navbar-toggler {
     border: none;
@@ -423,7 +442,7 @@ button {
 .game-tags {
     background: #FAFAFA;
     padding: 10px;
-    border-left: 2px solid #E84118;
+    border-left: 2px solid #dc2d49;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.11);
 }
 .game-tags li {
@@ -438,17 +457,17 @@ button {
     text-decoration: none;
 }
 .game-tags li a:hover {
-    color: #E84118;
+    color: #dc2d49;
 }
 .game-tags li a:focus {
-    color: #E84118;
+    color: #dc2d49;
 }
 .game-card {
     width: 100%;
     margin: 0 auto 1.5rem auto;
     min-height: 270px;
     height: auto;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.11);
+    /* box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.11); */
 }
 .lightbox .lb-image {
     border: 4px solid #111;
@@ -458,7 +477,7 @@ button {
     top: 0;
     left: 0;
     background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8));
-    border-left: 2px solid #E84118;
+    border-left: 2px solid #dc2d49;
     width: 100%;
     height: 100%;
     opacity: 0;
@@ -615,7 +634,7 @@ button {
     border-radius: 2px;
 }
 .score-card:hover {
-     background: #E84118;
+     background: #dc2d49;
 }
 .score-card:hover .score {
     color: #FFF;
@@ -658,7 +677,7 @@ button {
 }
 #team figure img {
     border-radius: 3px;
-    border-bottom: 2px solid #E84118;
+    border-bottom: 2px solid #dc2d49;
 }
 .team-caption ul {
     margin-top: 10px;
@@ -671,7 +690,7 @@ button {
     color: #444;
 }
 .team-caption ul li > a:hover {
-    color: #E84118;
+    color: #dc2d49;
 }
 .team-caption {
     position: absolute;
@@ -710,7 +729,7 @@ button {
 .job-card {
     text-align: center;
     background: #FAFAFA;
-    border-left: 2px solid #E84118;
+    border-left: 2px solid #dc2d49;
     padding: 25px 35px;
     margin: 10px 0;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.11);
@@ -719,7 +738,7 @@ button {
     background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 1));
 }
 .modal-header {
-    border-bottom: 1px solid #E84118;
+    border-bottom: 1px solid #dc2d49;
 }
 .modal-body > ul > li > p {
     padding: 0 5px;
@@ -732,7 +751,7 @@ button {
     margin-bottom: 0;
 }
 .modal-footer {
-    border-top: 1px solid #E84118;
+    border-top: 1px solid #dc2d49;
 }
 .modal-footer button {
     margin: 0;
@@ -750,7 +769,7 @@ button {
     cursor: pointer;
 }
 .close:hover {
-    color: #E84118;
+    color: #dc2d49;
     opacity: 1;
 }
 /* -- Newsletter -- */
@@ -780,7 +799,7 @@ button {
     width: 100%;
     color: #222;
     background: none;
-    border-bottom: 2px solid #E84118 !important;
+    border-bottom: 2px solid #dc2d49 !important;
     border-left: none !important;
     border-right: none !important;
     border-top: none !important;
@@ -790,7 +809,7 @@ button {
     width: 100%;
     color: #222;
     background: none;
-    border-bottom: 2px solid #E84118 !important;
+    border-bottom: 2px solid #dc2d49 !important;
     border-left: none !important;
     border-right: none !important;
     border-top: none !important;
@@ -812,7 +831,7 @@ button {
     margin-top: 25px;
 }
 #contact ul li i {
-    color: #E84118;
+    color: #dc2d49;
     background: #FAFAFA;
     padding: 10px;
 }
@@ -834,7 +853,7 @@ button {
     min-height: 70px;
     height: auto;
     background: #FFF;
-    border-top: 2px solid #E84118;
+    border-top: 2px solid #dc2d49;
     padding: 20px 0 0 0;
 }
 .social-links {
@@ -848,10 +867,10 @@ button {
     color: #222;
 }
 .social-links li a:hover {
-    color: #E84118;
+    color: #dc2d49;
 }
 .social-links li a:focus {
-    color: #E84118;
+    color: #dc2d49;
 }
 #copyright {
     float: left;
@@ -879,7 +898,7 @@ button {
 /* --------------------------- /////////// XII. RESPONSIVE STYLES /////////// --------------------------- */
 @media (max-width : 991px) {
     .nav-item > a::first-letter {
-    color: #E84118;
+    color: #dc2d49;
     }
     .navbar-light{
         background-color: rgba(255,255,255,0.7); /* navbar background gradient */
