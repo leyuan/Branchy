@@ -67,7 +67,7 @@ $("#startbtn").click(function () {
 
 });
 
-$("#startbtn").click(); // TODO - Remove this once finished
+// $("#startbtn").click(); // TODO - Remove this once finished
 
 var celltx = document.getElementById('celltx');
 var adaptiontx = document.getElementById('adaptiontx');
