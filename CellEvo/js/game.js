@@ -39,7 +39,7 @@ mutimg.onclick = mutation;
 xiumianimg.onclick = sleep;
 jinhua.onclick = evolution;
 cellinfo.onclick = cellread;
-// playinfoexplain.onclick = playinfoexplainfun;
+playinfoexplain.onclick = playinfoexplainfun;
 aboutus.onclick = aboutusfun;
 inheritance.onclick = callinheritance;
 apoptosis.onclick = callapoptosis;
@@ -67,7 +67,7 @@ $("#startbtn").click(function () {
 
 });
 
-$("#startbtn").click(); // TODO - Remove this once finished
+// $("#startbtn").click(); // TODO - Remove this once finished
 
 var celltx = document.getElementById('celltx');
 var adaptiontx = document.getElementById('adaptiontx');
@@ -1252,10 +1252,10 @@ var src = '';
 $(".action-btn").mouseenter(function() {
     src = this.src;
     var fileNames = src.split('.');
-    fileNames[fileNames.length-1] = '.gif';
-    this.src = fileNames.join('');
+    fileNames[fileNames.length-1] = 'gif';
+    this.src = fileNames.join('.');
 }).mouseleave(function() {
     var fileNames = src.split('.');
-    fileNames[fileNames.length-1] = '.png';
-    this.src = fileNames.join('');
+    fileNames[fileNames.length-1] = 'png';
+    this.src = fileNames.join('.');
 });
