@@ -1252,10 +1252,10 @@ var src = '';
 $(".action-btn").mouseenter(function() {
     src = this.src;
     var fileNames = src.split('.');
-    fileNames[fileNames.length-1] = '.gif';
-    this.src = fileNames.join('');
+    fileNames[fileNames.length-1] = 'gif';
+    this.src = fileNames.join('.');
 }).mouseleave(function() {
     var fileNames = src.split('.');
-    fileNames[fileNames.length-1] = '.png';
-    this.src = fileNames.join('');
+    fileNames[fileNames.length-1] = 'png';
+    this.src = fileNames.join('.');
 });
