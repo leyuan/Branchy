@@ -47,8 +47,8 @@ var NebPay = require("nebpay");
 var nebPay = new NebPay();
 
 var nebulas = require("nebulas"),
-    Account = nebulas.Account,
-    neb = new nebulas.Neb();
+Account = nebulas.Account,
+neb = new nebulas.Neb();
 neb.setRequest(new nebulas.HttpRequest("https://mainnet.nebulas.io"));
 
 //to check if the extension is installed
@@ -57,7 +57,7 @@ if (typeof(webExtensionWallet) != "undefined") {
 
 } else {
 
-    layer.msg('请安装最新的钱包后刷新~ 点击游戏页面More Info也可以直接开启传送阵!');
+    layer.msg('请安装最新的星云钱包后刷新~ 点击游戏页面More Info也可以直接开启传送阵!');
 
 }
 
@@ -66,6 +66,9 @@ $("#startbtn").click(function () {
     $("#gamemain").fadeIn("slow");
 
 });
+
+// $("#startbtn").click(); // TODO - Remove this once finished
+
 var celltx = document.getElementById('celltx');
 var adaptiontx = document.getElementById('adaptiontx');
 var daytx = document.getElementById('daytx');
@@ -96,62 +99,53 @@ var lifecycleno = 20;
 
 $('#worlddata').on('click', function () {
     //读取数据
-    layer.prompt(
-        {
-            title: '输入想要读取的世界的id',
-            formType: 3,
-            btn: ["确认", "当前世界信息", "取消"],
-            btn2: function () {
 
-                var func = "getcurrentworld";
-                var from = Account.NewAccount().getAddressString();
+    layer.prompt({title: '输入想要读取的世界的id', formType: 3, skin:'layui-custom'}, function (pass, index) {
+        layer.msg('读取世界编号<' + pass + '>资料中');
 
-                var callArgs = JSON.stringify(['0']);
-                var value = "0";
-                var nonce = "0";
-                var gas_price = "1000000";
-                var gas_limit = "2000000";
-                var contract = {
-                    "function": func,
-                    "args": callArgs
-                };
+        var func = "getworld";
+//        var args = "[\"" + pass + "\"]";
+        var from = Account.NewAccount().getAddressString();
 
-                neb.api.call(from, dappAddress, value, nonce, gas_price, gas_limit, contract).then(function (resp) {
-                    worldSearch(resp)
-                }).catch(function (err) {
-
-                    console.log("error:" + err.message)
-                })
-
-            }
-        }, function (pass, index) {
-            console.log("index = " + index);
-            layer.msg('读取世界编号<' + pass + '>资料中');
-            var func = "getworld";
-            var from = Account.NewAccount().getAddressString();
-
-            var callArgs = JSON.stringify([pass]);
-            var value = "0";
-            var nonce = "0";
-            var gas_price = "1000000";
-            var gas_limit = "2000000";
-            var contract = {
-                "function": func,
-                "args": callArgs
-            };
-
-            neb.api.call(from, dappAddress, value, nonce, gas_price, gas_limit, contract).then(function (resp) {
-                worldSearch(resp)
-            }).catch(function (err) {
-
-                console.log("error:" + err.message)
-            })
-
-        });
+        var args = pass;
+        var callArgs = JSON.stringify([args]);
+        var value = "0";
+        var nonce = "0"
+        var gas_price = "1000000"
+        var gas_limit = "2000000"
+        var contract = {
+                 "function": func,
+                 "args": callArgs
+        }
+        
+        neb.api.call(from,dappAddress,value,nonce,gas_price,gas_limit,contract).then(function (resp) {
+                                                                                worldSearch(resp)
+                                                                        }).catch(function (err) {
+                                                                     
+                                                                            console.log("error:" + err.message)
+                                                                                        })
+//        window.postMessage({
+//            "target": "contentscript",
+//            "data": {
+//                "to": dappAddress,
+//                "value": "0",
+//                "contract": {
+//                    "function": func,
+//                    "args": args
+//                }
+//            },
+//            "method": "neb_call"
+//        }, "*");
+    });
 });
 
 function aboutusfun() {
-    layer.msg("<img src=\"img/neblogo.png \" height=\"70\" width=\"70\"><br><div>细胞进化需要星云链钱包的支持,这样可以进行DNA融合，体验到更多游戏性。<br>Language: <a href=\"http:\/\/cellevo.net:9310\">中文</a>|<a href=\"http:\/\/cellevo.net:9306\">English</a><br>网页下载地址:<br><a href=\"https:\/\/github.com\/ChengOrangeJu\/WebExtensionWallet\">https://github.com/ChengOrangeJu/WebExtensionWallet\</a><br>苹果钱包下载地址(海外):<br><a href=\"https:\/\/itunes.apple.com\/hk\/app\/nas-nano\/id1281191905\?l=zh\&ls=1\&mt=8\">https://itunes.apple.com/hk/app/nas-nano/id1281191905?l=zh&ls=1&mt=8\</a><br>安卓钱包下载地址:<br><a href=\"https:\/\/nano.nebulas.io\/index_cn.html\">https://nano.nebulas.io/index_cn.html\</a><br><br><img src=\"img/drlogo.png \" height=\"60\" width=\"120\"><br>感谢合作方DappReview的大力支持,DappReview作为国内最专业的区块链游戏媒体,<br>持续为细胞进化(Cell Evolution)提供推广,孵化以及测评服务!<br><br><br>小记:<br>设计这款游戏的初衷就是想要做出一款真正的游戏,不是区块链的发币，博傻等传统意义上的游戏，我认为区块链是一种工具,让游戏过程,数据更加高效透明的情况下,通过自己的链上逻辑,拥有自己的生态逻辑,可以让游戏过程更加独具游戏性。接着我发现跟传统意义不一样，如果真的有一个游戏可以让所有人参与进生态,无数个体决定世界的走向，那么这就不是一个单机经营，一个简单的积分榜，而是一个真正的匿名群体游戏，有追逐高分的玩家，有群体合作的玩家，有新手，也有高玩，有创造者，也有修补者，各色各样的个体构建一个真正的区块链游戏。 <br><p>Cell Evolution<br><br>A game about cells and humanity.</p><br>Present by Ling</div>", {
+    layer.msg("<img src=\"img/neb.png \" height=\"60\" width=\"60\"><br>" +
+        "<div>细胞进化需要星云链钱包的支持,这样可以进行DNA融合，体验到更多游戏性。<br>" +
+        "Language: <a href=\"http:\/\/cellevo.net:9310\">中文</a>|<a href=\"http:\/\/cellevo.net:9306\">English</a><br>" +
+        "网页下载地址:<br>" +
+        "<a href=\"https:\/\/github.com\/ChengOrangeJu\/WebExtensionWallet\">https://github.com/ChengOrangeJu/WebExtensionWallet\</a>" +
+        "<br>苹果钱包下载地址(海外):<br><a href=\"https:\/\/itunes.apple.com\/hk\/app\/nas-nano\/id1281191905\?l=zh\&ls=1\&mt=8\">https://itunes.apple.com/hk/app/nas-nano/id1281191905?l=zh&ls=1&mt=8\</a><br>安卓钱包下载地址:<br><a href=\"https:\/\/nano.nebulas.io\/index_cn.html\">https://nano.nebulas.io/index_cn.html\</a><br><br>小记:<br>设计这款游戏的初衷就是想要做出一款真正的游戏,不是区块链的发币，博傻等传统意义上的游戏，我认为区块链是一种工具,让游戏过程,数据更加高效透明的情况下,通过自己的链上逻辑,拥有自己的生态逻辑,可以让游戏过程更加独具游戏性。接着我发现跟传统意义不一样，如果真的有一个游戏可以让所有人参与进生态,无数个体决定世界的走向，那么这就不是一个单机经营，一个简单的积分榜，而是一个真正的匿名群体游戏，有追逐高分的玩家，有群体合作的玩家，有新手，也有高玩，有创造者，也有修补者，各色各样的个体构建一个真正的区块链游戏, Cell Evolution.<br>希望你们喜欢。 -Ling</div>", {
         time: 0 //不自动关闭
         , anim: 0, btnAlign: 'c', shade: 0.8, area: ['780px', '500px'], btn: ['确定'], closeBtn: 1
 
@@ -236,53 +230,33 @@ function sleep() {
 
 }
 
-function randomize(lower, upper) {
-    return Math.floor((Math.random() * (upper - lower) + lower));
-}
-
-function displayEndGameUI() {
-    var datacollect = '游戏结束<br>细胞数:' + cellno + '<br>适应性:' + adaption + ' 生存性:' + surviveability + ' 繁殖性:' + division + '<br>外部环境:' + environment + ' 存活日:' + day + '<br> 总体得分:' + totoalscore + '<br> 最终评价:' + finaltitle;
-    layer.msg(datacollect, {
-        time: 0 //不自动关闭
-        , btn: ['确定', '分享'], area: ['480px', '300px'], btnAlign: 'c', shade: 0.8
-        , yes: function (index) {
-            layer.close(index);
-            layer.confirm('<p>是否上传DNA，融合进族群？<p>', {
-                type: 0,
-                btn: ['确认', '取消'], anim: 0, btnAlign: 'c', shade: 0.8, closeBtn: 0, area: ['480px', '300px'] //按钮
-            }, function () {
-                layer.msg('DNA融合中...');
-                savecell();
-
-
-            }, function () {
-                layer.msg('数据重置中...');
-                reset();
-
-            });
-
-        }, btn2: function (index) {
-            var sharepicrandom = randomize(1, 9);
-            var backgroundim = '  <link rel=\"stylesheet\" href=\"css/card.css\"><div class=\"paper\"><img class=\"poster\" src="img/p' + sharepicrandom + '.png"/> ' +
-                '<h2>细胞进化-最终评价</h2>  <h1>' + finaltitle + '</h1> <p>你的细胞在这个世界里存活了 ' + day + ' 天.共获得了 ' + totoalscore + ' 分。把它的经历截图分享给你的朋友吧</p>  ' +
-                '<img class=\"qrcode\" src=\"img/share.png\"/></div>';
-            layer.msg(backgroundim, {
-                time: 0, //不自动关闭
-                shadeClose: true,
-                area: "70%",
-                offset: '10%',
-                shade: 0.8
-            }, displayEndGameUI);
-        }
-    });
-}
-
 function generalupdate() {
     if (lifecycleno <= 0) {
 
         titlejustify();
         totoalscore = cellno + (adaption + surviveability + division) * 100 + day * environment;
-        displayEndGameUI();
+        var datacollect = '游戏结束<br>细胞数:' + cellno + '<br>适应性:' + adaption + ' 生存性:' + surviveability + ' 繁殖性:' + division + '<br>外部环境:' + environment + ' 存活日:' + day + '<br> 总体得分:' + totoalscore + '<br> 最终评价:' + finaltitle;
+        layer.msg(datacollect, {
+            time: 0 //不自动关闭
+            , btn: ['确定'], area: ['480px', '300px'], btnAlign: 'c', shade: 0.8
+            , yes: function (index) {
+                layer.close(index);
+                layer.confirm('<p>是否上传DNA，融合进族群？<p>', {
+                    type: 0,
+                    btn: ['确认', '取消'], anim: 0, btnAlign: 'c', shade: 0.8, closeBtn: 0, area: ['480px', '300px'] //按钮
+                }, function () {
+                    layer.msg('DNA融合中...');
+                    savecell();
+
+
+                }, function () {
+                    layer.msg('数据重置中...');
+                    reset();
+
+                });
+
+            }
+        });
         //   lifecycleno=20;
 
     } else {
@@ -317,7 +291,7 @@ function savecell() {
 
     var func = "gettotalcell"
     var from = Account.NewAccount().getAddressString();
-
+    
     var args = 0;
     var callArgs = JSON.stringify([args]);
     var value = "0";
@@ -328,13 +302,13 @@ function savecell() {
         "function": func,
         "args": callArgs
     }
-
-    neb.api.call(from, dappAddress, value, nonce, gas_price, gas_limit, contract).then(function (resp) {
-        totalcellSearch(resp)
-    }).catch(function (err) {
-
-        console.log("error:" + err.message)
-    })
+    
+    neb.api.call(from,dappAddress,value,nonce,gas_price,gas_limit,contract).then(function (resp) {
+                                                                                 totalcellSearch(resp)
+                                                                                 }).catch(function (err) {
+                                                                                          
+                                                                                          console.log("error:" + err.message)
+                                                                                          })
 //    var args = "[\"" + 1 + "\"]"
 //
 //    window.postMessage({
@@ -389,7 +363,31 @@ function callapoptosis() {
             titlejustify();
             finaltitle = "<font color='grey'>凋亡的 </font>" + finaltitle;
             totoalscore = cellno + (adaption + surviveability + division) * 100 + day * environment;
-            displayEndGameUI();
+            var newdatacollect = '游戏结束<br>细胞数:' + cellno + '<br>适应性:' + adaption + ' 生存性:' + surviveability + ' 繁殖性:' + division + '<br>外部环境:' + environment + ' 存活日:' + day + '<br> 总体得分:' + totoalscore + '<br> 最终评价:' + finaltitle;
+            layer.msg(newdatacollect, {
+                time: 0 //不自动关闭
+                , btn: ['确定'], area: ['480px', '300px'], btnAlign: 'c', shade: 0.8, yes: function () {
+
+                    layer.close(index);
+                    layer.confirm('<p>是否上传DNA，融合进族群？<p>', {
+                        type: 0,
+                        btn: ['确认', '取消'], anim: 0, btnAlign: 'c', shade: 0.8, closeBtn: 0, area: ['480px', '300px'] //按钮
+                    }, function () {
+                        layer.msg('DNA融合中...');
+                        savecell();
+
+
+                    }, function () {
+                        layer.msg('数据重置中...');
+                        reset();
+
+                    });
+
+                }
+
+            });
+
+
         }
     });
 
@@ -419,6 +417,18 @@ function realsave() {
         listener: cbCallDapp
     });
 
+//    window.postMessage({
+//        "target": "contentscript",
+//        "data": {
+//            "to": dappAddress,
+//            "value": "0.0001",
+//            "contract": {
+//                "function": func,
+//                "args": args
+//            }
+//        },
+//        "method": "neb_sendTransaction"
+//    }, "*");
     layer.msg("融合id为:" + nextid);
 
     reset();
@@ -505,17 +515,17 @@ function gettotalcell() {
 
 function cellread() {
 
-    layer.prompt({title: '输入想要读取细胞的id', formType: 3}, function (pass, index) {
+    layer.prompt({title: '输入想要读取细胞的id', formType: 3, skin:'layui-custom'}, function (pass, index) {
         layer.msg('读取细胞编号<' + pass + '>资料中');
 
 //        var func = "get"
 //        var args = "[\"" + pass + "\"]"
 
-
+                 
         var func = "get";
-        //        var args = "[\"" + pass + "\"]";
+                 //        var args = "[\"" + pass + "\"]";
         var from = Account.NewAccount().getAddressString();
-
+                 
         var args = pass;
         var callArgs = JSON.stringify([args]);
         var value = "0";
@@ -523,17 +533,17 @@ function cellread() {
         var gas_price = "1000000"
         var gas_limit = "2000000"
         var contract = {
-            "function": func,
-            "args": callArgs
-        }
-
-        neb.api.call(from, dappAddress, value, nonce, gas_price, gas_limit, contract).then(function (resp) {
-            cellSearch(resp)
-        }).catch(function (err) {
-
-            console.log("error:" + err.message)
-        })
-
+                 "function": func,
+                 "args": callArgs
+                 }
+                 
+        neb.api.call(from,dappAddress,value,nonce,gas_price,gas_limit,contract).then(function (resp) {
+                                                                                              cellSearch(resp)
+                                                                                              }).catch(function (err) {
+                                                                                                       
+                                                                                                       console.log("error:" + err.message)
+                                                                                                       })
+                 
     });
 
 
@@ -717,7 +727,7 @@ function playinfoexplainfun() {
                                                                     closeBtn: 0,
                                                                     area: ['780px', '500px'],
                                                                     btn: ['Next'],
-                                                                    yes: function () {
+                                                                      yes: function () {
                                                                         layer.msg("<img src=\"img/btn5l.png\" height=\"60\" width=\"60\"></img><img src=\"img/btn6l.png\" height=\"60\" width=\"60\"><div>细胞凋亡     细胞遗传</div><br><div><br><br>遗传细胞可以在开始的时候，遗传一定世界dna的属性作为初始属性，有几率遗传到比较好的属性，也有几率遗传下来的属性较低。不过如果想要冲击高分的玩家，可以尽可能的遗传到较高的三个初始属性，作为开局。而想要修补世界的玩家，则可以针对性的选择遗传开局。这样也增加了世界与个体细胞的联动，激励大家更多的去融合进世界，冲击更高的世界分数,这样也对自己后面的游戏更容易争取初期优势。" + "<br><br>细胞凋亡是生物学上的术语，在自然界中也是非常重要的发现。有些细胞牺牲是有利于有机体的维持和更新，他们完成自己的使命后，自己悄悄退出。在这里我们通过这个功能给了世界修补者更多发挥的空间。当你选择凋亡的时候，细胞的生命周期会即刻归零，繁殖性，适应性以及生存性中最高的属性会有部分融合进世界dna。牺牲自我，成就世界。</div>", {
                                                                             time: 0 //不自动关闭
                                                                             ,
@@ -744,20 +754,16 @@ function playinfoexplainfun() {
                                                                                             btnAlign: 'c',
                                                                                             shade: 0.8,
                                                                                             closeBtn: 0,
-                                                                                            area: ['780px', '500px'],
-                                                                                            btn: ['Next'],
-                                                                                            yes: function () {
-
-                                                                                                layer.msg("<img src=\"img/neb.png \" height=\"60\" width=\"60\"><br><div>细胞进化与星云链完美绑定,<br>记住，当你培育完一个细胞后，真正的游戏才刚刚开始！<br><br>细胞进化的世界里有着一个个细胞族群，当一个族群的繁殖性，适应性，与生存性平衡发展的时候，族群才能存活。<br>这个世界由无数个培育出来的细胞组成,<br>当你获得一个独一无二的称谓,极高的游戏分数时候,<br>你的失衡属性却有可能导致族群灭亡,你会如何选择,融合记录进整体DNA数据库,永远的锁定记录,<br>还是为了族群,放弃自己的一次完美的培育?<br><br><br><p>Cell Evolution<br><br>A game about cells and humanity.<br></p>Present by: Ling</div>", {
-                                                                                                    time: 0 //不自动关闭
-                                                                                                    ,
-                                                                                                    anim: 0,
-                                                                                                    btnAlign: 'c',
-                                                                                                    shade: 0.8,
-                                                                                                    closeBtn: 0,
-                                                                                                    area: ['780px', '500px'],
-                                                                                                    btn: ['Next']
-                                                                                                });
+                                                                                            area: ['780px', '500px'], btn: ['Next'],yes:function(){
+                                                                                            
+                                                                                                  layer.msg("<img src=\"img/neb.png \" height=\"60\" width=\"60\"><br><div>细胞进化与星云链完美绑定,<br>记住，当你培育完一个细胞后，真正的游戏才刚刚开始！<br><br>细胞进化的世界里有着一个个细胞族群，当一个族群的繁殖性，适应性，与生存性平衡发展的时候，族群才能存活。<br>这个世界由无数个培育出来的细胞组成,<br>当你获得一个独一无二的称谓,极高的游戏分数时候,<br>你的失衡属性却有可能导致族群灭亡,你会如何选择,融合记录进整体DNA数据库,永远的锁定记录,<br>还是为了族群,放弃自己的一次完美的培育?<br><br><br><p>Cell Evolution<br><br>A game about cells and humanity.<br></p>Present by: Ling</div>", {
+                                                                                                            time: 0 //不自动关闭
+                                                                                                            ,
+                                                                                                            anim: 0,
+                                                                                                            btnAlign: 'c',
+                                                                                                            shade: 0.8,
+                                                                                                            closeBtn: 0,
+                                                                                                            area: ['780px', '500px'], btn: ['Next']});
                                                                                             }
                                                                                         });
 
@@ -884,11 +890,11 @@ function getinheritance() {
 
 
     var func = "inheritance";
-
+  
 //    var func = "getworld";
     //        var args = "[\"" + pass + "\"]";
     var from = Account.NewAccount().getAddressString();
-
+    
     var args = 0;
     var callArgs = JSON.stringify([args]);
     var value = "0";
@@ -899,13 +905,13 @@ function getinheritance() {
         "function": func,
         "args": callArgs
     }
-
-    neb.api.call(from, dappAddress, value, nonce, gas_price, gas_limit, contract).then(function (resp) {
-        inheritanceSearch(resp)
-    }).catch(function (err) {
-
-        console.log("error:" + err.message)
-    })
+    
+    neb.api.call(from,dappAddress,value,nonce,gas_price,gas_limit,contract).then(function (resp) {
+                                                                                 inheritanceSearch(resp)
+                                                                                 }).catch(function (err) {
+                                                                                          
+                                                                                          console.log("error:" + err.message)
+                                                                                          })
 
 }
 
@@ -1034,180 +1040,167 @@ function decidepic(incoming) {
 function worldSearch(resp) {
     var result = resp.result    ////resp is an object, resp.result is a JSON string
     console.log("return of rpc call: " + JSON.stringify(result))
-
+    
     var resultString = JSON.stringify(result);
-    if (resultString.search("worldtitle") !== -1) {
+    if(resultString.search("worldtitle") !== -1){
         result = JSON.parse(result)
     }
     console.log(result.worldtitle);
     var worldtitle = decideworldtitle(result.worldtitle);
     var datacollect = worldpictype + '<h4>编号<' + result.id + '>世界数据</h3><br>世界细胞数:' + result.cellno + '<br>世界适应性:' + result.adaption + ' 世界生存性:' + result.surviveability + ' 世界繁殖性:' + result.division + '<br>世界外部环境:' + result.environment + ' 世界存活日:' + result.day + '<br> 总体得分:' + result.totoalscore + '<br><br>' + '世界称号:' + worldtitle + '<br><br>已经有 ' + result.id + ' 个族群毁灭，请注意族群的平衡发展,一味的追逐高分也许并不能带来胜利。-Ling';
     layer.msg(datacollect, {
-        time: 0, //不自动关闭
-        btn: ['详情', '取消', '分享'],
-        anim: 0,
-        btnAlign: 'c',
-        shade: 0.9,
-        closeBtn: 0,
-        area: ['80%', '80%'],
-        offset: 'c',
-        yes: function () {
-            var readtext = result.cellsdetail;
-            var singlecell = readtext.split("|");
-            var newdatacollect = "<section class=\"main-section\">\n"
-                + "<script>$('.info-card').click(function() {\n" +
-                "    $(this).toggleClass('open');\n" +
-                "});\n</script>";
-
-            for (var i = 0; i < singlecell.length; i++) {
-                if (singlecell[i] != "") {
-
-                    var cellStr = singlecell[i];
-
-                    cellStr = cellStr.replace(/<\/font(.*?)>/g, '')
-                        .replace(/<font(.*?)>/g, '');
-
-                    for (var key in colorMap) {
-                        var regex = new RegExp(key, 'g');
-                        if (key == '僵尸亚种') {
-                            cellStr = cellStr.replace(regex, '僵123尸亚种');
-                            console.log("after: " + cellStr);
-                        } else {
-                            cellStr = cellStr.replace(regex, "<font color='" + colorMap[key] + "'>" + key + "</font>");
-                        }
-                    }
-                    cellStr = cellStr.replace(new RegExp('僵123尸亚种', 'g'), "<font color='gold'>僵尸亚种</font>");
-
-                    var singlecellinfo = cellStr.split(',');
-
-                    var imgpic = decidepic(singlecellinfo[9]);
-
-                    var info = "    <div class=\"info-card\">\n" +
-                        "        <i class=\"car-icon\">\n" + imgpic
-                        +
-                        "        </i>\n" +
-                        "        <h1>编号<" + singlecellinfo[0] + ">细胞数据</h1>\n" +
-                        "        <h2>细胞数: " + singlecellinfo[2] + "</h2>\n" +
-                        "        最终评价: " + singlecellinfo[9] + "\n" +
-                        "\n" +
-                        "        <div class=\"extra-info\">\n" +
-                        "            <h3>详细信息</h3>\n" +
-                        "            细胞数: " + singlecellinfo[2] + "</br>\n" +
-                        "            适应性: " + singlecellinfo[3] + "</br>\n" +
-                        "            生存性: " + singlecellinfo[4] + "</br>\n" +
-                        "            繁殖性: " + singlecellinfo[5] + "</br>\n" +
-                        "            外部环境: " + singlecellinfo[6] + "</br>\n" +
-                        "            存活日: " + singlecellinfo[7] + "</br>\n" +
-                        "            总体得分: " + singlecellinfo[8] + "</br>\n" +
-                        "            最终评价: " + singlecellinfo[9] + "</br>\n" +
-                        "            细胞创造者: " + singlecellinfo[1] + "</br>\n" +
-                        "            所属族群: " + singlecellinfo[10] + "</br>\n" +
-                        "        </div>\n" +
-                        "    </div>"
-                    newdatacollect = newdatacollect + info;
-
-
-                }
-            }
-
-            newdatacollect += "</section>";
-
-            layer.msg(newdatacollect, {
-                scrollbar: false,
-                time: 0, //不自动关闭
-                // btn: ['确定'],
-                shadeClose: true,
-                anim: 0,
-                btnAlign: 'c',
-                shade: 0.2,
-                closeBtn: 0,
-                area: ['935px', '70%'],
-                offset: 'c',
-                fixed: false
-            });
-        }, btn3: function (index) {
-            var sharepicrandom = randomize(1, 9);
-            var backgroundim = '  <link rel=\"stylesheet\" ' +
-                'href=\"css/card.css\"><div class=\"paper\">' +
-                '<img class=\"poster\" src="img/p' + sharepicrandom + '.png"/> ' +
-                '<h2>世界-最终评价</h2>  <h1>' + worldtitle + '</h1> ' +
-                '<p>第 ' + result.id + ' 世界里细胞存活了 ' + result.day + ' 天.共获得了 ' + result.totoalscore + ' 分。' +
-                '把这个世界截图分享给你的朋友吧</p>  <img class=\"qrcode\" src=\"img/share.png\"/></div>'
-            layer.msg(backgroundim, {
-                time: 0, //不自动关闭
-                shadeClose: true,
-                area: "70%",
-                offset: '10%',
-                shade: 0.8
-            });
-        }
-    });
-
+              time: 0, //不自动关闭
+              btn: ['详情', '取消'],
+              anim: 0,
+              btnAlign: 'c',
+              shade: 0.9,
+              closeBtn: 0,
+              area: ['80%', '80%'],
+              offset: 'c',
+              yes: function () {
+              var readtext = result.cellsdetail;
+              var singlecell = readtext.split("|");
+              var newdatacollect = "<section class=\"main-section\">\n"
+              + "<script>$('.info-card').click(function() {\n" +
+              "    $(this).toggleClass('open');\n" +
+              "});\n</script>";
+              
+              for (var i = 0; i < singlecell.length; i++) {
+              if (singlecell[i] != "") {
+              
+              var cellStr = singlecell[i];
+              
+              cellStr = cellStr.replace(/<\/font(.*?)>/g, '')
+              .replace(/<font(.*?)>/g, '');
+              
+              for (var key in colorMap) {
+              var regex = new RegExp(key, 'g');
+              if (key == '僵尸亚种') {
+              cellStr = cellStr.replace(regex, '僵123尸亚种');
+              console.log("after: " + cellStr);
+              } else {
+              cellStr = cellStr.replace(regex, "<font color='" + colorMap[key] + "'>" + key + "</font>");
+              }
+              }
+              cellStr = cellStr.replace(new RegExp('僵123尸亚种', 'g'), "<font color='gold'>僵尸亚种</font>");
+              
+              var singlecellinfo = cellStr.split(',');
+              
+              var imgpic = decidepic(singlecellinfo[9]);
+              
+              var info = "    <div class=\"info-card\">\n" +
+              "        <i class=\"car-icon\">\n" + imgpic
+              +
+              "        </i>\n" +
+              "        <h1>编号<" + singlecellinfo[0] + ">细胞数据</h1>\n" +
+              "        <h2>细胞数: " + singlecellinfo[2] + "</h2>\n" +
+              "        最终评价: " + singlecellinfo[9] + "\n" +
+              "\n" +
+              "        <div class=\"extra-info\">\n" +
+              "            <h3>详细信息</h3>\n" +
+              "            细胞数: " + singlecellinfo[2] + "</br>\n" +
+              "            适应性: " + singlecellinfo[3] + "</br>\n" +
+              "            生存性: " + singlecellinfo[4] + "</br>\n" +
+              "            繁殖性: " + singlecellinfo[5] + "</br>\n" +
+              "            外部环境: " + singlecellinfo[6] + "</br>\n" +
+              "            存活日: " + singlecellinfo[7] + "</br>\n" +
+              "            总体得分: " + singlecellinfo[8] + "</br>\n" +
+              "            最终评价: " + singlecellinfo[9] + "</br>\n" +
+              "            细胞创造者: " + singlecellinfo[1] + "</br>\n" +
+              "            所属族群: " + singlecellinfo[10] + "</br>\n" +
+              "        </div>\n" +
+              "    </div>"
+              newdatacollect = newdatacollect + info;
+              
+              
+              }
+              }
+              
+              newdatacollect += "</section>";
+              
+              layer.msg(newdatacollect, {
+                        scrollbar: false,
+                        time: 0, //不自动关闭
+                        // btn: ['确定'],
+                        shadeClose: true,
+                        anim: 0,
+                        btnAlign: 'c',
+                        shade: 0.2,
+                        closeBtn: 0,
+                        area: ['935px', '70%'],
+                        offset: 'c',
+                        fixed: false
+                        });
+              }
+              });
+    
     console.log("recived by page:" + e + ", e.data:" + JSON.stringify(e.data));
-
-
+    
+    
+    
 }
+
 
 
 function cellSearch(resp) {
     var result = resp.result    ////resp is an object, resp.result is a JSON string
     console.log("return of rpc call: " + JSON.stringify(result))
-
+    
     var resultString = JSON.stringify(result);
-    if (resultString.search("surviveability") !== -1) {
+    if(resultString.search("surviveability") !== -1){
         result = JSON.parse(result)
     }
     var imgpic = decidepic(result.finaltitle);
     var newdatacollect = '';
     var info = "<div class=\"info-card.open\">\n" +
-        "        <i class=\"car-icon\">\n" +
-        imgpic +
-        "        </i>\n" +
-        "        <h1>编号<" + result.id + ">细胞数据</h1>\n" +
-        "        <h2>细胞数: " + result.cellno + "</h2>\n" +
-        "        最终评价: " + result.finaltitle + "\n" +
-        "            <h3>详细信息</h3>\n" +
-        "            细胞数: " + result.cellno + "</br>\n" +
-        "            适应性: " + result.adaption + "</br>\n" +
-        "            生存性: " + result.surviveability + "</br>\n" +
-        "            繁殖性: " + result.division + "</br>\n" +
-        "            外部环境: " + result.environment + "</br>\n" +
-        "            存活日: " + result.day + "</br>\n" +
-        "            总体得分: " + result.totoalscore + "</br>\n" +
-        "            最终评价: " + result.finaltitle + "</br>\n" +
-        "            细胞创造者: " + result.creator + "</br>\n" +
-        "            所属族群: " + result.belong + "</br>\n" +
-        "    </div>"
-
+    "        <i class=\"car-icon\">\n" +
+    imgpic +
+    "        </i>\n" +
+    "        <h1>编号<" + result.id + ">细胞数据</h1>\n" +
+    "        <h2>细胞数: " + result.cellno + "</h2>\n" +
+    "        最终评价: " + result.finaltitle + "\n" +
+    "            <h3>详细信息</h3>\n" +
+    "            细胞数: " + result.cellno + "</br>\n" +
+    "            适应性: " + result.adaption + "</br>\n" +
+    "            生存性: " + result.surviveability + "</br>\n" +
+    "            繁殖性: " + result.division + "</br>\n" +
+    "            外部环境: " + result.environment + "</br>\n" +
+    "            存活日: " + result.day + "</br>\n" +
+    "            总体得分: " + result.totoalscore + "</br>\n" +
+    "            最终评价: " + result.finaltitle + "</br>\n" +
+    "            细胞创造者: " + result.creator + "</br>\n" +
+    "            所属族群: " + result.belong + "</br>\n" +
+    "    </div>"
+    
     newdatacollect = newdatacollect + info;
-
+    
     layer.msg(newdatacollect, {
-        time: 0 //不自动关闭
-        , shadeClose: true
-        , btn: ['确定']
-        , anim: 0, btnAlign: 'c', shade: 0.6, closeBtn: 0, area: ['500px', '60%'], offset: 'c'
-    });
+              time: 0 //不自动关闭
+              , shadeClose: true
+              , btn: ['确定']
+              , anim: 0, btnAlign: 'c', shade: 0.6, closeBtn: 0, area: ['500px', '60%'], offset: 'c'
+              });
     console.log("recived by page:" + e + ", e.data:" + JSON.stringify(e.data));
 }
 
 
 function inheritanceSearch(resp) {
     var result = resp.result    ////resp is an object, resp.result is a JSON string
-
+    
     var resultString = JSON.parse(result);
-
+   
     var stringinfo = resultString.toString();
     var singlein = stringinfo.split(",");
-
+    
     adaption = parseInt(singlein[0]);
     surviveability = parseInt(singlein[1]);
     division = parseInt(singlein[2]);
     day--;
-
+    
     var d1 = '天生适应性: ' + adaption;
     var d2 = '天生生存性: ' + surviveability;
     var d3 = '天生繁殖性: ' + division;
-
+    
     if (adaption > 50) {
         d1 = '<font color=\"red\">' + d1 + '</font>';
     } else if (adaption > 10) {
@@ -1223,22 +1216,22 @@ function inheritanceSearch(resp) {
     } else if (division > 10) {
         d3 = '<font color=\"violet\">' + d3 + '</font>';
     }
-
-
+    
+    
     var datacollect = '<img src=\"img/dna7.png \" height=\"96\" width=\"60\" id=\"jinhua\"></img>' + '<div>' + 'No. ' + singlein[3] + ' 遗传信息</div><br>' + d3 + '<br>' + d1 + '<br>' + d2;
-
+    
     layer.msg(datacollect, {
-        time: 0 //不自动关闭
-        ,
-        anim: 0,
-        btnAlign: 'c',
-        shade: 0.8,
-        closeBtn: 0,
-        area: ['480px', '300px'],
-        offset: 't',
-        btn: ['确认']
-    });
-
+              time: 0 //不自动关闭
+              ,
+              anim: 0,
+              btnAlign: 'c',
+              shade: 0.8,
+              closeBtn: 0,
+              area: ['480px', '300px'],
+              offset: 't',
+              btn: ['确认']
+              });
+    
     generalupdate();
 
 }
@@ -1246,12 +1239,23 @@ function inheritanceSearch(resp) {
 
 function totalcellSearch(resp) {
     var result = resp.result    ////resp is an object, resp.result is a JSON string
-
+    
     inputid = parseInt(result);
     console.log(inputid);
     setTimeout(realsave, 300);
 
-
+    
 }
 
+var src = '';
 
+$(".action-btn").mouseenter(function() {
+    src = this.src;
+    var fileNames = src.split('.');
+    fileNames[fileNames.length-1] = 'gif';
+    this.src = fileNames.join('.');
+}).mouseleave(function() {
+    var fileNames = src.split('.');
+    fileNames[fileNames.length-1] = 'png';
+    this.src = fileNames.join('.');
+});
