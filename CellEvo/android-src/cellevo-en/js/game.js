@@ -140,12 +140,12 @@ $('#worlddata').on('click', function () {
 });
 
 function aboutusfun() {
-    layer.msg("<img src=\"img/neblogo.png \" height=\"70\" width=\"70\"><br>" +
+    layer.msg("<img src=\"img/neb.png \" height=\"70\" width=\"70\"><br>" +
               "<div>Cell Evolution need Nebulas wallet to support DNA merging,<br> install one of the following wallet to gain full game experience." +
               "<br>Language: <a href=\"http:\/\/cellevo.net:9310\">中文</a>|<a href=\"http:\/\/cellevo.net:9306\">English</a>" +
               "<br> Web Extension wallet:<br><a href=\"https:\/\/github.com\/ChengOrangeJu\/WebExtensionWallet\">https://github.com/ChengOrangeJu/WebExtensionWallet\</a><br>Ios Wallet:<br><a href=\"https:\/\/itunes.apple.com\/hk\/app\/nas-nano\/id1281191905\?l=zh\&ls=1\&mt=8\">https://itunes.apple.com/hk/app/nas-nano/id1281191905?l=zh&ls=1&mt=8\</a><br>Android wallet:<br><a href=\"https:\/\/nano.nebulas.io\/index_cn.html\">https://nano.nebulas.io/index_cn.html\</a><br><br><img src=\"img/drlogo.png \" height=\"60\" width=\"120\"><br>Thanks for DappReview's support. <br>As a friend, DappReview provide lots of resources for Cell Evolution and hope we can grow up together in the future!<br><br><br>Note:<br>The original purpose of designing this game is to make a real game, but not a traditional blockchain's currency or hot potato game. I think the blockchain is a tool  that makes the game process and data more efficient and transparent, which means it has its own ecological logic and will make the process more unique and game-like. Unlike the traditional game meaning, I discovered that if there is a game that allows everyone to participate in the ecology, and the countless individuals will determine the direction of the world, so this is not a stand-alone management, a simple scoreboard, but a truly anonymous group games. There will be players aiming at high scores, players with group cooperation, rookies, hardcore players, creators, and repairers,ect. All kinds of individuals will build a real blockchain game.  <br><p>Cell Evolution<br><br>A game about cells and humanity.</p><br>Present by Ling</div>", {
         time: 0 //不自动关闭
-        , anim: 0, btnAlign: 'c', shade: 0.8, area: ['780px', '500px'], btn: ['确定'], closeBtn: 1
+        , anim: 0, btnAlign: 'c', shade: 0.8, area: ['780px', '500px'], btn: ['Enter','Cancel'], closeBtn: 1
 
     });
 }
@@ -1175,51 +1175,49 @@ function worldSearch(resp) {
 }
 
 
-
 function cellSearch(resp) {
     var result = resp.result    ////resp is an object, resp.result is a JSON string
     console.log("return of rpc call: " + JSON.stringify(result))
     
     var resultString = JSON.stringify(result);
-    if (resultString.search("surviveability") !== -1) {
+    if(resultString.search("surviveability") !== -1){
         result = JSON.parse(result)
     }
-    console.log(result);
     var imgpic = decidepic(result.finaltitle);
-    
     var newdatacollect = '';
     var info = "<div class=\"info-card.open\">\n" +
     "        <i class=\"car-icon\">\n" +
     imgpic +
     "        </i>\n" +
-    "        <h1>ID <" + result.id + "> Cell data</h1>\n" +
+    "        <h1>ID<" + result.id + ">Cell data</h1>\n" +
     "        <h2>Cell number: " + result.cellno + "</h2>\n" +
-    "        <p class='label'>Final evaluation: </p>" + result.finaltitle + "\n" +
-    "            <div class='label'><h3>Details</h3>\n</div>" +
-    "            <div class='label'>Number of cells: </div>" + result.cellno + "</br>\n" +
-    "            <div class='label'>Adaptability: </div>" + result.adaption + "</br>\n" +
-    "            <div class='label'>Survivability: </div>" + result.surviveability + "</br>\n" +
-    "            <div class='label'>Reproductivity: </div>" + result.division + "</br>\n" +
-    "            <div class='label'>External environment: </div>" + result.environment + "</br>\n" +
-    "            <div class='label'>Survival day: </div>" + result.day + "</br>\n" +
-    "            <div class='label'>Overal score: </div>" + result.totoalscore + "</br>\n" +
-    "            <div class='label'>Final evaluation: </div>" + result.finaltitle + "</br>\n" +
-    "            <div class='label'>Creator: </div>" + result.creator + "</br>\n" +
-    "            <div class='label'>Ecological Group: </div>" + result.belong + "</br>" +
+    "        Final evaluation: " + result.finaltitle + "\n" +
+    "            <h3>Details</h3>\n" +
+    "            Number of cells: " + result.cellno + "</br>\n" +
+    "            Adaptability: " + result.adaption + "</br>\n" +
+    "            Survivability: " + result.surviveability + "</br>\n" +
+    "            Reproductivity: " + result.division + "</br>\n" +
+    "            External environment: " + result.environment + "</br>\n" +
+    "            Survival day: " + result.day + "</br>\n" +
+    "            Overal score: " + result.totoalscore + "</br>\n" +
+    "            Final evaluation: " + result.finaltitle + "</br>\n" +
+    "            Creator: " + result.creator + "</br>\n" +
+    "            Ecological Group: " + result.belong + "</br>\n" +
     "    </div>"
     
     newdatacollect = newdatacollect + info;
     
-    newdatacollect = renderAndTranslate(newdatacollect);
-    
     layer.msg(newdatacollect, {
               time: 0 //不自动关闭
               , shadeClose: true
-              , btn: ['Enter']
+              , btn: ['Enter','Cancel']
               , anim: 0, btnAlign: 'c', shade: 0.6, closeBtn: 0, area: ['500px', '60%'], offset: 'c'
               });
     console.log("recived by page:" + e + ", e.data:" + JSON.stringify(e.data));
 }
+
+
+
 
 function inheritanceSearch(resp) {
     var result = resp.result    ////resp is an object, resp.result is a JSON string
