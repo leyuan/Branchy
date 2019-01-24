@@ -70,7 +70,7 @@
 }
 
 .generaldata{
-    position:absolute;
+    position:absolute
     padding-right: 0px;
     z-index:5;
     background-repeat:no-repeat;
@@ -118,37 +118,37 @@
 
 .fanzhitextpos{
     position:absolute;
-    padding-left:27px;
+    padding-left:37px;
     padding-top:0px;
     float:left;
 }
 .evolutiontextpos{
     position:absolute;
-    padding-left:125px;
+    padding-left:143px;
     padding-top:0px;
     float:left;
 }
 .mutationtextpos{
     position:absolute;
-    padding-left:230px;
+    padding-left:245px;
     padding-top:0px;
     float:left;
 }
 .sleeptextpos{
     position:absolute;
-    padding-left:340px;
+    padding-left:345px;
     padding-top:0px;
     float:left;
 }
 .aptextpos{
     position:absolute;
-    padding-left:435px;
+    padding-left:455px;
     padding-top:0px;
     float:left;
 }
 .inheritancetextpos{
     position:absolute;
-    padding-left:550px;
+    padding-left:558px;
     padding-top:0px;
     float:left;
 }
@@ -163,6 +163,16 @@
 }
 img {opacity:0.6;filter(alpha=60)}
 img:hover {opacity:1;filter(alpha=100)}
+
+/*.bhover img{}*/
+/*.bhover img:hover*/
+/*{*/
+/*/*   background-color:yellow; color:red;*/*/
+/* background:url(../img/btn3l.png);*/
+/* height="120px"; width="120px";*/
+/*/*    background:url("img/btn3l.png"); */*/
+/*}*/
+
 
 .datapos{
     position:absolute;
@@ -194,7 +204,7 @@ img:hover {opacity:1;filter(alpha=100)}
 .textpos{
 /*    border:1px solid #00F;*/
     padding-top:60px;
-    padding-left:360px;
+    padding-left:380px;
     z-index:2;
     position:absolute;
     width:1200px;
@@ -211,7 +221,7 @@ img:hover {opacity:1;filter(alpha=100)}
 
 .daysurvive{
     padding-top: 20px;
-    padding-left:90px;
+    padding-left:62px;
     z-index:2;
     color: #66b3ff;
     position:absolute;  float:left;
@@ -220,7 +230,7 @@ img:hover {opacity:1;filter(alpha=100)}
 
 .cellno{
     padding-top: 20px;
-    padding-left:203px;
+    padding-left:210px;
     z-index:2;
     color: #66b3ff;
     position:absolute;float:left;
@@ -229,7 +239,7 @@ img:hover {opacity:1;filter(alpha=100)}
 
 .environment{
     padding-top: 20px;
-    padding-left:340px;
+    padding-left:330px;
     z-index:2;
     color: #66b3ff;
     position:absolute;float:left;
@@ -237,7 +247,7 @@ img:hover {opacity:1;filter(alpha=100)}
 }
 .daytx{
     padding-top: 25px;
-    padding-left:100px;
+    padding-left:82px;
     z-index:2;
     color: #66b3ff;
     position:absolute;float:left;
@@ -245,7 +255,7 @@ img:hover {opacity:1;filter(alpha=100)}
 }
 .cellnotx{
     padding-top: 25px;
-    padding-left:250px;
+    padding-left:229px;
     z-index:2;
     color: #66b3ff;
     position:absolute;float:left;
@@ -253,7 +263,7 @@ img:hover {opacity:1;filter(alpha=100)}
 }
 .environmentnotx{
     padding-top: 25px;
-    padding-left:380px;
+    padding-left:360px;
     z-index:2;
     color: #66b3ff;
     position:absolute;float:left;
@@ -270,7 +280,7 @@ img:hover {opacity:1;filter(alpha=100)}
 }
 .adaptionno{
     padding-top: 120px;
-    padding-left:180px;
+    padding-left:160px;
     z-index:2;
     color: #66b3ff;
     position:absolute;float:left;
@@ -279,7 +289,7 @@ img:hover {opacity:1;filter(alpha=100)}
 
 .survivepostx{
     padding-top: 95px;
-    padding-left:278px;
+    padding-left:275px;
     z-index:2;
     color: #66b3ff;
     position:absolute;float:left;
@@ -287,7 +297,7 @@ img:hover {opacity:1;filter(alpha=100)}
 }
 .surviveno{
     padding-top: 120px;
-    padding-left:315px;
+    padding-left:295px;
     z-index:2;
     color: #66b3ff;
     position:absolute;float:left;
@@ -302,10 +312,9 @@ img:hover {opacity:1;filter(alpha=100)}
     position:absolute;float:left;
     
 }
-
 .lifecyclepostx{
     padding-top: 95px;
-    padding-left:420px;
+    padding-left:410px;
     z-index:2;
     color: #66b3ff;
     position:absolute;float:left;
@@ -313,16 +322,15 @@ img:hover {opacity:1;filter(alpha=100)}
 }
 .lifecyclenotx{
     padding-top: 120px;
-    padding-left:445px;
+    padding-left:430px;
     z-index:2;
     color: #66b3ff;
     position:absolute;float:left;
     
 }
-
 .playinfo{
     padding-top: 680px;
-    padding-left:165px;
+    padding-left:170px;
     
     z-index:2;
     color: #66b3ff;
@@ -330,10 +338,14 @@ img:hover {opacity:1;filter(alpha=100)}
 }
 .divisionnotx{
     padding-top: 120px;
-    padding-left:40px;
+    padding-left:20px;
     z-index:2;
     color: #66b3ff;
     position:absolute;float:left;
+    
+}
+p{
+    color: #FF3366;
     
 }
 
@@ -343,7 +355,7 @@ img:hover {opacity:1;filter(alpha=100)}
     background-repeat:no-repeat;
     background-position:center;
 /*        border:1px solid #00F;*/
-    position:absolute;
+    position:absolute;left 0px;top 0px;
     z-index:1;
     
 }
@@ -365,10 +377,6 @@ color: #000;
         z-index:2;
         color: #66b3ff;
   
-}
-p{
-    color: #FF3366;
-    
 }
 a{
      color: #66b3ff;

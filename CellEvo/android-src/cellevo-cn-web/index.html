@@ -84,6 +84,20 @@ width: 50%;
     background-size: contain;
     background-repeat: no-repeat;
 }
+@media screen and (min-width: 1440px) {
+  .box2 {
+    background: url(Imgs/Textfram2.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .box2 {
+    background: url(Imgs/Textfram3.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}
 
 .buttonbox{
 position: absolute; 
@@ -116,6 +130,14 @@ margin-top: 10px;
     z-index: 9;
     position: fixed;
 }
+.playinfoicon2 {
+    padding-top: 50px;
+    float: right;
+    z-index: 9;
+    position: fixed;
+    width: 100%;
+}
+
 .img {
 width: 50%;
 height: auto;
@@ -281,10 +303,12 @@ isEnglish = true;
             </div>
 
             <div class="content__inner" id="gamemain" style="display:none">
-                    <div class="playinfoicon">
+                    <div class="playinfoicon2">
+                        <div style="float:right; margin-right: 2%;">
                             <img src="img/question.png"  width="60" id="playinfoexplain"></img>
                             <div style="color:#12aac2; ">玩法说明</div>
                         </div>
+                    </div>
                 <div class="topbg">
                     <div class="center">
                         <div class="gallery">
@@ -304,22 +328,22 @@ isEnglish = true;
                         </div>
                         <div class="gallery">
                             <img class="img" src="Imgs/4.png">
-                                <div class="desc">适应性:</div>
+                            <div class="desc">适应性:</div>
                             <div id="adaptiontx" class="desc2"> 0</div>
                         </div>
                         <div class="gallery">
                             <img class="img" src="Imgs/5.png">
-                                <div class="desc">生存性:</div>
+                            <div class="desc">生存性:</div>
                             <div id="surviveabilitytx" class="desc2"> 0</div>
                         </div>
                         <div class="gallery">
                             <img class="img" src="Imgs/6.png">
-                                <div class="desc">繁殖性:</div>
+                            <div class="desc">繁殖性:</div>
                             <div id="divisiontx" class="desc2"> 0</div>
                         </div>
                         <div class="gallery">
                             <img class="img" src="Imgs/7.png">
-                                <div class="desc">生命周期:</div>
+                            <div class="desc">生命周期:</div>
                             <div id="lifecycletx" class="desc2">20</div>
                         </div>
                     </div>
