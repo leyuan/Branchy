@@ -55,212 +55,10 @@
     <!-- Main Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
     <link href="css/timeline.css" rel="stylesheet">
-<style>
-    .navbar-light .navbar-nav .nav-link {
-        color:#dc2d49;
-    }
-    .colored {
-        color:#dc2d49;
-    }
-    hr {
-        background: #dc2d49;
-    }
-    .game-card-right {
-        background:  rgba(26,28,50,0.3);
-    }
-    .short-hr-left::after {
-        border-color: #dc2d49;
-    }
-    .job-card {
-        background:  rgba(26,28,50,0.3);
-        border-left: 2px solid transparent;
-    }
-    .button {
-        background: #dc2d49;
-    }
-    .button:hover {
-        background: #121429;
-    }
-    .scrolled {
-        background-color: rgba(18,20,41,0.8);
-        z-index: 900;
-        border: 0px solid
-}
-    .navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
-        color: aliceblue;
-    }
-    .game-tags {
-        background: #121429;
-    }
-    .game-tags li a {
-        color: #ffffff;
-    }
-    #contactForm {
-        background:  rgba(26,28,50,0.3);
-    }
-    #contact ul li i {
-        color: #dc2d49;
-        background: transparent;
-    }
-    a {
-        color: #dc2d49;
-    }
-    #footer {
-        background:  rgba(26,28,50,0.3);
-        border-top: 2px solid #dc2d49;
-    }
-    .social-links li a {
-        color: #ffffff;
-    }
-    .mydiv {
-        fill: #dc2d49 
-  /* animation: myanimation 10s infinite; */
-}
 
-@keyframes myanimation {
-  0% {fill: red;}
-  25%{fill:yellow;}
-  50%{fill:green;}
-  75%{fill:brown;}
-  100% {fill: red;}
-}
-.game-card-left img {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    box-shadow: -16px 16px 32px rgba(0,0,0,.64);
-}
-.img-fluid1 {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    box-shadow: -16px 16px 32px rgba(0,0,0,.64);
-}
-.whitetext {
-    color: #ffffff;
-    /* font-family: ZaoZiGongFangDianHeiChaoXiTi */
-}
-.whitetext1 {
-    color: #ffffff;
-    font-family: ZaoZiGongFangDianHeiChaoXiTi
-}
-
-.game-card-right {
-    background: transparent;
-}
-.job-card {
-    background-color: rgba(18,20,41,0.8);
-}
-.img-fluid {
-    box-shadow: -16px 16px 32px rgba(0,0,0,.64);
-}
-::shadow {
-
-}
-p {
-    font-family: ZaoZiGongFangDianHeiChaoXiTi;
-}
-.game-card-left1 img {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 70%;
-    
-}
-.game-card{
-    margin: 1.5rem auto 1.5rem auto;
-}
-.videoposition {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-}
-.game-card-right{
-    margin: auto;
-}
-.large-margin{
-    margin-bottom: 3em;
-}
-.grid-gallery .row{
-    margin: 0 0 2em 0;
-}
-.gallery-item{
-    padding: 0 1.2em;
-}
-.tiny-margin {
-    margin-bottom: 3em;
-}
-.timeline-events li:nth-child(1):before {
-    background: transparent;
-    background-image: -webkit-linear-gradient(left, rgba(18,20,41,0.1) 0%, #ffffff 100%);
-}
-.timeline-events li:nth-child(5):before{
-    background: transparent;
-    background-image: linear-gradient(to right, #dc2d49 0%, rgba(18,20,41,0.1) 100%);
-}
-
-/* .teamcard{
-    background-color: rgba(18,20,41,0.8);
-    padding-left: 0.5em;
-    padding-right: 0.5em;
-} */
-/* .large-header {
-   position: relative;
-   width: 100%;
-   overflow: hidden;
-   background-size: cover;
-   background-position: center center;
-} */
-
-
-
-/* Header */
-.large-header {
-	position: relative;
-	width: 100%;
-	/* background: #333; */
-	overflow: hidden;
-	background-size: cover;
-	background-position: center center;
-	/* z-index: 1; */
-}
-
-/* #large-header {
-	background-image: url('https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/img/demo-1-bg.jpg');
-} */
-
-.main-title {
-	position: absolute;
-	margin: 0;
-	padding: 0;
-	color: #f9f1e9;
-	text-align: center;
-	top: 50%;
-	left: 50%;
-	-webkit-transform: translate3d(-50%,-50%,0);
-	transform: translate3d(-50%,-50%,0);
-}
-
-.demo-1 .main-title {
-	text-transform: uppercase;
-	font-size: 4.2em;
-	letter-spacing: 0.1em;
-}
-
-.main-title .thin {
-	font-weight: 200;
-}
-
-@media only screen and (max-width : 768px) {
-	.demo-1 .main-title {
-		font-size: 3em;
-	}
-}
-</style>
 </head>
 
 <body>
-    
     <!-- Loading Screen -->
     <div id="loader-wrapper">
         <h1 class="loader-logo">WHITE<span class="colored">Matrix</span></h1>
@@ -307,27 +105,18 @@ p {
 
     <!-- /// HERO SECTION /// -->
     <div id="hero-section" class="small-margin">
-        <!-- <div id="particles-web"></div> -->
-        <div id="large-header" class="large-header">
-                <canvas id="demo-canvas"></canvas>
-                <img class="mydiv main-title" src="images/Logo.svg" alt="" style="width:500px;">
-              </div>
-
-    
-                  
-                  <!-- <h1 class="main-title"><span class="thin">Explore</span> Space</h1> -->
-        
-        <!-- <div class="row hero-unit">
+        <div id="particles-web"></div>
+        <div class="row hero-unit">
             <div class="container">
                 <div class="hero-caption">
-                     Main Tagline -->
-                    <!-- <img class="mydiv" src="images/Logo.svg" alt="" style="width:500px;"> -->
+                    <!-- Main Tagline -->
+                    <img src="images/logo2.png" alt="" style="width:500px;">
                     <!-- <hr/>
                     <h1>We Make <span class="colored">Awesome Games</span></h1>
                 </div> -->
-                <!-- </div>
-            </div> -->
-        <!-- </div>Hero Section End  -->
+                </div>
+            </div>
+        </div><!-- Hero Section End -->
 
         <!-- /// Main Container /// -->
         <div class="container">
@@ -336,14 +125,14 @@ p {
                 <a href="about"></a><!-- Nav Anchor -->
                 <div class="row heading tiny-margin">
                     <div class="col-md-auto">
-                        <h1 class="animation-element slide-down whitetext">ABOUT <span class="colored">US</span></h1>
+                        <h1 class="animation-element slide-down">ABOUT <span class="colored">US</span></h1>
                     </div>
                     <div class="col">
                         <hr class="animation-element extend">
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-11 small-margin" >
+                    <div class="col-md-11 small-margin">
                         <p>  南京纯白矩阵科技有限公司是一家专注区块链游戏研发，创意区块链框架设计的创业公司。我们理念是运用区块链思维，节约游戏运营成本，构造全新的游戏性。我们对于新的技术一直抱有好奇心与探索欲，我们相信区块可以去游戏碰撞出更多创意的火花。
                         </p>
                     </div>
@@ -351,30 +140,29 @@ p {
                         <ul class="timeline-events">
                             <li class="timeline-event-years-6-5">
                                 <h2>2018-05</h2>
-                                <h3 style="font-family: ZaoZiGongFangDianHeiChaoXiTi;  color: #ffffff;  font-weight: 900;">Nebulas Incentive Program</h3>
-                                <h4 class="whitetext1" style="font-family: ZaoZiGongFangDianHeiChaoXiTi; color: #ffffff;">第二周冠军</h4>
-                                <h4 class="whitetext1" style="font-family: ZaoZiGongFangDianHeiChaoXiTi; color: #ffffff;">第一月冠军</h4>
+                                <h3>Nebulas Incentive Program</h3>
+                                <h4>第二周冠军</h4>
+                                <h4>第一月冠军</h4>
                             </li>
                             <li class="timeline-event-years-2">
                                 <h2>2018-08</h2>
-                                <h3 style="font-family: ZaoZiGongFangDianHeiChaoXiTi; font-weight: 900;">首届Neo开发者大赛</h3>
-                                <h4 class="whitetext1" style="font-family: ZaoZiGongFangDianHeiChaoXiTi; color: #ffffff;">游戏创意奖</h4>
+                                <h3>首届Neo开发者大赛</h3>
+                                <h4>游戏创意奖</h4>
                             </li>
                             <li class="timeline-event-years-2">
                                 <h2>2018-10</h2>
-                                <h3 style="font-family: ZaoZiGongFangDianHeiChaoXiTi; font-weight: 900;">Fibos“一念巨浪”DApp大赛</h3>
-                                <h4 class="whitetext1" style="font-family: ZaoZiGongFangDianHeiChaoXiTi; color: #ffffff;">一等奖</h4>
+                                <h3>Fibos“一念巨浪”DApp大赛</h3>
+                                <h4>一等奖</h4>
                             </li>
                             <li class="timeline-event-years-7">
                                 <h2>2018-11</h2>
-                                <h3 style="font-family: ZaoZiGongFangDianHeiChaoXiTi;  font-weight: 900;">蛮牛杯游戏开发大赛<br/></h3>
-                                    <h3 style="color:rgba(255, 255, 255, 0.6);">(腾讯WeGame，Facebook，<br/>TapTap，GameCell，游戏蛮牛联合举办)</h3>
-                                <h4 class="whitetext1" style="font-family: ZaoZiGongFangDianHeiChaoXiTi; color: #ffffff;">一等奖</h4>
+                                <h3>蛮牛杯游戏开发大赛<br/>(腾讯WeGame，Facebook，<br/>TapTap，GameCell，游戏蛮牛联合举办)</h3>
+                                <h4>一等奖</h4>
                             </li>
                             <li class="timeline-event-years-3">
                                 <h2>2018-12</h2>
-                                <h3 style="font-family: ZaoZiGongFangDianHeiChaoXiTi; color: #dc2d49; font-weight: 900;">第六届金茶奖</h3>
-                                <h4 class="whitetext1" style="font-family: ZaoZiGongFangDianHeiChaoXiTi; color: #ffffff;">最佳区块链游戏</h4>
+                                <h3>第六届金茶奖</h3>
+                                <h4>最佳区块链游戏</h4>
                             </li>
                         </ul>
                     </div>
@@ -385,7 +173,7 @@ p {
                 <a href="games"></a><!-- Nav Anchor -->
                 <div class="row heading tiny-margin">
                     <div class="col-md-auto">
-                        <h1 class="animation-element slide-down whitetext">OUR <span class="colored">GAMES</span></h1>
+                        <h1 class="animation-element slide-down">OUR <span class="colored">GAMES</span></h1>
                     </div>
                     <div class="col">
                         <hr class="animation-element extend">
@@ -410,31 +198,27 @@ p {
                     <div class="row game-card pc new">
                         <div class="col-lg-12 col-xl-5 game-card-left">
                             <a href="http://www.cellevo.net:9306/">
-                                <img src="images/games/cell_evo.jpg" data-src="images/games/cell_evo.jpg" class="img-fluid1 b-lazy"
+                                <img src="images/games/cell_evo.jpg" data-src="images/games/cell_evo.jpg" class="img-fluid b-lazy"
                                     alt="video thumbnail"> <!-- Video Thumbnail Img -->
                             </a>
                         </div>
                         <div class="col-lg-12 col-xl-7 game-card-right">
-                            <a class="whitetext" href="http://www.cellevo.net:9306/"><h2 class="short-hr-left">细胞进化 | Cell Evolution</h2></a>
+                            <a href="http://www.cellevo.net:9306/"><h2 class="short-hr-left">细胞进化 | Cell Evolution</h2></a>
                             <p class="tags"><span class="subtle">冒险解谜 | LingTian</span> </p>
                             <p class="game-description">细胞进化是第一款基于区块链的去中心化的沙盒经营策略游戏，所有的玩家扮演一个细胞族群。在这个族群里，我们需要平衡我们总体的适应性，生存性与繁殖性。当我们的细胞族群的方向失衡，我们整体将会进化失败。这不仅仅是个游戏，也是个真正的社会群体实验。你在这里扮演了一个原始细胞，而无数个你将会决定我们共同的命运。接下来，开启的进化之旅！
-                                <br/>
-                                <a style="font-family: ZaoZiGongFangDianHeiChaoXiTi;" href="https://indienova.com/g/cellevo#gameDetailSection" class="expand colored strong">
-                                 Read More </a>
+                                <a href="https://indienova.com/g/cellevo#gameDetailSection" class="expand colored strong">
+                                    Read More </a>
                                 <div>
-                                    <a class="whitetext1" style="font-size:12px;" href="https://incentive.nebulas.io/cn/dapps-board.html#2">
+                                    <a href="https://incentive.nebulas.io/cn/dapps-board.html#2">
                                         Nebulas星云链开发者激励计划第二周冠军
                                     </a> |
-                                    <br>
-                                    <a class="whitetext1"  style="font-size:12px;" href="https://incentive.nebulas.io/cn/dapps-board.html#2">
+                                    <a href="https://incentive.nebulas.io/cn/dapps-board.html#2">
                                         Nebulas星云链开发者激励计划第一月月度冠军
                                     </a> |
-                                    <br>
-                                    <a class="whitetext1"  style="font-size:12px;" href="https://c.m.163.com/news/a/DKTT8F0S000998GP.html?spsw=1&spssid=1982b4a5901dcfc932d1735d0f2fa114&spss=newsapp&from=timeline&isappinstalled=0">
+                                    <a href="https://c.m.163.com/news/a/DKTT8F0S000998GP.html?spsw=1&spssid=1982b4a5901dcfc932d1735d0f2fa114&spss=newsapp&from=timeline&isappinstalled=0">
                                         网易科技频道: 区块链游戏《细胞进化》获500万联合投资
                                     </a> |
-                                    <br>
-                                    <a class="whitetext1"  style="font-size:12px;" href="https://mp.weixin.qq.com/s/jZnKTg-cW3zXgjg1bO2IfA">
+                                    <a href="https://mp.weixin.qq.com/s/jZnKTg-cW3zXgjg1bO2IfA">
                                         Dapp Review: 错的不是你，是世界|类沙盒+解密的区块链游戏新思路
                                     </a> |
                                 </div>
@@ -444,36 +228,33 @@ p {
                     <!-- Game Card Video -->
                     <div class="row game-card mobile new">
                         <div class="col-lg-12 col-xl-5 game-card-left">
-                            <video class="img-fluid b-lazy videoposition" autoplay loop controls muted>
+                            <video class="img-fluid b-lazy" poster="images/last-trip-preview.png" controls>
                                 <source src="images/games/Last_trip.mp4" type="video/mp4" />
-                            </video>
-
+                                Your browser does not support html video.
+                             </video>
                         </div>
                         <div class="col-lg-12 col-xl-7 game-card-right">
-                            <a class="whitetext" href="http://lastrip.co"><h2 class="short-hr-left">最后的旅途 | Last Trip</h2></a>
+                            <a href="http://lastrip.co"><h2 class="short-hr-left">最后的旅途 | Last Trip</h2></a>
                             <p class="tags"><span class="subtle">冒险解谜 | LingTian</span> </p>
                             <p class="game-description">最后的旅途-Last Trip <br />
                                 孤独的灵魂游走在生死之间，迷失在善恶两难的不同境遇里。 <br />
                                 玩家在游戏中不再是一个游戏者，而是一个书写者。<br />
                                 通过玩家自己不同的方式，撰写一本自己的《神曲》。
                                 <br/>
-                                <a style="font-family: ZaoZiGongFangDianHeiChaoXiTi;" href="https://indienova.com/g/last-trip#gameDetailSection" class="expand colored strong">
+                                <a href="https://indienova.com/g/last-trip#gameDetailSection" class="expand colored strong">
                                     Read More </a>
                             </p>
                             <div>
-                                <a class="whitetext1" style="font-size:12px;" href="http://neo.game/index.html">
+                                <a href="http://neo.game/index.html">
                                     首届Neo区块链游戏开发大赛入围奖
                                 </a> |
-                                <br>
-                                <a class="whitetext1" style="font-size:12px;" href="https://mp.weixin.qq.com/s/ob0EHa718Q8milpcXiSmGA">
+                                <a href="https://mp.weixin.qq.com/s/ob0EHa718Q8milpcXiSmGA">
                                     DappReview：开发者吴啸：新作《Last Trip》和他的「文艺复兴」野心
                                 </a> |
-                                <br>
-                                <a class="whitetext1" style="font-size:12px;" href="https://mp.weixin.qq.com/s/HcUZWIMprVkDSpoO5Q-xgQ">
+                                <a href="https://mp.weixin.qq.com/s/HcUZWIMprVkDSpoO5Q-xgQ">
                                     链鱼鱼：独家专访| 吴啸：只做纯白的、有创意的、有趣味性的区块链游戏
                                 </a> |
-                                <br>
-                                <a class="whitetext1" style="font-size:12px;" href="https://mp.weixin.qq.com/s/QOUHvhjYLbaiSTf_zccn8g">
+                                <a href="https://mp.weixin.qq.com/s/QOUHvhjYLbaiSTf_zccn8g">
                                     吴啸新作「Last Trip」首发，区块链是21世纪的文艺复兴
                                 </a> |
                             </div>
@@ -507,13 +288,13 @@ p {
                     <!-- Game Card -->
                     <div class="row game-card pc">
                         <div class="col-lg-12 col-xl-5 game-card-left">
-                            <video class="img-fluid b-lazy" autoplay loop controls muted>
+                            <video class="img-fluid b-lazy" poster="images/pfu-preview.png" controls>
                                 <source src="images/games/Game.mp4" type="video/mp4" />
                             </video>
 
                         </div>
                         <div class="col-lg-12 col-xl-7 game-card-right">
-                            <h2 class="short-hr-left whitetext">Project First Universe(第一宇宙)</h2>
+                            <h2 class="short-hr-left">Project First Universe(第一宇宙)</h2>
                             <p class="tags"><span class="subtle">Action RPG | PC</span> </p>
                             <p class="game-description">
                             硬科幻题材端游。数十种武器，飞机，自由搭配。游戏资产，部分逻辑，几率控制融合区块链，给玩家带来更棒的游戏体验。
@@ -589,11 +370,11 @@ p {
 
                     <!-- Game Card -->
                     <div class="row game-card pc">
-                        <div class="col-lg-12 col-xl-5 game-card-left1" style="width:70%;" >
-                            <img src="images/games/genesis-project1.png" class="b-lazy b-loaded" alt="video thumbnail" >
+                        <div class="col-lg-12 col-xl-5 game-card-left" style="text-align: center;">
+                            <img src="images/games/genesis-project.png" class="img-fluid b-lazy b-loaded" alt="video thumbnail" style="width: 70%;">
                         </div>
                         <div class="col-lg-12 col-xl-7 game-card-right">
-                            <h2 class="short-hr-left whitetext">Genesis 计划</h2>
+                            <h2 class="short-hr-left">Genesis 计划</h2>
                             <p class="tags"><span class="subtle">https://github.com/LingTian/GenesisContract</span></p>
                             <p class="game-description">内包含NAS,EOS,ETH,TRON,LOOM,QTUM,MANA版本，接近覆盖国内所有能写的链，直接可以使用读取的sample以及各个接口。
                                 <br />
@@ -617,7 +398,7 @@ p {
                 <a href="team"></a><!-- Nav Anchor -->
                 <div class="row heading tiny-margin">
                     <div class="col-md-auto">
-                        <h1 class="animation-element slide-down whitetext">THE <span class="colored">TEAM</span></h1>
+                        <h1 class="animation-element slide-down">THE <span class="colored">TEAM</span></h1>
                     </div>
                     <div class="col">
                         <hr class="animation-element extend">
@@ -628,7 +409,7 @@ p {
                         <p>我们的团队大多来自世界顶尖的大学；有技术的极客，疯狂的科学家以及独具创意的设计师。</p>
                     </div>
                     <div id="full-row" class="row text-center">
-                        <div class="col-md-3 team-card teamcard ">
+                        <div class="col-md-3 team-card">
                             <figure>
                                 <a href="eggs/page1/index.html" style="cursor:none">
                                     <img src="images/people/CEO.png" data-src="images/people/CEO.png" class="img-fluid b-lazy"
@@ -644,10 +425,10 @@ p {
                                     </ul>
                                 </figcaption> -->
                             </figure>
-                            <p class="team-name whitetext">Ling</p>
+                            <p class="team-name">Ling</p>
                             <p class="subtle">CEO</p>
                         </div>
-                        <div class="col-md-3 team-card teamcard">
+                        <div class="col-md-3 team-card">
                             <figure>
                                 <img src="images/people/CTO.png" data-src="images/people/CTO.png" class="img-fluid b-lazy"
                                     alt="teammember">
@@ -661,10 +442,10 @@ p {
                                     </ul>
                                 </figcaption> -->
                             </figure>
-                            <p class="team-name whitetext">Tim</p>
+                            <p class="team-name">Tim</p>
                             <p class="subtle">CTO</p>
                         </div>
-                        <div class="col-md-3 team-card teamcard">
+                        <div class="col-md-3 team-card">
                             <figure>
                                 <img src="images/people/LY.png" data-src="images/people/LY.png" class="img-fluid b-lazy"
                                     alt="teammember">
@@ -678,10 +459,10 @@ p {
                                     </ul>
                                 </figcaption> -->
                             </figure>
-                            <p class="team-name whitetext">LY</p>
+                            <p class="team-name">LY</p>
                             <p class="subtle">Researcher</p>
                         </div>
-                        <div class="col-md-3 team-card teamcard">
+                        <div class="col-md-3 team-card">
                             <figure>
                                 <img src="images/people/HJW.png" data-src="images/people/HJW.png" class="img-fluid b-lazy"
                                     alt="teammember">
@@ -695,19 +476,19 @@ p {
                                     </ul>
                                 </figcaption> -->
                             </figure>
-                            <p class="team-name whitetext">JW</p>
+                            <p class="team-name">JW</p>
                             <p class="subtle">UI & UX</p>
                         </div>
                     </div>
                 </div>
                 <div class="row tiny-margin">
                     <div class="col-md-11">
-                        <h2 class="short-hr-left whitetext">OUR VISION</h2>
+                        <h2 class="short-hr-left">OUR VISION</h2>
                         <p>我们期望能够探索更多的区块链应用落地场景，也期望可以探索更多游戏与区块链的
 创意结合。我们在北京大学，南京大学，香港中文大学（深圳），西安交大等都进行过活动/授课/分享，其中多所大学与我们在具体项目上已经有论文和游戏的合作。</p>
                     </div>
                 </div>
-                <div class="grid-gallery" style="margin-bottom:8em;">
+                <div class="grid-gallery">
                     <div class="row">
                         <div class="col-md-4 gallery-item">
                             <a href="images/games/WechatIMG2.jpeg" data-lightbox="studio_gallery">
@@ -773,7 +554,7 @@ p {
                 <a href="careers"></a><!-- Nav Anchor -->
                 <div class="row heading tiny-margin">
                     <div class="col-md-auto">
-                        <h1 class="animation-element slide-down whitetext">WE'RE <span class="colored">HIRING</span></h1>
+                        <h1 class="animation-element slide-down">WE'RE <span class="colored">HIRING</span></h1>
                     </div>
                     <div class="col">
                         <hr class="animation-element extend">
@@ -786,7 +567,7 @@ p {
                     </div>
                     <div class="col-md-4">
                         <div class="job-card">
-                            <h3 class="whitetext">研发</h3>
+                            <h3 class="colored">研发</h3>
                             <p>极客，鬼才，全栈，相信代码可以改变世界</p>
                             <button class="button" onclick="contactus()">Contact Us</button>
                             <!-- <button class="button" data-toggle="modal" data-target="#modal1">Contact Us</button> -->
@@ -848,7 +629,7 @@ p {
                     </div>
                     <div class="col-md-4">
                         <div class="job-card">
-                            <h3 class="whitetext">设计</h3>
+                            <h3 class="colored">设计</h3>
                             <p>视觉艺术，独特美学，创意，有打破常规的野心</p>
                             <button class="button" onclick="contactus()">Contact Us</button>
                             <!-- <button class="button" data-toggle="modal" data-target="#modal2">Contact Us</button> -->
@@ -910,7 +691,7 @@ p {
                     </div>
                     <div class="col-md-4">
                         <div class="job-card">
-                            <h3 class="whitetext">科学家</h3>
+                            <h3 class="colored">科学家</h3>
                             <p>扎实的基础，跳跃的思维，疯狂的想法，对区块链有自己的想法</p>
                             <button class="button" onclick="contactus()">Contact Us</button>
                             <!-- <button class="button" data-toggle="modal" data-target="#modal3">Contact Us</button> -->
@@ -988,7 +769,7 @@ p {
                 <a href="contact"></a><!-- Nav Anchor -->
                 <div class="row heading tiny-margin">
                     <div class="col-md-auto">
-                        <h1 class="animation-element slide-down whitetext">GET IN <span class="colored">TOUCH</span></h1>
+                        <h1 class="animation-element slide-down">GET IN <span class="colored">TOUCH</span></h1>
                     </div>
                     <div class="col">
                         <hr class="animation-element extend">
@@ -1002,7 +783,7 @@ p {
                     </div>
                     <div class="row">
                         <div class="col-md-6">
-                            <h2 class="short-hr-left whitetext">LEAVE US A MESSAGE</h2>
+                            <h2 class="short-hr-left">LEAVE US A MESSAGE</h2>
                             <form id="contactForm" data-toggle="validator">
                                 <div class="form-group">
                                     <!-- Name Field -->
@@ -1027,7 +808,7 @@ p {
                             </form>
                         </div>
                         <div class="col-md-6">
-                            <h2 class="short-hr-left whitetext">OUR DETAILS</h2>
+                            <h2 class="short-hr-left">OUR DETAILS</h2>
                             <div id="contact-info">
                                 <ul>
                                     <li><i class="fa fa-phone"></i>
@@ -1079,202 +860,14 @@ p {
         <script src="js/popper.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/blazy.min.js"></script>
-        <!-- <script src="js/particles.js"></script> -->
+        <script src="js/particles.js"></script>
         <script src="js/isotope.pkgd.min.js"></script>
         <script src="js/lightbox.min.js"></script>
         <script src="js/jquery-modal-video.min.js"></script>
         <script src="js/validator.min.js"></script>
         <script src="js/strider.js"></script>
-        <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/TweenLite.min.js"></script>
-        <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/EasePack.min.js"></script>
-        <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/demo.js"></script>
         <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB64kJJiSynOc9ZqkNMOyl94cvsw5Z2uno"></script> -->
         <script>
-            (function() {
-
-var width, height, largeHeader, canvas, ctx, points, target, animateHeader = true;
-
-// Main
-initHeader();
-initAnimation();
-addListeners();
-
-function initHeader() {
-    width = window.innerWidth;
-    height = window.innerHeight;
-    target = {x: width/2, y: height/2};
-
-    largeHeader = document.getElementById('large-header');
-    largeHeader.style.height = height+'px';
-
-    canvas = document.getElementById('demo-canvas');
-    canvas.width = width;
-    canvas.height = height;
-    ctx = canvas.getContext('2d');
-
-    // create points
-    points = [];
-    for(var x = 0; x < width; x = x + width/20) {
-        for(var y = 0; y < height; y = y + height/20) {
-            var px = x + Math.random()*width/20;
-            var py = y + Math.random()*height/20;
-            var p = {x: px, originX: px, y: py, originY: py };
-            points.push(p);
-        }
-    }
-
-    // for each point find the 5 closest points
-    for(var i = 0; i < points.length; i++) {
-        var closest = [];
-        var p1 = points[i];
-        for(var j = 0; j < points.length; j++) {
-            var p2 = points[j]
-            if(!(p1 == p2)) {
-                var placed = false;
-                for(var k = 0; k < 5; k++) {
-                    if(!placed) {
-                        if(closest[k] == undefined) {
-                            closest[k] = p2;
-                            placed = true;
-                        }
-                    }
-                }
-
-                for(var k = 0; k < 5; k++) {
-                    if(!placed) {
-                        if(getDistance(p1, p2) < getDistance(p1, closest[k])) {
-                            closest[k] = p2;
-                            placed = true;
-                        }
-                    }
-                }
-            }
-        }
-        p1.closest = closest;
-    }
-
-    // assign a circle to each point
-    for(var i in points) {
-        var c = new Circle(points[i], 2+Math.random()*2, 'rgba(255,255,255,0.3)');
-        points[i].circle = c;
-    }
-}
-
-// Event handling
-function addListeners() {
-    if(!('ontouchstart' in window)) {
-        window.addEventListener('mousemove', mouseMove);
-    }
-    window.addEventListener('scroll', scrollCheck);
-    window.addEventListener('resize', resize);
-}
-
-function mouseMove(e) {
-    var posx = posy = 0;
-    if (e.pageX || e.pageY) {
-        posx = e.pageX;
-        posy = e.pageY;
-    }
-    else if (e.clientX || e.clientY)    {
-        posx = e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
-        posy = e.clientY + document.body.scrollTop + document.documentElement.scrollTop;
-    }
-    target.x = posx;
-    target.y = posy;
-}
-
-function scrollCheck() {
-    if(document.body.scrollTop > height) animateHeader = false;
-    else animateHeader = true;
-}
-
-function resize() {
-    width = window.innerWidth;
-    height = window.innerHeight;
-    largeHeader.style.height = height+'px';
-    canvas.width = width;
-    canvas.height = height;
-}
-
-// animation
-function initAnimation() {
-    animate();
-    for(var i in points) {
-        shiftPoint(points[i]);
-    }
-}
-
-function animate() {
-    if(animateHeader) {
-        ctx.clearRect(0,0,width,height);
-        for(var i in points) {
-            // detect points in range
-            if(Math.abs(getDistance(target, points[i])) < 4000) {
-                points[i].active = 0.3;
-                points[i].circle.active = 0.6;
-            } else if(Math.abs(getDistance(target, points[i])) < 20000) {
-                points[i].active = 0.1;
-                points[i].circle.active = 0.3;
-            } else if(Math.abs(getDistance(target, points[i])) < 40000) {
-                points[i].active = 0.02;
-                points[i].circle.active = 0.1;
-            } else {
-                points[i].active = 0;
-                points[i].circle.active = 0;
-            }
-
-            drawLines(points[i]);
-            points[i].circle.draw();
-        }
-    }
-    requestAnimationFrame(animate);
-}
-
-function shiftPoint(p) {
-    TweenLite.to(p, 1+1*Math.random(), {x:p.originX-50+Math.random()*100,
-        y: p.originY-50+Math.random()*100, ease:Circ.easeInOut,
-        onComplete: function() {
-            shiftPoint(p);
-        }});
-}
-
-// Canvas manipulation
-function drawLines(p) {
-    if(!p.active) return;
-    for(var i in p.closest) {
-        ctx.beginPath();
-        ctx.moveTo(p.x, p.y);
-        ctx.lineTo(p.closest[i].x, p.closest[i].y);
-        ctx.strokeStyle = 'rgba(156,217,249,'+ p.active+')';
-        ctx.stroke();
-    }
-}
-
-function Circle(pos,rad,color) {
-    var _this = this;
-
-    // constructor
-    (function() {
-        _this.pos = pos || null;
-        _this.radius = rad || null;
-        _this.color = color || null;
-    })();
-
-    this.draw = function() {
-        if(!_this.active) return;
-        ctx.beginPath();
-        ctx.arc(_this.pos.x, _this.pos.y, _this.radius, 0, 2 * Math.PI, false);
-        ctx.fillStyle = 'rgba(156,217,249,'+ _this.active+')';
-        ctx.fill();
-    };
-}
-
-// Util
-function getDistance(p1, p2) {
-    return Math.pow(p1.x - p2.x, 2) + Math.pow(p1.y - p2.y, 2);
-}
-
-})();
             function contactus() {
                 $([document.documentElement, document.body]).animate({
                     scrollTop: $("#contact").offset().top
