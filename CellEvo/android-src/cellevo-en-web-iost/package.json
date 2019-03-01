@@ -1,0 +1,25 @@
+{
+  "name": "cellevo-en-web-iost",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "algorithm": "0.0.2",
+    "connect": "^3.6.6",
+    "iost": "0.0.21",
+    "request": "^2.88.0",
+    "serve-static": "^1.13.2",
+    "webpack": "^4.29.5"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.2.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "build": "webpack"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -76,7 +76,9 @@ var lifecycletx = document.getElementById('lifecycletx');
 var surviveabilitytx = document.getElementById('surviveabilitytx');
 var divisiontx = document.getElementById('divisiontx');
 var lifecycletx = document.getElementById('lifecycletx');
-var dappAddress = "n1gFbEA3c8W6fAHgEhCNYoYBDyN7jCNmG7T";
+var dappAddress = "n1eqHaf98mHYEJ4cvD7Jb8UjDYBcaZ343Jy";
+//
+//n1gFbEA3c8W6fAHgEhCNYoYBDyN7jCNmG7T
 var totoalscore = 0;
 var finaltitle = "";
 var inputid = 0;
@@ -448,17 +450,20 @@ function cbCallDapp(resp) {
 }
 
 function inheritancecallback(resp) {
-    console.log("callback resp: " + JSON.stringify(resp))
-    if (resp != 'Error: Transaction rejected by user') {
-        setTimeout(getinheritance, 2000);
-
-        layer.msg('获得遗传信息中..');
-
-    } else {
-        layer.msg('放弃获得遗传信息，数据数据中..');
-
-
+    for(i=0;i<10;i++){
+        getinheritance();
     }
+    // console.log("callback resp: " + JSON.stringify(resp))
+    // if (resp != 'Error: Transaction rejected by user') {
+    //     setTimeout(getinheritance, 2000);
+    //
+    //     layer.msg('获得遗传信息中..');
+    //
+    // } else {
+    //     layer.msg('放弃获得遗传信息，数据数据中..');
+    //
+    //
+    // }
 
 }
 
@@ -474,18 +479,18 @@ function callinheritance() {
         var args = "[\"" + 'random' + "\"]";
         console.log(args);
 
-
-        nebPay.call(to, value, func, args, {
-            qrcode: {
-                showQRCode: false
-            },
-            goods: {
-                name: "test",
-                desc: "test goods"
-            },
-            listener: inheritancecallback
-        });
-
+        for(i=0;i<10;i++) {
+            nebPay.call(to, value, func, args, {
+                qrcode: {
+                    showQRCode: false
+                },
+                goods: {
+                    name: "test",
+                    desc: "test goods"
+                },
+                // listener: inheritancecallback
+            });
+        }
     } else {
         layer.msg('遗传信息只能开始读取');
     }
@@ -905,13 +910,17 @@ function getinheritance() {
         "function": func,
         "args": callArgs
     }
-    
-    neb.api.call(from,dappAddress,value,nonce,gas_price,gas_limit,contract).then(function (resp) {
-                                                                                 inheritanceSearch(resp)
-                                                                                 }).catch(function (err) {
-                                                                                          
-                                                                                          console.log("error:" + err.message)
-                                                                                          })
+    // for(i=0;i<10;i++){
+        neb.api.call(from,dappAddress,value,nonce,gas_price,gas_limit,contract);
+    //
+    // }
+
+    // neb.api.call(from,dappAddress,value,nonce,gas_price,gas_limit,contract).then(function (resp) {
+    //                                                                              inheritanceSearch(resp)
+    //                                                                              }).catch(function (err) {
+    //
+    //                                                                                       console.log("error:" + err.message)
+    //                                                                                       })
 
 }
 

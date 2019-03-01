@@ -1,0 +1,48 @@
+{
+  "_from": "iost@^0.0.21",
+  "_id": "iost@0.0.21",
+  "_inBundle": false,
+  "_integrity": "sha512-qUxfnPSTrLvhGsMIq0kH8e6uudNSBkrZ2RW5sA5wqoRZYKqFXA0ayY5vDVrnLDGG2z4pbrJPIsKLI0mjfF8KAg==",
+  "_location": "/iost",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "iost@^0.0.21",
+    "name": "iost",
+    "escapedName": "iost",
+    "rawSpec": "^0.0.21",
+    "saveSpec": null,
+    "fetchSpec": "^0.0.21"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/iost/-/iost-0.0.21.tgz",
+  "_shasum": "e0541360bef592472ede076ec26d0086e95f878a",
+  "_spec": "iost@^0.0.21",
+  "_where": "/Users/xiaowu/Documents/Github/homepage/Branchy/CellEvo/android-src/cellevo-en-web-iost",
+  "author": {
+    "name": "IOST.IO"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "atob": "^2.1.2",
+    "axios": "^0.18.0",
+    "bn.js": "^4.4.0",
+    "bs58": "^4.0.1",
+    "btoa": "^1.2.1",
+    "elliptic": "^6.4.1",
+    "js-base64": "^2.4.9",
+    "jsdoc": "^3.5.5",
+    "long": "^4.0.0",
+    "sha3": "^2.0.0",
+    "tweetnacl": "^1.0.0"
+  },
+  "deprecated": false,
+  "description": "iost JavaScript SDK",
+  "main": "index.js",
+  "name": "iost",
+  "version": "0.0.21"
+}

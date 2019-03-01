@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef84687e-2a0c-44df-8efa-558199af0e8a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/android-src/cellevo-cn-web/fonts/nexa_boldfree_macroman/Nexa_Free_Bold-webfont.eot" beforeDir="false" afterPath="$PROJECT_DIR$/android-src/cellevo-cn-web/fonts/nexa_boldfree_macroman/Nexa_Free_Bold-webfont.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android-src/cellevo-cn-web/fonts/nexa_boldfree_macroman/Nexa_Free_Bold-webfont.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/android-src/cellevo-cn-web/fonts/nexa_boldfree_macroman/Nexa_Free_Bold-webfont.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android-src/cellevo-cn-web/fonts/nexa_boldfree_macroman/Nexa_Free_Bold-webfont.woff" beforeDir="false" afterPath="$PROJECT_DIR$/android-src/cellevo-cn-web/fonts/nexa_boldfree_macroman/Nexa_Free_Bold-webfont.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android-src/cellevo-cn-web/fonts/nexa_boldfree_macroman/Nexa_Free_Bold-webfont.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/android-src/cellevo-cn-web/fonts/nexa_boldfree_macroman/Nexa_Free_Bold-webfont.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/game.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -36,83 +35,81 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="-669348821">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="13" />
+          <entry key="project.open.time.10" value="1" />
+          <entry key="project.open.time.11" value="1" />
+          <entry key="project.open.time.13" value="1" />
+          <entry key="project.open.time.15" value="1" />
+          <entry key="project.open.time.16" value="1" />
+          <entry key="project.open.time.18" value="1" />
+          <entry key="project.open.time.19" value="2" />
+          <entry key="project.open.time.2" value="2" />
+          <entry key="project.open.time.21" value="1" />
+          <entry key="project.open.time.23" value="1" />
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.opened" value="14" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="css" value="3" />
+          <entry key="gif" value="1" />
+          <entry key="html" value="8" />
+          <entry key="js" value="23" />
+          <entry key="json" value="1" />
+          <entry key="png" value="14" />
+          <entry key="ts" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CSS" value="3" />
+          <entry key="HTML" value="8" />
+          <entry key="Image" value="15" />
+          <entry key="JSON" value="1" />
+          <entry key="JavaScript" value="23" />
+          <entry key="TypeScript" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="html" value="29" />
+          <entry key="js" value="1283" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="HTML" value="29" />
+          <entry key="JavaScript" value="1283" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/android-src/cellevo-cn-web-iost/package-lock.json">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/index.html">
+        <entry file="file://$PROJECT_DIR$/android-src/cellevo-en-web-iost/js/game.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="39" column="18" selection-start-line="39" selection-start-column="14" selection-end-line="39" selection-end-column="18" />
+            <state relative-caret-position="398">
+              <caret line="523" column="26" selection-start-line="523" selection-start-column="26" selection-end-line="523" selection-end-column="26" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/android-src/cellevo-cn-web/index.html">
+        <entry file="file://$PROJECT_DIR$/android-src/cellevo-en-web-iost/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-900" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/android-src/cellevo-cn-web/server.js">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/android-src/cellevo-android/www/server.js">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/android-src/cellevo-android/www/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2400" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/android-src/cellevo-android/www/js/game.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
-              <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/game.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="70">
-              <caret line="39" column="27" selection-start-line="39" selection-start-column="27" selection-end-line="39" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/base.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="363" column="1" selection-start-line="363" selection-start-column="1" selection-end-line="363" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/demo1.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/new.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="21" column="31" lean-forward="true" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
+            <state relative-caret-position="6450">
+              <caret line="430" column="42" selection-start-line="430" selection-start-column="42" selection-end-line="430" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -121,11 +118,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>playinfoexplain</find>
-      <find>playinfoexplain.onclick</find>
-      <find>930</find>
-      <find>9306</find>
-      <find>9316</find>
+      <find>.call</find>
+      <find>css</find>
+      <find>world</find>
+      <find>.css</find>
+      <find>worldin</find>
+      <find>end</find>
+      <find>totalcellsearch</find>
+      <find>nebpay</find>
+      <find>iosts</find>
+      <find>test</find>
+      <find>finalti</find>
+      <find>cellread</find>
+      <find>savecell</find>
+      <find>displayend</find>
+      <find>require</find>
+      <find>request</find>
+      <find>iost</find>
+      <find>post</find>
+      <find>rea</find>
+      <find>finaltitle</find>
+      <find>iostrea</find>
+      <find>renderandtransl</find>
+      <find>callapoptosis</find>
+      <find>iostreal</find>
+      <find>凋亡</find>
+      <find>realsave</find>
+      <find>iostreadd</find>
+      <find>iostread</find>
+      <find>cellsearch</find>
+      <find>iostrealsave</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -134,9 +156,15 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/js/game.js" />
         <option value="$PROJECT_DIR$/css/base.css" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/js/game.js" />
+        <option value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/js/nebPay.js" />
+        <option value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/index.html" />
+        <option value="$PROJECT_DIR$/android-src/cellevo-en-web-iost/js/game5.js" />
+        <option value="$PROJECT_DIR$/android-src/cellevo-en-web-iost/index.html" />
+        <option value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/js/game.js" />
+        <option value="$PROJECT_DIR$/android-src/cellevo-en-web-iost/js/game.js" />
       </list>
     </option>
   </component>
@@ -146,8 +174,14 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/android-src/cellevo-en-web-iost/iost/node_modules" />
+    <handled-path value="$PROJECT_DIR$/android-src/cellevo-en-web-iost/js/iost/node_modules" />
+    <handled-path value="$PROJECT_DIR$/android-src/cellevo-en-web-iost/node_modules" />
+  </component>
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths>
+      <path value="$PROJECT_DIR$/android-src/cell-new/package.json" />
       <path value="$PROJECT_DIR$/android-src/cellevo-android/package.json" />
       <path value="$PROJECT_DIR$/android-src/cellevo-android/www/node_modules/connect/package.json" />
       <path value="$PROJECT_DIR$/android-src/cellevo-android/www/node_modules/debug/package.json" />
@@ -174,6 +208,104 @@
       <path value="$PROJECT_DIR$/android-src/cellevo-android/www/node_modules/statuses/package.json" />
       <path value="$PROJECT_DIR$/android-src/cellevo-android/www/node_modules/unpipe/package.json" />
       <path value="$PROJECT_DIR$/android-src/cellevo-android/www/node_modules/utils-merge/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/ajv/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/asn1/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/assert-plus/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/asynckit/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/aws-sign2/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/aws4/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/bcrypt-pbkdf/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/caseless/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/combined-stream/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/connect/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/core-util-is/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/dashdash/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/debug/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/delayed-stream/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/depd/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/destroy/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/ecc-jsbn/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/ee-first/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/encodeurl/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/escape-html/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/etag/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/extend/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/extsprintf/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/fast-deep-equal/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/fast-json-stable-stringify/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/finalhandler/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/forever-agent/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/form-data/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/fresh/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/getpass/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/har-schema/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/har-validator/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/http-errors/node_modules/statuses/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/http-errors/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/http-signature/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/inherits/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/is-typedarray/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/isstream/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/jsbn/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/json-schema-traverse/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/json-schema/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/json-stringify-safe/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/jsprim/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/mime-db/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/mime-types/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/mime/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/ms/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/oauth-sign/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/on-finished/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/parseurl/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/performance-now/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/psl/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/punycode/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/qs/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/range-parser/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/request/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/safe-buffer/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/safer-buffer/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/send/node_modules/statuses/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/send/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/serve-static/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/setprototypeof/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/sshpk/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/statuses/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/tough-cookie/node_modules/punycode/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/tough-cookie/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/tunnel-agent/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/tweetnacl/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/unpipe/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/uri-js/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/utils-merge/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/uuid/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/verror/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web/node_modules/connect/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web/node_modules/debug/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web/node_modules/depd/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web/node_modules/destroy/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web/node_modules/ee-first/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web/node_modules/encodeurl/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web/node_modules/escape-html/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web/node_modules/etag/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web/node_modules/finalhandler/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web/node_modules/fresh/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web/node_modules/http-errors/node_modules/statuses/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web/node_modules/http-errors/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web/node_modules/inherits/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web/node_modules/mime/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web/node_modules/ms/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web/node_modules/on-finished/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web/node_modules/parseurl/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web/node_modules/range-parser/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web/node_modules/send/node_modules/statuses/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web/node_modules/send/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web/node_modules/serve-static/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web/node_modules/setprototypeof/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web/node_modules/statuses/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web/node_modules/unpipe/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-cn-web/node_modules/utils-merge/package.json" />
       <path value="$PROJECT_DIR$/android-src/cellevo-en-android/package.json" />
       <path value="$PROJECT_DIR$/android-src/cellevo-en-android/www/node_modules/connect/package.json" />
       <path value="$PROJECT_DIR$/android-src/cellevo-en-android/www/node_modules/debug/package.json" />
@@ -200,6 +332,34 @@
       <path value="$PROJECT_DIR$/android-src/cellevo-en-android/www/node_modules/statuses/package.json" />
       <path value="$PROJECT_DIR$/android-src/cellevo-en-android/www/node_modules/unpipe/package.json" />
       <path value="$PROJECT_DIR$/android-src/cellevo-en-android/www/node_modules/utils-merge/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-en-web-iost/iost/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-en-web-iost/js/iost/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-en-web-iost/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-en/node_modules/connect/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-en/node_modules/debug/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-en/node_modules/depd/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-en/node_modules/destroy/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-en/node_modules/ee-first/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-en/node_modules/encodeurl/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-en/node_modules/escape-html/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-en/node_modules/etag/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-en/node_modules/finalhandler/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-en/node_modules/fresh/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-en/node_modules/http-errors/node_modules/statuses/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-en/node_modules/http-errors/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-en/node_modules/inherits/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-en/node_modules/mime/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-en/node_modules/ms/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-en/node_modules/on-finished/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-en/node_modules/parseurl/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-en/node_modules/range-parser/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-en/node_modules/send/node_modules/statuses/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-en/node_modules/send/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-en/node_modules/serve-static/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-en/node_modules/setprototypeof/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-en/node_modules/statuses/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-en/node_modules/unpipe/package.json" />
+      <path value="$PROJECT_DIR$/android-src/cellevo-en/node_modules/utils-merge/package.json" />
       <path value="$PROJECT_DIR$/node_modules/connect/package.json" />
       <path value="$PROJECT_DIR$/node_modules/debug/package.json" />
       <path value="$PROJECT_DIR$/node_modules/depd/package.json" />
@@ -228,10 +388,10 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="580" />
-    <option name="y" value="220" />
-    <option name="width" value="1400" />
-    <option name="height" value="1000" />
+    <option name="x" value="-193" />
+    <option name="y" value="54" />
+    <option name="width" value="1440" />
+    <option name="height" value="812" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -239,7 +399,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -252,20 +412,27 @@
               <item name="CellEvo" type="462c0819:PsiDirectoryNode" />
               <item name="android-src" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="CellEvo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CellEvo" type="462c0819:PsiDirectoryNode" />
+              <item name="android-src" type="462c0819:PsiDirectoryNode" />
+              <item name="cellevo-en-web-iost" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547956921228" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551367361595" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -284,8 +451,14 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.index.html (1)">
+  <component name="RunManager" selected="JavaScript Debug.index.html (3)">
     <configuration name="index.html (1)" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/CellEvo/android-src/cellevo-cn-web/index.html">
+      <method v="2" />
+    </configuration>
+    <configuration name="index.html (2)" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/CellEvo/android-src/cellevo-cn-web-iost/index.html">
+      <method v="2" />
+    </configuration>
+    <configuration name="index.html (3)" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/CellEvo/android-src/cellevo-en-web-iost/index.html">
       <method v="2" />
     </configuration>
     <configuration name="index.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/CellEvo/index.html">
@@ -298,11 +471,15 @@
       <item itemvalue="JavaScript Debug.new.html" />
       <item itemvalue="JavaScript Debug.index.html" />
       <item itemvalue="JavaScript Debug.index.html (1)" />
+      <item itemvalue="JavaScript Debug.index.html (2)" />
+      <item itemvalue="JavaScript Debug.index.html (3)" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JavaScript Debug.index.html (1)" />
+        <item itemvalue="JavaScript Debug.index.html (3)" />
+        <item itemvalue="JavaScript Debug.index.html (2)" />
         <item itemvalue="JavaScript Debug.index.html" />
+        <item itemvalue="JavaScript Debug.index.html (1)" />
         <item itemvalue="JavaScript Debug.new.html" />
       </list>
     </recent_temporary>
@@ -318,6 +495,20 @@
       <option name="presentableId" value="Default" />
       <updated>1547953407581</updated>
       <workItem from="1547953408748" duration="3344000" />
+      <workItem from="1548347588226" duration="540000" />
+      <workItem from="1548393700050" duration="614000" />
+      <workItem from="1548411572690" duration="7000" />
+      <workItem from="1548518426179" duration="662000" />
+      <workItem from="1548519869808" duration="1869000" />
+      <workItem from="1548557886822" duration="457000" />
+      <workItem from="1549424342243" duration="1623000" />
+      <workItem from="1550383237002" duration="294000" />
+      <workItem from="1550980282954" duration="5655000" />
+      <workItem from="1550994962131" duration="191000" />
+      <workItem from="1550995412205" duration="387000" />
+      <workItem from="1550995873699" duration="29842000" />
+      <workItem from="1551365769138" duration="2176000" />
+      <workItem from="1551410718763" duration="494000" />
     </task>
     <task id="LOCAL-00001" summary="add back the onclick of info button&#10;override the default scrollbar">
       <created>1547954723068</created>
@@ -337,23 +528,19 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3344000" />
+    <option name="totallyTimeSpent" value="48155000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
+    <frame x="1" y="32" width="1440" height="812" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Image Layers" />
-      <window_info id="Designer" />
-      <window_info id="UI Designer" />
-      <window_info id="Capture Tool" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2932761" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.32936507" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -361,16 +548,49 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Palette" />
-      <window_info anchor="right" id="Theme Preview" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="right" id="Palette&#9;" />
-      <window_info anchor="right" id="Database" />
-      <window_info anchor="right" id="Maven Projects" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.1816921" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Database" order="7" />
+      <window_info anchor="right" id="Maven Projects" order="8" />
     </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28481895" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.1816921" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Database" order="7" />
+      <window_info anchor="right" id="Maven Projects" order="8" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -384,27 +604,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Uncomment the ports" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js/game.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="70">
-          <caret line="39" column="27" selection-start-line="39" selection-start-column="27" selection-end-line="39" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/base.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="363" column="1" selection-start-line="363" selection-start-column="1" selection-end-line="363" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/demo1.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
@@ -412,40 +611,211 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/new.html" />
     <entry file="file://$PROJECT_DIR$/android-src/cellevo-cn-web/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-900" />
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/android-src/cellevo-cn-web/server.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/nebulas.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="837" column="16" lean-forward="true" selection-start-line="837" selection-start-column="16" selection-end-line="837" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android-src/cellevo-android/www/js/game.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smartContract/CellEvolutionNewWorld.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1465">
+          <caret line="200" column="30" selection-start-line="200" selection-start-column="25" selection-end-line="200" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/bg.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/android-src/cellevo-android/www/server.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/android-src/cellevo-android/www/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2400" />
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/android-src/cellevo-android/www/js/game.js">
+    <entry file="file://$PROJECT_DIR$/js/nebPay.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+        <state relative-caret-position="98775">
+          <caret line="6585" column="23" selection-start-line="6585" selection-start-column="17" selection-end-line="6585" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/new.html">
+    <entry file="file://$PROJECT_DIR$/css/world.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="21" column="31" lean-forward="true" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
+        <state relative-caret-position="180">
+          <caret line="12" column="10" lean-forward="true" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smartContract/CellEvolution.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="17" column="12" lean-forward="true" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/btn5.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/btn5l.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/worlddata.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/worldpic.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/world/world.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5768" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/world/bubble.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/base.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-193">
+          <caret line="367" column="1" selection-start-line="367" selection-start-column="1" selection-end-line="367" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/demo1.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Imgs/1.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Imgs/3.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Imgs/Inherit.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Imgs/Textfram2.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Imgs/Textfram3.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/game.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15180">
+          <caret line="1012" column="22" selection-start-line="1012" selection-start-column="22" selection-end-line="1012" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Imgs/Smallbutton1.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Imgs/Popup.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Imgs/Textfram.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Imgs/Sleep.gif">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Imgs/Smallbutton2.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Imgs/Mutate.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android-src/cellevo-cn-web-iost/js/nebPay.js" />
+    <entry file="file://$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/har-validator/lib/promise.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="948">
+          <caret line="91" selection-start-line="91" selection-end-line="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android-src/cellevo-cn-web-iost/smartContract/CellEvolution.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2098" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="39" column="18" selection-start-line="39" selection-start-column="14" selection-end-line="39" selection-end-column="18" />
+        <state relative-caret-position="495">
+          <caret line="33" column="39" selection-start-line="33" selection-start-column="39" selection-end-line="33" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/request/request.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="14" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android-src/cellevo-en-web-iost/js/game5.js" />
+    <entry file="file://$PROJECT_DIR$/android-src/cellevo-cn-web-iost/node_modules/request/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="582">
+          <caret line="68" selection-start-line="68" selection-end-line="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android-src/cellevo-en-web-iost/js/game6.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android-src/cellevo-cn-web-iost/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="419" column="55" selection-start-line="419" selection-start-column="55" selection-end-line="419" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="16458" column="4" selection-start-line="16458" selection-start-column="4" selection-end-line="16458" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android-src/cellevo-cn-web-iost/js/game.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="82">
+          <caret line="398" lean-forward="true" selection-start-line="398" selection-end-line="419" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android-src/cellevo-cn-web-iost/package-lock.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android-src/cellevo-en-web-iost/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6450">
+          <caret line="430" column="42" selection-start-line="430" selection-start-column="42" selection-end-line="430" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android-src/cellevo-en-web-iost/js/game.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="398">
+          <caret line="523" column="26" selection-start-line="523" selection-start-column="26" selection-end-line="523" selection-end-column="26" />
         </state>
       </provider>
     </entry>
