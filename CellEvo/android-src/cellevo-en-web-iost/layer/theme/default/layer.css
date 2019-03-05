@@ -387,14 +387,15 @@ html #layuicss-layer {
 
 .layui-layer-title {
     font-family: 'Courier New', Courier, monospace;
-    padding: 40px 80px 0 20px;
+    padding: 40px 80px 0 90px;
     height: auto;
     line-height: 42px;
     /* border-bottom: 1px solid #eee; */
-    font-size: 16px;
+    font-size: 12px;
     text-align: center;
     color: #fff;
     overflow: hidden;
+    text-transform:Uppercase;
     border-radius: 2px 2px 0 0
 }
 

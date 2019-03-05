@@ -10,8 +10,33 @@ var cellinfo = document.getElementById('cellinfo');
 var aboutus = document.getElementById('aboutus');
 var inheritance = document.getElementById('inheritance');
 var apoptosis = document.getElementById('apoptosis');
+
 // import IOST from './iost';
 let IOST = require('iost');
+let globalAdd = "ContractHBMiwQMZ1JEktwCkTQkXExgLLmMjyvgcYgegP668LpCA";
+// let currentworld = setTimeout(iostworldno(),2000);
+
+const EngColorMap = {
+            'Few&#44 ' : 'blue',
+            'Minimum&#44 ' : 'blue',
+            'Many&#44 ' : 'gold',
+            'Much&#44 ' : 'gold',
+            'Numerous&#44 ' : 'red',
+            'Billions of&#44 ' : 'red',
+            'Supercells&#44 ' : 'red',
+            'Eukaryotes&#44 ' : 'gold',
+            'Prokaryotes&#44 ' : 'violet',
+            'Archaea&#44 ' : 'blue',
+            'Zombie Subtype&#44 ' : 'gold',
+            'Zombie&#44 ' : 'red',
+            'Superstrong environmental resistance&#44 ' : 'red',
+            'Strong environmental resistance&#44 ' : 'gold',
+            'Weak environmental resistance&#44 ' : 'blue',
+            'Super adaptability&#44 ' : 'red',
+            'Super survivability&#44 ' : 'red',
+            'Super reproductivity&#44 ' : 'red',
+            'Apoptosis&#44 ' : 'grey'
+        }
 const EngMap = {
     '极少': 'Very little&#44 ',
     '少数': 'Little&#44 ',
@@ -36,9 +61,9 @@ const EngMap = {
     '超强适应': 'Super adaptability&#44 ',
     '超强生存': 'Super survivability&#44 ',
     '超强繁殖': 'Super reproductivity&#44 ',
-    '超强适应': 'Super adaptability&#44 ',
     '凋亡的': 'Apoptosis&#44 '
 };
+
 const colorMap = {
     '较少': 'blue',
     '中等数量': 'blue',
@@ -63,6 +88,9 @@ const colorMap = {
     '凋亡的': 'grey'
 };
 
+var finaltitle = "";
+console.log(finaltitle);
+console.log(renderAndTranslate(finaltitle));
 fanzhiimg.onclick = celldivision;
 mutimg.onclick = mutation;
 xiumianimg.onclick = sleep;
@@ -124,39 +152,7 @@ $('#worlddata').on('click', function () {
     layer.prompt({title: 'Please enter the world ID to get the world info', formType: 3, skin:'layui-custom'}, function (pass, index) {
         layer.msg('Reading World <' + pass + '> data ...');
 
-        var func = "getworld";
-//        var args = "[\"" + pass + "\"]";
-        var from = Account.NewAccount().getAddressString();
-
-        var args = pass;
-        var callArgs = JSON.stringify([args]);
-        var value = "0";
-        var nonce = "0"
-        var gas_price = "1000000"
-        var gas_limit = "2000000"
-        var contract = {
-                 "function": func,
-                 "args": callArgs
-        }
-        
-        neb.api.call(from,dappAddress,value,nonce,gas_price,gas_limit,contract).then(function (resp) {
-                                                                                worldSearch(resp)
-                                                                        }).catch(function (err) {
-                                                                     
-                                                                            console.log("error:" + err.message)
-                                                                                        })
-//        window.postMessage({
-//            "target": "contentscript",
-//            "data": {
-//                "to": dappAddress,
-//                "value": "0",
-//                "contract": {
-//                    "function": func,
-//                    "args": args
-//                }
-//            },
-//            "method": "neb_call"
-//        }, "*");
+        iostworlddata(pass);
     });
 });
 
@@ -244,7 +240,23 @@ function evolution() {
 
     generalupdate();
 }
+function renderAndTranslateNew(cellStr){
+    console.log(cellStr);
 
+    var retCellStr = cellStr.replace(/<\/font(.*?)>/g, '')
+        .replace(/<font(.*?)>/g, '');
+    console.log(retCellStr);
+    for (var key in EngColorMap) {
+        var regex = new RegExp(key, 'g');
+        retCellStr = retCellStr.replace(regex, "<font color='" + EngColorMap[key] + "'>" + key + "</font>");
+    }
+
+    console.log(retCellStr);
+
+    return retCellStr.replace(new RegExp('僵123尸亚种', 'g'), "Zombie Subtype");
+
+
+}
 function sleep() {
     eval(function (p, a, c, k, e, d) {
         e = function (c) {
@@ -278,7 +290,8 @@ function generalupdate() {
 
         titlejustify();
         totoalscore = cellno + (adaption + surviveability + division) * 100 + day * environment;
-        var datacollect = 'Game over<br>Cell numbers:' + cellno + '<br>Adaptability:' + adaption + ' Survivability:' + surviveability + ' Reproductivity:' + division + '<br>External environment:' + environment + ' Survival day:' + day + '<br> Overall score:' + totoalscore + '<br> Final evaluation:' + finaltitle;
+
+        var datacollect = 'Game over<br>Cell numbers:' + cellno + '<br>Adaptability:' + adaption + ' Survivability:' + surviveability + ' Reproductivity:' + division + '<br>External environment:' + environment + ' Survival day:' + day + '<br> Overall score:' + totoalscore + '<br> Final evaluation:' + renderAndTranslate(finaltitle);
         layer.msg(datacollect, {
             time: 0 //不自动关闭
             , btn: ['Next'], area: ['480px', '300px'], btnAlign: 'c', shade: 0.8
@@ -286,6 +299,7 @@ function generalupdate() {
                 layer.close(index);
                 layer.confirm('<p>Whether go fusion to integrate DNA into the group or not?<p>', {
                     type: 0,
+                    title:"Decision",
                     btn: ['Yes', 'No'], anim: 0, btnAlign: 'c', shade: 0.8, closeBtn: 0, area: ['480px', '300px'] //按钮
                 }, function () {
                     layer.msg('DNA uploading...');
@@ -412,11 +426,13 @@ function callapoptosis() {
                         layer.close(index);
                         layer.confirm('<p>Whether go fusion to integrate DNA into the group or not?<p>', {
                                       type: 0,
+                                      title:"Decision",
                                       btn: ['Yes', 'No'], anim: 0, btnAlign: 'c', shade: 0.8, closeBtn: 0, area: ['480px', '300px'] //按钮
                                       }, function () {
                                       layer.msg('DNA uploading...');
 //                                      savecell();
 //                                        iostrealsave();
+
                                        gettotalcell();
 //                                       iostreaddata();
                                       }, function () {
@@ -427,12 +443,15 @@ function callapoptosis() {
                         
                         }
                         });
-              
+            // cellno=100000000;
+            // adaption=100;
+            // surviveability=100000000;
+            // division=1000;
             titlejustify();
             // finaltitle = "<font color='grey'>凋亡的 </font>" + finaltitle;
             // finaltitle="凋亡的 ";
             totoalscore = cellno + (adaption + surviveability + division) * 100 + day * environment;
-            var newdatacollect = 'Game Over<br>Cell Numbers:' + cellno + '<br>Adaptability:' + adaption + ' Survivability:' + surviveability + ' Reproductivity:' + division + '<br>External environment:' + environment + ' Survival day:' + day + '<br> Overall score:' + totoalscore + '<br> Final evaluation:' + finaltitle;
+            var newdatacollect = 'Game Over<br>Cell Numbers:' + cellno + '<br>Adaptability:' + adaption + ' Survivability:' + surviveability + ' Reproductivity:' + division + '<br>External environment:' + environment + ' Survival day:' + day + '<br> Overall score:' + totoalscore + '<br> Final evaluation:' + renderAndTranslate(finaltitle);
             layer.msg(newdatacollect, {
                 time: 0 //不自动关闭
                 , btn: ['Next'], area: ['480px', '300px'], btnAlign: 'c', shade: 0.8, yes: function () {
@@ -440,11 +459,13 @@ function callapoptosis() {
                     layer.close(index);
                     layer.confirm('<p>Whether go fusion to integrate DNA into the group or not?<p>', {
                         type: 0,
+                        title:"Decision",
                         btn: ['Yes', 'No'], anim: 0, btnAlign: 'c', shade: 0.8, closeBtn: 0, area: ['480px', '300px'] //按钮
                     }, function () {
                         layer.msg('DNA uploading...');
                         // savecell();
                         // iostrealsave();
+
                         gettotalcell();
                         // iostreaddata();
                     }, function () {
@@ -465,7 +486,7 @@ function callapoptosis() {
 function gettotalcell(){
     let url = 'http://13.115.202.226:30001/getContractStorage';
     let obj = {
-        "id": "Contract5wgC5xMMp1akMTgxLVE2zEhDu3bNPJ7ke5mWPVcCJ3qD",
+        "id": globalAdd,
         "key": "totalcell"
     };
 
@@ -491,11 +512,73 @@ function gettotalcell(){
     };
 
 }
+function iostworldno(){
+    let url = 'http://13.115.202.226:30001/getContractStorage';
+    let obj = {
+        "id": globalAdd,
+        "key": "currentworld"
+    };
 
+
+    let httpRequest = new XMLHttpRequest();//第一步：创建需要的对象
+    httpRequest.open('POST', url, true); //第二步：打开连接/***发送json格式文件必须设置请求头 ；如下 - */
+    httpRequest.setRequestHeader("Content-type", "application/json");//设置请求头 注：post方式必须设置请求头（在建立连接后设置请求头）var obj = { name: 'zhansgan', age: 18 };
+    httpRequest.send(JSON.stringify(obj));//发送请求 将json写入send中
+
+
+    httpRequest.onreadystatechange = function () {//请求后的回调接口，可将请求成功后要执行的程序写在其中
+        if (httpRequest.readyState == 4 && httpRequest.status == 200) {//验证请求是否发送成功
+            var json = httpRequest.responseText;//获取到服务端返回的数据
+            console.log(json);
+            console.log(JSON.parse(json));
+            let decodejs=JSON.parse(json);
+
+            var jsonData = decodejs.data;
+            return jsonData;
+
+        }
+    };
+}
+function iostworlddata(worldno){
+    let url = 'http://13.115.202.226:30001/getContractStorage';
+    let obj = {
+        "id": globalAdd,
+        "field": worldno,
+        "key": "WorldHistory"
+    };
+
+    let httpRequest = new XMLHttpRequest();//第一步：创建需要的对象
+    httpRequest.open('POST', url, true); //第二步：打开连接/***发送json格式文件必须设置请求头 ；如下 - */
+    httpRequest.setRequestHeader("Content-type", "application/json");//设置请求头 注：post方式必须设置请求头（在建立连接后设置请求头）var obj = { name: 'zhansgan', age: 18 };
+    httpRequest.send(JSON.stringify(obj));//发送请求 将json写入send中
+
+
+    httpRequest.onreadystatechange = function () {//请求后的回调接口，可将请求成功后要执行的程序写在其中
+        if (httpRequest.readyState == 4 && httpRequest.status == 200) {//验证请求是否发送成功
+            var json = httpRequest.responseText;//获取到服务端返回的数据
+            console.log(json);
+            console.log(JSON.parse(json));
+            let decodejs=JSON.parse(json);
+
+            var jsonData = decodejs.data;
+            console.log(jsonData);
+            var finalData= JSON.parse(jsonData);
+            // console.log(finalData.id);
+
+            worldSearch(finalData);
+            // console.log(jsonData);
+            // var result = $.parseJSON(jsonData);
+            // console.log(result);
+            // for(var k in jsonData ){//遍历packJson 对象的每个key/value对,k为key
+            //     console.log(k);
+            // }
+        }
+    };
+}
 function iostreaddata(cellno) {
     let url = 'http://13.115.202.226:30001/getContractStorage';
     let obj = {
-        "id": "Contract5wgC5xMMp1akMTgxLVE2zEhDu3bNPJ7ke5mWPVcCJ3qD",
+        "id": globalAdd,
         "field": cellno,
         "key": "CellHistory"
     };
@@ -685,7 +768,7 @@ const defaultConfig = {
 
 function iostrealsave(totalcell){
     console.log("enter iost save");
-    const contractAddress = 'Contract5wgC5xMMp1akMTgxLVE2zEhDu3bNPJ7ke5mWPVcCJ3qD';
+    const contractAddress = globalAdd;
     let nid = parseInt(totalcell)+1;
     var test=new Array(nid.toString(),cellno.toString(),adaption.toString(),surviveability.toString(),division.toString(),environment.toString(),day.toString(),totoalscore.toString(),renderAndTranslate(finaltitle).toString());
 
@@ -810,26 +893,26 @@ function cbCallDapp(resp) {
     }
 
 }
-
-function inheritancecallback(resp) {
-    console.log("callback resp: " + JSON.stringify(resp))
-    if (resp != 'Error: Transaction rejected by user') {
-        setTimeout(getinheritance, 2000);
-
-      layer.msg('Getting inheritance data..');
-
-    } else {
-         layer.msg('Data reseting...');
-
-
-    }
-
-}
+//
+// function inheritancecallback(resp) {
+//     console.log("callback resp: " + JSON.stringify(resp))
+//     if (resp != 'Error: Transaction rejected by user') {
+//         setTimeout(getinheritance, 2000);
+//
+//       layer.msg('Getting inheritance data..');
+//
+//     } else {
+//          layer.msg('Data reseting...');
+//
+//
+//     }
+//
+// }
 
 function callinheritance() {
     if (day == 1) {
 
-        const contractAddress = 'Contract5wgC5xMMp1akMTgxLVE2zEhDu3bNPJ7ke5mWPVcCJ3qD';
+        const contractAddress = globalAdd;
         // let nid = parseInt(totalcell)+1;
         // var test=new Array(nid.toString(),cellno.toString(),adaption.toString(),surviveability.toString(),division.toString(),environment.toString(),day.toString(),totoalscore.toString(),renderAndTranslate(finaltitle).toString());
 
@@ -838,24 +921,12 @@ function callinheritance() {
 
             const iost = window.IWalletJS.newIOST(IOST);
 
-            //transfer
-            // const tx = iost.transfer('iost', account, "testiost1", "1.000", "this is memo")
-            //
-            // iost.signAndSend(tx)
-            //     .on('pending', (trx) => {
-            //         console.log(trx, 'trx')
-            //     })
-            //     .on('success', (result) => {
-            //         console.log(result, 'result')
-            //     })
-            //     .on('failed', (failed) => {
-            //         console.log(failed, 'failed')
-            //     })
 
-            const ctx = iost.callABI(contractAddress, "newinheritance", ['']);
+            const ctx = iost.callABI(contractAddress, "newinheritance", []);
 
             iost.signAndSend(ctx).on('pending', (trx) => {
                 console.log(trx, 'trx')
+                layer.msg('Get Inheritance Info successfully!');
                 getinheritance();
             })
                 .on('success', (result) => {
@@ -929,28 +1000,6 @@ function cellread() {
 
 
     iostreaddata(pass);
-        //
-        // var func = "get";
-        //          //        var args = "[\"" + pass + "\"]";
-        // var from = Account.NewAccount().getAddressString();
-        //
-        // var args = pass;
-        // var callArgs = JSON.stringify([args]);
-        // var value = "0";
-        // var nonce = "0"
-        // var gas_price = "1000000"
-        // var gas_limit = "2000000"
-        // var contract = {
-        //          "function": func,
-        //          "args": callArgs
-        //          }
-        //
-        // neb.api.call(from,dappAddress,value,nonce,gas_price,gas_limit,contract).then(function (resp) {
-        //                                                                                       cellSearch(resp)
-        //                                                                                       }).catch(function (err) {
-        //
-        //                                                                                                console.log("error:" + err.message)
-        //                                                                                                })
 
     });
 
@@ -1302,13 +1351,39 @@ function randomize(lower,upper) {
 }
 function getinheritance() {
     var inheritancearray=[];
-    inheritancearray.push(randomize(0,100));
-    inheritancearray.push(randomize(0,100));
-    inheritancearray.push(randomize(0,100));
-    inheritancearray.push(randomize(0,100));
+    inheritancearray.push(randomize(0,50));
+    inheritancearray.push(randomize(0,50));
+    inheritancearray.push(randomize(0,50));
+
+    let url = 'http://13.115.202.226:30001/getContractStorage';
+    let obj = {
+        "id": "ContractFpjyEqGTr9w12wkjFdKSRipMqLmPaihMreTjzbgXd29N",
+        "key": "inheritno"
+    };
+
+
+    let httpRequest = new XMLHttpRequest();//第一步：创建需要的对象
+    httpRequest.open('POST', url, true); //第二步：打开连接/***发送json格式文件必须设置请求头 ；如下 - */
+    httpRequest.setRequestHeader("Content-type", "application/json");//设置请求头 注：post方式必须设置请求头（在建立连接后设置请求头）var obj = { name: 'zhansgan', age: 18 };
+    httpRequest.send(JSON.stringify(obj));//发送请求 将json写入send中
+
+
+    httpRequest.onreadystatechange = function () {//请求后的回调接口，可将请求成功后要执行的程序写在其中
+        if (httpRequest.readyState == 4 && httpRequest.status == 200) {//验证请求是否发送成功
+            var json = httpRequest.responseText;//获取到服务端返回的数据
+            console.log(json);
+            console.log(JSON.parse(json));
+            let decodejs=JSON.parse(json);
+
+            var jsonData = decodejs.data;
+            inheritancearray.push(parseInt(jsonData));
+            inheritanceSearch(JSON.stringify(inheritancearray));
+        }
+    };
+    // inheritancearray.push(randomize(0,100));
 
     console.log(inheritancearray);
-    inheritanceSearch(JSON.stringify(inheritancearray));
+
 //
 //     var func = "inheritance";
 //
@@ -1341,9 +1416,9 @@ function decideworldtitle(incoming) {
     var titlecheck = incoming.split(" ");
 
     var worldtitle = "";
-    if (incoming == "进化中的世界") {
+    if (incoming == "World in Evolution") {
         worldpictype = "<img src=\"img/p9.png\" height=\"200\" width=\"300\"></img>\n";
-        worldtitle = "进化中的世界";
+        worldtitle = "World in Evolution";
         return worldtitle
     }
     if (incoming == "None") {
@@ -1426,26 +1501,25 @@ function decideworldtitle(incoming) {
 
 }
 
-
 function decidepic(incoming) {
     var imgpic = "<img src=\"img/dna1.png\" height=\"96\" width=\"60\"></img>\n";
-    var n = incoming.search("单细胞");
+    var n = incoming.search("Monoplast");
     if (n != -1) {
         imgpic = "<img src=\"img/dna1.png\" height=\"96\" width=\"60\"></img>\n";
     }
-    var n = incoming.search("古核细胞");
+    var n = incoming.search("Archaea");
     if (n != -1) {
         imgpic = "<img src=\"img/dna2.png\" height=\"96\" width=\"60\"></img>\n";
     }
-    var n = incoming.search("原核细胞");
+    var n = incoming.search("Prokaryotes");
     if (n != -1) {
         imgpic = "<img src=\"img/dna3.png\" height=\"96\" width=\"60\"></img>\n";
     }
-    var n = incoming.search("真核细胞");
+    var n = incoming.search("Eukaryotes");
     if (n != -1) {
         imgpic = "<img src=\"img/dna4.png\" height=\"96\" width=\"60\"></img>\n";
     }
-    var n = incoming.search("超级细胞");
+    var n = incoming.search("Supercells");
     if (n != -1) {
         imgpic = "<img src=\"img/dna5.png\" height=\"96\" width=\"60\"></img>\n";
     }
@@ -1459,14 +1533,18 @@ function decidepic(incoming) {
 }
 
 function worldSearch(resp) {
-    var result = resp.result    ////resp is an object, resp.result is a JSON string
-    console.log("return of rpc call: " + JSON.stringify(result))
-    
-    var resultString = JSON.stringify(result);
-    if(resultString.search("worldtitle") !== -1){
-        result = JSON.parse(result)
+     var result = resp;    ////resp is an object, resp.result is a JSON string
+    console.log("return of rpc call: " + result)
+
+    var resultString = JSON.stringify(resp);
+    // if(resultString.search("worldtitle") !== -1){
+    //     result = JSON.parse(result)
+    // }
+    if(result==null){
+        layer.msg("World not construct yet");
     }
     console.log(result.worldtitle);
+
     var worldtitle = decideworldtitle(result.worldtitle);
     var datacollect = worldpictype + '<h3>ID <' + result.id + '> World data</h3><div class="label">World Cell Numbers: </div>' + result.cellno + '<br>' +
     '   <div class="label">World Adaptability: </div>' + result.adaption + '<br>' +
@@ -1476,7 +1554,7 @@ function worldSearch(resp) {
     ' <div class="label">World survive day: </div>' + result.day + '<br>' +
     ' <div class="label">Overall score: </div>' + result.totoalscore + '<br><br>' +
     '' + '<div class="label">World title: </div>' + worldtitle + '<br><br>' +
-    'There have been ' + result.id + ' ecological groups destructed.  Please pay attention to the balanced development of the group. Blindly pursuing high scores may not bring victory. <br> -by Ling';
+    'There have been '   + ' ecological groups destructed.  Please pay attention to the balanced development of the group. Blindly pursuing high scores may not bring victory. <br> -by Ling';
     layer.msg(datacollect, {
               time: 0, //不自动关闭
               btn: ['Detail', 'Cancel'],
@@ -1516,14 +1594,15 @@ function worldSearch(resp) {
               var singlecellinfo = cellStr.split(',');
               
               var imgpic = decidepic(singlecellinfo[9]);
-              
+              // var info="";
+
               var info = "    <div class=\"info-card\">\n" +
               "        <i class=\"car-icon\">\n" + imgpic
               +
               "        </i>\n" +
               "        <h1>ID <" + singlecellinfo[0] + "> Cell data</h1>\n" +
               "        <h2>Cell number: " + singlecellinfo[2] + "</h2>\n" +
-              "        <div class=\"label\">Final evaluation: </div>" + singlecellinfo[9] + "\n" +
+              "        <div class=\"label\">Final evaluation: </div>" + renderAndTranslateNew(singlecellinfo[9]) + "\n" +
               "\n" +
               "        <div class=\"extra-info\">\n" +
               "            <h3>Details</h3>\n" +
@@ -1534,15 +1613,13 @@ function worldSearch(resp) {
               "            <div class=\"label\">External environment: </div>" + singlecellinfo[6] + "</br>\n" +
               "            <div class=\"label\">Survival day: </div>" + singlecellinfo[7] + "</br>\n" +
               "            <div class=\"label\">Overall score: </div>" + singlecellinfo[8] + "</br>\n" +
-              "            <div class=\"label\">Final evaluation: </div>" + singlecellinfo[9] + "</br>\n" +
+              "            <div class=\"label\">Final evaluation: </div>" + renderAndTranslateNew(singlecellinfo[9]) + "</br>\n" +
               "            <div class=\"label\">Creator: </div>" + singlecellinfo[1] + "</br>\n" +
               "            <div class=\"label\">Ecological Group: </div>" + singlecellinfo[10] + "</br>\n" +
               "        </div>\n" +
-              "    </div>"
+              "    </div>";
               newdatacollect = newdatacollect + info;
 
-              
-              
               }
               }
               
@@ -1564,7 +1641,7 @@ function worldSearch(resp) {
               }
               });
     
-    console.log("recived by page:" + e + ", e.data:" + JSON.stringify(e.data));
+    // console.log("recived by page:" + e + ", e.data:" + JSON.stringify(e.data));
     
     
     
@@ -1602,7 +1679,7 @@ function cellSearch(finalData) {
     "    </div>"
     
     newdatacollect = newdatacollect + info;
-    
+    console.log(finalData.finaltitle);
     layer.msg(newdatacollect, {
               time: 0 //不自动关闭
               , shadeClose: true
