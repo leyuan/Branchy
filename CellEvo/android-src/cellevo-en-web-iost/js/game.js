@@ -1664,7 +1664,7 @@ function cellSearch(finalData) {
     "        </i>\n" +
     "        <h1>ID<" + finalData.id + ">Cell data</h1>\n" +
     "        <h2>Cell number: " + finalData.cellno + "</h2>\n" +
-    "        Final evaluation: " + finalData.finaltitle + "\n" +
+    "        Final evaluation: " + renderAndTranslateNew(finalData.finaltitle) + "\n" +
     "            <h3>Details</h3>\n" +
     "            Number of cells: " + finalData.cellno + "</br>\n" +
     "            Adaptability: " + finalData.adaption + "</br>\n" +
@@ -1673,7 +1673,7 @@ function cellSearch(finalData) {
     "            External environment: " + finalData.environment + "</br>\n" +
     "            Survival day: " + finalData.day + "</br>\n" +
     "            Overal score: " + finalData.totoalscore + "</br>\n" +
-    "            Final evaluation: " + finalData.finaltitle + "</br>\n" +
+    "            Final evaluation: " + renderAndTranslateNew(finalData.finaltitle) + "</br>\n" +
     "            Creator: " + finalData.creator + "</br>\n" +
     "            Ecological Group: " + finalData.belong + "</br>\n" +
     "    </div>"
