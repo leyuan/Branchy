@@ -46,11 +46,11 @@ const EngMap = {
     '很多': 'Much&#44 ',
     '超级多': 'Numerous&#44 ',
     '数以亿计': 'Billions of&#44 ',
-    '超级细胞': 'Supercells&#44 ',
-    '真核细胞': 'Eukaryotes&#44 ',
-    '原核细胞': 'Prokaryotes&#44 ',
-    '古核细胞': 'Archaea&#44 ',
-    '单细胞': 'Monoplast&#44 ',
+    '超级细胞': 'Supercells ',
+    '真核细胞': 'Eukaryotes ',
+    '原核细胞': 'Prokaryotes ',
+    '古核细胞': 'Archaea ',
+    '单细胞': 'Monoplast ',
     '正常': 'Normal&#44 ',
     '僵尸亚种': 'Zombie Subtype&#44 ',
     '僵尸': 'Zombie&#44 ',
@@ -1428,65 +1428,65 @@ function decideworldtitle(incoming) {
     }
 
 
-    if (titlecheck[0].search("高度进化") != -1) {
+    if (titlecheck[0].search("Highly evolved") != -1) {
         titlecheck[0] = '<font color=\"red\"> ' + titlecheck[0] + '</font>';
-    } else if (titlecheck[0].search("热闹") != -1) {
+    } else if (titlecheck[0].search("Lively") != -1) {
         titlecheck[0] = '<font color=\"gold\"> ' + titlecheck[0] + '</font>';
 
     } else {
         titlecheck[0] = '<font color=\"white\"> ' + titlecheck[0] + '</font>';
     }
 
-    if (titlecheck[1].search("高度适应") != -1) {
+    if (titlecheck[1].search("High adaption") != -1) {
         titlecheck[1] = '<font color=\"red\"> ' + titlecheck[1] + '</font>';
-    } else if (titlecheck[1].search("正常适应") != -1) {
+    } else if (titlecheck[1].search("Normal adaption") != -1) {
         titlecheck[1] = '<font color=\"gold\"> ' + titlecheck[1] + '</font>';
     } else {
         titlecheck[1] = '<font color=\"white\"> ' + titlecheck[1] + '</font>';
     }
 
-    if (titlecheck[2].search("高度生存") != -1) {
+    if (titlecheck[2].search("High surviveability") != -1) {
         titlecheck[2] = '<font color=\"red\"> ' + titlecheck[2] + '</font>';
-    } else if (titlecheck[2].search("正常生存") != -1) {
+    } else if (titlecheck[2].search("Normal surviveability") != -1) {
         titlecheck[2] = '<font color=\"gold\"> ' + titlecheck[2] + '</font>';
     } else {
         titlecheck[2] = '<font color=\"white\"> ' + titlecheck[2] + '</font>';
     }
 
-    if (titlecheck[3].search("高度繁殖") != -1) {
+    if (titlecheck[3].search("High division") != -1) {
         titlecheck[3] = '<font color=\"red\"> ' + titlecheck[3] + '</font>';
-    } else if (titlecheck[3].search("正常繁殖") != -1) {
+    } else if (titlecheck[3].search("Normal division") != -1) {
         titlecheck[3] = '<font color=\"gold\"> ' + titlecheck[3] + '</font>';
     } else {
         titlecheck[3] = '<font color=\"white\"> ' + titlecheck[3] + '</font>';
     }
-    if (titlecheck[4].search("高度环境抵抗") != -1) {
+    if (titlecheck[4].search("Severe environment") != -1) {
         titlecheck[4] = '<font color=\"red\"> ' + titlecheck[4] + '</font>';
-    } else if (titlecheck[3].search("正常环境抵抗") != -1) {
+    } else if (titlecheck[3].search("Normal environment") != -1) {
         titlecheck[4] = '<font color=\"gold\"> ' + titlecheck[4] + '</font>';
     } else {
         titlecheck[4] = '<font color=\"white\"> ' + titlecheck[4] + '</font>';
     }
     worldpictype = "<img src=\"img/p1.png\" height=\"200\" width=\"300\"></img>\n";
-    if (titlecheck[5].search("暗物质世界") != -1) {
+    if (titlecheck[5].search("Dark Matter") != -1) {
         worldpictype = "<img src=\"img/p8.png\" height=\"200\" width=\"300\"></img>\n";
         titlecheck[5] = '<font color=\"red\"> ' + titlecheck[5] + '</font>';
-    } else if (titlecheck[5].search("盖亚世界") != -1) {
+    } else if (titlecheck[5].search("Gaea") != -1) {
         worldpictype = "<img src=\"img/p7.png\" height=\"200\" width=\"300\"></img>\n";
         titlecheck[5] = '<font color=\"red\"> ' + titlecheck[5] + '</font>';
-    } else if (titlecheck[5].search("岩石世界") != -1) {
+    } else if (titlecheck[5].search("Rock World") != -1) {
         worldpictype = "<img src=\"img/p4.png\" height=\"200\" width=\"300\"></img>\n";
         titlecheck[5] = '<font color=\"gold\"> ' + titlecheck[5] + '</font>';
-    } else if (titlecheck[5].search("海洋世界") != -1) {
+    } else if (titlecheck[5].search("Ocean World") != -1) {
         worldpictype = "<img src=\"img/p5.png\" height=\"200\" width=\"300\"></img>\n";
         titlecheck[5] = '<font color=\"gold\"> ' + titlecheck[5] + '</font>';
-    } else if (titlecheck[5].search("机械世界") != -1) {
+    } else if (titlecheck[5].search("Machanical World") != -1) {
         worldpictype = "<img src=\"img/p6.png\" height=\"200\" width=\"300\"></img>\n";
         titlecheck[5] = '<font color=\"gold\"> ' + titlecheck[5] + '</font>';
-    } else if (titlecheck[5].search("虫族世界") != -1) {
+    } else if (titlecheck[5].search("Zerg's World") != -1) {
         worldpictype = "<img src=\"img/p3.png\" height=\"200\" width=\"300\"></img>\n";
         titlecheck[5] = '<font color=\"blue\"> ' + titlecheck[5] + '</font>';
-    } else if (titlecheck[5].search("精神世界") != -1) {
+    } else if (titlecheck[5].search("Spirit World") != -1) {
         worldpictype = "<img src=\"img/p2.png\" height=\"200\" width=\"300\"></img>\n";
         titlecheck[5] = '<font color=\"violet\"> ' + titlecheck[5] + '</font>';
     } else {
@@ -1546,6 +1546,7 @@ function worldSearch(resp) {
     console.log(result.worldtitle);
 
     var worldtitle = decideworldtitle(result.worldtitle);
+    console.log(worldtitle);
     var datacollect = worldpictype + '<h3>ID <' + result.id + '> World data</h3><div class="label">World Cell Numbers: </div>' + result.cellno + '<br>' +
     '   <div class="label">World Adaptability: </div>' + result.adaption + '<br>' +
     '    <div class="label">World Survivability: </div>' + result.surviveability + '<br>' +
