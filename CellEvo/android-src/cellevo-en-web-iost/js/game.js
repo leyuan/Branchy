@@ -13,7 +13,14 @@ var apoptosis = document.getElementById('apoptosis');
 
 // import IOST from './iost';
 let IOST = require('iost');
-let globalAdd = "ContractHBMiwQMZ1JEktwCkTQkXExgLLmMjyvgcYgegP668LpCA";
+let testglobalAdd = "ContractHBMiwQMZ1JEktwCkTQkXExgLLmMjyvgcYgegP668LpCA";
+let testglobalNode = "http://13.115.202.226:30001/getContractStorage";
+let globalAdd = "ContractDhrEknF173mzsGmo1fWy5cDh2EN4gXLTQu5Wi8wp7YW7";
+let globalNode ="http://api.iost.io/getContractStorage";
+
+let currentAdd=globalAdd;
+let currentNode=globalNode;
+
 // let currentworld = setTimeout(iostworldno(),2000);
 
 const EngColorMap = {
@@ -158,7 +165,7 @@ $('#worlddata').on('click', function () {
 
 function aboutusfun() {
     layer.msg("<img src=\"img/neb.png \" height=\"70\" width=\"70\"><br>" +
-              "<div>Cell Evolution need Nebulas wallet to support DNA merging,<br> install one of the following wallet to gain full game experience." +
+              "<div>Cell Evolution need IOST wallet to support DNA merging,<br> install one of the following wallet to gain full game experience." +
               "<br>Language: <a href=\"http:\/\/cellevo.net:9310\">中文</a>|<a href=\"http:\/\/cellevo.net:9306\">English</a>" +
               "<br> Web Extension wallet:<br><a href=\"https:\/\/github.com\/ChengOrangeJu\/WebExtensionWallet\">https://github.com/ChengOrangeJu/WebExtensionWallet\</a><br>Ios Wallet:<br><a href=\"https:\/\/itunes.apple.com\/hk\/app\/nas-nano\/id1281191905\?l=zh\&ls=1\&mt=8\">https://itunes.apple.com/hk/app/nas-nano/id1281191905?l=zh&ls=1&mt=8\</a><br>Android wallet:<br><a href=\"https:\/\/nano.nebulas.io\/index_cn.html\">https://nano.nebulas.io/index_cn.html\</a><br><br><img src=\"img/drlogo.png \" height=\"60\" width=\"120\"><br>Thanks for DappReview's support. <br>As a friend, DappReview provide lots of resources for Cell Evolution and hope we can grow up together in the future!<br><br><br>Note:<br>The original purpose of designing this game is to make a real game, but not a traditional blockchain's currency or hot potato game. I think the blockchain is a tool  that makes the game process and data more efficient and transparent, which means it has its own ecological logic and will make the process more unique and game-like. Unlike the traditional game meaning, I discovered that if there is a game that allows everyone to participate in the ecology, and the countless individuals will determine the direction of the world, so this is not a stand-alone management, a simple scoreboard, but a truly anonymous group games. There will be players aiming at high scores, players with group cooperation, rookies, hardcore players, creators, and repairers,ect. All kinds of individuals will build a real blockchain game.  <br><p>Cell Evolution<br><br>A game about cells and humanity.</p><br>Present by Ling</div>", {
         time: 0 //不自动关闭
@@ -484,7 +491,7 @@ function callapoptosis() {
 
 }
 function gettotalcell(){
-    let url = 'http://13.115.202.226:30001/getContractStorage';
+    let url = currentNode;
     let obj = {
         "id": globalAdd,
         "key": "totalcell"
@@ -513,7 +520,7 @@ function gettotalcell(){
 
 }
 function iostworldno(){
-    let url = 'http://13.115.202.226:30001/getContractStorage';
+    let url = 'api.iost.io/getContractStorage';
     let obj = {
         "id": globalAdd,
         "key": "currentworld"
@@ -540,7 +547,7 @@ function iostworldno(){
     };
 }
 function iostworlddata(worldno){
-    let url = 'http://13.115.202.226:30001/getContractStorage';
+    let url = currentNode;
     let obj = {
         "id": globalAdd,
         "field": worldno,
@@ -576,7 +583,7 @@ function iostworlddata(worldno){
     };
 }
 function iostreaddata(cellno) {
-    let url = 'http://13.115.202.226:30001/getContractStorage';
+    let url = currentNode;
     let obj = {
         "id": globalAdd,
         "field": cellno,
@@ -1215,7 +1222,7 @@ function playinfoexplainfun() {
                                                                                               btn: ['Next'],
                                                                                               yes: function () {
                                                                                               
-                                                                                              layer.msg("<img src=\"img/neb.png \" height=\"60\" width=\"60\"><br><div>Cell evolution is perfectly bound to the Nebulas chain.<br>Remember that when you finish cultivating a cell, the real game has just begun!<br><br>In the world of cell evolution, there are ethnic groups of cell. When a group's reproductivity, adaptability, and survivability developed into balance, the group can survive.<br>The world is made up of countless nurtured cells.<br>When you get a unique title and high scores, your imbalanced attribute may lead to a extinction of the entire group. Integrating records into the overall world database, locking up the records forever, or giving up your own perfect cultivation for the ecological group. What would you like to choose?<br><br><br><p>Cell Evolution<br><br>A game about cells and humanity.<br></p>Present by: Ling</div>", {
+                                                                                              layer.msg("<img src=\"img/neb.png \" height=\"60\" width=\"60\"><br><div>Cell evolution is perfectly bound to the IOST chain.<br>Remember that when you finish cultivating a cell, the real game has just begun!<br><br>In the world of cell evolution, there are ethnic groups of cell. When a group's reproductivity, adaptability, and survivability developed into balance, the group can survive.<br>The world is made up of countless nurtured cells.<br>When you get a unique title and high scores, your imbalanced attribute may lead to a extinction of the entire group. Integrating records into the overall world database, locking up the records forever, or giving up your own perfect cultivation for the ecological group. What would you like to choose?<br><br><br><p>Cell Evolution<br><br>A game about cells and humanity.<br></p>Present by: Ling</div>", {
                                                                                                         time: 0 //不自动关闭
                                                                                                         ,
                                                                                                         anim: 0,
@@ -1355,7 +1362,7 @@ function getinheritance() {
     inheritancearray.push(randomize(0,50));
     inheritancearray.push(randomize(0,50));
 
-    let url = 'http://13.115.202.226:30001/getContractStorage';
+    let url = 'api.iost.io/getContractStorage';
     let obj = {
         "id": "ContractFpjyEqGTr9w12wkjFdKSRipMqLmPaihMreTjzbgXd29N",
         "key": "inheritno"
@@ -1494,7 +1501,7 @@ function decideworldtitle(incoming) {
         titlecheck[5] = '<font color=\"white\"> ' + titlecheck[5] + '</font>';
     }
 
-    worldtitle = worldtitle + titlecheck[0] + titlecheck[1] + titlecheck[2] + titlecheck[3] + titlecheck[4] + titlecheck[5];
+    worldtitle = waorldtitle + titlecheck[0] + titlecheck[1] + titlecheck[2] + titlecheck[3] + titlecheck[4] + titlecheck[5];
 
 
     return worldtitle;
@@ -1657,6 +1664,9 @@ function cellSearch(finalData) {
     // if(resultString.search("surviveability") !== -1){
     //     result = JSON.parse(result)
     // }
+    if(finalData==null){
+        layer.msg("Cell not construct yet");
+    }
     var imgpic = decidepic(finalData.finaltitle);
     var newdatacollect = '';
     var info = "<div class=\"info-card.open\">\n" +
