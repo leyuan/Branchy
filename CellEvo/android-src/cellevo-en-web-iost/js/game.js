@@ -15,7 +15,7 @@ var apoptosis = document.getElementById('apoptosis');
 let IOST = require('iost');
 let testglobalAdd = "ContractHBMiwQMZ1JEktwCkTQkXExgLLmMjyvgcYgegP668LpCA";
 let testglobalNode = "http://13.115.202.226:30001/getContractStorage";
-let globalAdd = "ContractDhrEknF173mzsGmo1fWy5cDh2EN4gXLTQu5Wi8wp7YW7";
+let globalAdd = "Contract6sGG1pBi42HYNrVZB2YDkMzKASiFeNCQ8PWmrTkTGdCZ";
 let globalNode ="http://api.iost.io/getContractStorage";
 
 let currentAdd=globalAdd;
@@ -167,7 +167,7 @@ function aboutusfun() {
     layer.msg("<img src=\"img/neb.png \" height=\"70\" width=\"70\"><br>" +
               "<div>Cell Evolution need IOST wallet to support DNA merging,<br> install one of the following wallet to gain full game experience." +
               "<br>Language: <a href=\"http:\/\/cellevo.net:9310\">中文</a>|<a href=\"http:\/\/cellevo.net:9306\">English</a>" +
-              "<br> Web Extension wallet:<br><a href=\"https:\/\/github.com\/ChengOrangeJu\/WebExtensionWallet\">https://github.com/ChengOrangeJu/WebExtensionWallet\</a><br>Ios Wallet:<br><a href=\"https:\/\/itunes.apple.com\/hk\/app\/nas-nano\/id1281191905\?l=zh\&ls=1\&mt=8\">https://itunes.apple.com/hk/app/nas-nano/id1281191905?l=zh&ls=1&mt=8\</a><br>Android wallet:<br><a href=\"https:\/\/nano.nebulas.io\/index_cn.html\">https://nano.nebulas.io/index_cn.html\</a><br><br><img src=\"img/drlogo.png \" height=\"60\" width=\"120\"><br>Thanks for DappReview's support. <br>As a friend, DappReview provide lots of resources for Cell Evolution and hope we can grow up together in the future!<br><br><br>Note:<br>The original purpose of designing this game is to make a real game, but not a traditional blockchain's currency or hot potato game. I think the blockchain is a tool  that makes the game process and data more efficient and transparent, which means it has its own ecological logic and will make the process more unique and game-like. Unlike the traditional game meaning, I discovered that if there is a game that allows everyone to participate in the ecology, and the countless individuals will determine the direction of the world, so this is not a stand-alone management, a simple scoreboard, but a truly anonymous group games. There will be players aiming at high scores, players with group cooperation, rookies, hardcore players, creators, and repairers,ect. All kinds of individuals will build a real blockchain game.  <br><p>Cell Evolution<br><br>A game about cells and humanity.</p><br>Present by Ling</div>", {
+              "<br> Web Extension wallet:<br><a href=\"https:\/\/github.com\/ChengOrangeJu\/WebExtensionWallet\">Google Extension\</a><br>Thanks for DappReview's support. <br>As a friend, DappReview provide lots of resources for Cell Evolution and hope we can grow up together in the future!<br><br><br>Note:<br>The original purpose of designing this game is to make a real game, but not a traditional blockchain's currency or hot potato game. I think the blockchain is a tool  that makes the game process and data more efficient and transparent, which means it has its own ecological logic and will make the process more unique and game-like. Unlike the traditional game meaning, I discovered that if there is a game that allows everyone to participate in the ecology, and the countless individuals will determine the direction of the world, so this is not a stand-alone management, a simple scoreboard, but a truly anonymous group games. There will be players aiming at high scores, players with group cooperation, rookies, hardcore players, creators, and repairers,ect. All kinds of individuals will build a real blockchain game.  <br><p>Cell Evolution<br><br>A game about cells and humanity.</p><br>Present by Ling</div>", {
         time: 0 //不自动关闭
         , anim: 0, btnAlign: 'c', shade: 0.8, area: ['780px', '500px'], btn: ['Enter','Cancel'], closeBtn: 1
 
@@ -1611,6 +1611,7 @@ function worldSearch(resp) {
               "        <h1>ID <" + singlecellinfo[0] + "> Cell data</h1>\n" +
               "        <h2>Cell number: " + singlecellinfo[2] + "</h2>\n" +
               "        <div class=\"label\">Final evaluation: </div>" + renderAndTranslateNew(singlecellinfo[9]) + "\n" +
+                  "     <br>   Creator: " + singlecellinfo[1] + "\n" +
               "\n" +
               "        <div class=\"extra-info\">\n" +
               "            <h3>Details</h3>\n" +
@@ -1675,8 +1676,9 @@ function cellSearch(finalData) {
     "        </i>\n" +
     "        <h1>ID<" + finalData.id + ">Cell data</h1>\n" +
     "        <h2>Cell number: " + finalData.cellno + "</h2>\n" +
-    "        Final evaluation: " + renderAndTranslateNew(finalData.finaltitle) + "\n" +
-    "            <h3>Details</h3>\n" +
+    "        Final evaluation: " + renderAndTranslateNew(finalData.finaltitle) + "</br>\n" +
+        "        Creator: " + finalData.creator + "\n" +
+        "            <h3>Details</h3>\n" +
     "            Number of cells: " + finalData.cellno + "</br>\n" +
     "            Adaptability: " + finalData.adaption + "</br>\n" +
     "            Survivability: " + finalData.surviveability + "</br>\n" +
