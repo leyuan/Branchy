@@ -165,8 +165,8 @@ $('#worlddata').on('click', function () {
         // "<br>Language: <a href=\"http:\/\/cellevo.net:9310\">中文</a>|<a href=\"http:\/\/cellevo.net:9306\">English</a>"
 function aboutusfun() {
     layer.msg("<img src=\"img/neb.png \" height=\"70\" width=\"70\"><br>" +
-              "<div>细胞进化需要IOST钱包的支持<br> ,这样可以进行DNA融合，体验到更多游戏性。"
-            +
+              "<div>细胞进化需要IOST钱包的支持<br> ,这样可以进行DNA融合，体验到更多游戏性。<br>"+
+    "Language: <a href=\"http:\/\/cellevo.matrixdapp.com:9310\">中文</a>|<a href=\"http:\/\/cellevo.matrixdapp.com:9306\">English</a><br>" +
               "<br> Web Extension wallet:<br><a href=\"https:\/\/github.com\/iost-official\">Google Extension\</a><br>感谢DappReview的帮助. <br>As a friend, DappReview provide lots of resources for Cell Evolution and hope we can grow up together in the future!<br><br><br>小记:<br>设计这款游戏的初衷就是想要做出一款真正的游戏,不是区块链的发币，博傻等传统意义上的游戏，我认为区块链是一种工具,让游戏过程,数据更加高效透明的情况下,通过自己的链上逻辑,拥有自己的生态逻辑,可以让游戏过程更加独具游戏性。接着我发现跟传统意义不一样，如果真的有一个游戏可以让所有人参与进生态,无数个体决定世界的走向，那么这就不是一个单机经营，一个简单的积分榜，而是一个真正的匿名群体游戏，有追逐高分的玩家，有群体合作的玩家，有新手，也有高玩，有创造者，也有修补者，各色各样的个体构建一个真正的区块链游戏, Cell Evolution.<br>希望你们喜欢。 -Ling", {
         time: 0 //不自动关闭
         , anim: 0, btnAlign: 'c', shade: 0.8, area: ['780px', '500px'], btn: ['Enter','Cancel'], closeBtn: 1
