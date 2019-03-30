@@ -1503,7 +1503,7 @@ function decideworldtitle(incoming) {
         titlecheck[5] = '<font color=\"white\"> ' + titlecheck[5] + '</font>';
     }
 
-    worldtitle = waorldtitle + titlecheck[0] + titlecheck[1] + titlecheck[2] + titlecheck[3] + titlecheck[4] + titlecheck[5];
+    worldtitle = worldtitle + titlecheck[0] + titlecheck[1] + titlecheck[2] + titlecheck[3] + titlecheck[4] + titlecheck[5];
 
 
     return worldtitle;

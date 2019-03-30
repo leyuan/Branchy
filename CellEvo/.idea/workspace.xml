@@ -38,7 +38,7 @@
     <session id="-669348821">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="33" />
+          <entry key="project.closed" value="37" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.13" value="1" />
@@ -49,16 +49,17 @@
           <entry key="project.open.time.19" value="3" />
           <entry key="project.open.time.2" value="2" />
           <entry key="project.open.time.20" value="1" />
-          <entry key="project.open.time.21" value="1" />
-          <entry key="project.open.time.22" value="1" />
+          <entry key="project.open.time.21" value="2" />
+          <entry key="project.open.time.22" value="2" />
           <entry key="project.open.time.23" value="2" />
           <entry key="project.open.time.24" value="2" />
+          <entry key="project.open.time.27" value="1" />
           <entry key="project.open.time.3" value="2" />
           <entry key="project.open.time.5" value="2" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.7" value="2" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="34" />
+          <entry key="project.opened" value="37" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -105,8 +106,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/android-src/cellevo-en-web-iost/js/game.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="168" column="9" selection-start-line="168" selection-start-column="9" selection-end-line="168" selection-end-column="9" />
+            <state relative-caret-position="215">
+              <caret line="1505" column="27" selection-start-line="1505" selection-start-column="27" selection-end-line="1505" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -129,7 +130,7 @@
         <entry file="file://$PROJECT_DIR$/android-src/cellevo-cn-web-iost_change/js/game.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="215">
-              <caret line="169" column="4" selection-start-line="168" selection-start-column="4" selection-end-line="169" selection-end-column="4" />
+              <caret line="1501" column="27" selection-start-line="1501" selection-start-column="27" selection-end-line="1501" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -137,8 +138,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-499">
-              <caret line="39" column="18" lean-forward="true" selection-start-line="39" selection-start-column="18" selection-end-line="39" selection-end-column="18" />
+            <state relative-caret-position="585">
+              <caret line="39" column="18" selection-start-line="39" selection-start-column="18" selection-end-line="39" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -146,8 +147,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/game.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="146" column="120" lean-forward="true" selection-start-line="146" selection-start-column="7" selection-end-line="146" selection-end-column="120" />
+            <state relative-caret-position="2190">
+              <caret line="146" column="120" selection-start-line="146" selection-start-column="7" selection-end-line="146" selection-end-column="120" />
             </state>
           </provider>
         </entry>
@@ -180,7 +181,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>cellno=</find>
       <find>title</find>
       <find>layui-layer-title</find>
       <find>finaltitle</find>
@@ -210,6 +210,7 @@
       <find>worldsearch</find>
       <find>中文</find>
       <find>更多</find>
+      <find>wa</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -459,9 +460,8 @@
       <path value="$PROJECT_DIR$/node_modules/utils-merge/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-10" />
-    <option name="y" value="119" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="815" />
   </component>
@@ -471,7 +471,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -514,13 +513,14 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553575131130" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553575554207" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -621,7 +621,10 @@
       <workItem from="1553314072666" duration="1295000" />
       <workItem from="1553493481351" duration="606000" />
       <workItem from="1553514831450" duration="5742000" />
-      <workItem from="1553574645511" duration="479000" />
+      <workItem from="1553574645511" duration="1339000" />
+      <workItem from="1553696911458" duration="612000" />
+      <workItem from="1553734720968" duration="49000" />
+      <workItem from="1553951991682" duration="52000" />
     </task>
     <task id="LOCAL-00001" summary="add back the onclick of info button&#10;override the default scrollbar">
       <created>1547954723068</created>
@@ -641,13 +644,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="99661000" />
+    <option name="totallyTimeSpent" value="101234000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-10" y="119" width="1440" height="815" extended-state="0" />
+    <frame x="0" y="23" width="1440" height="812" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3869814" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.4041488" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -922,6 +925,20 @@
     <entry file="file://$PROJECT_DIR$/android-src/cellevo-cn-web-iost_change/js/game3.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="39" column="18" selection-start-line="39" selection-start-column="18" selection-end-line="39" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/game.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2190">
+          <caret line="146" column="120" selection-start-line="146" selection-start-column="7" selection-end-line="146" selection-end-column="120" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/android-src/cellevo-cn-web-iost_change/Imgs/Head.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -938,31 +955,17 @@
     <entry file="file://$PROJECT_DIR$/android-src/cellevo-en-web-iost/js/game3.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-499">
-          <caret line="39" column="18" lean-forward="true" selection-start-line="39" selection-start-column="18" selection-end-line="39" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/game.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="146" column="120" lean-forward="true" selection-start-line="146" selection-start-column="7" selection-end-line="146" selection-end-column="120" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/android-src/cellevo-cn-web-iost_change/js/game.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="215">
-          <caret line="169" column="4" selection-start-line="168" selection-start-column="4" selection-end-line="169" selection-end-column="4" />
+          <caret line="1501" column="27" selection-start-line="1501" selection-start-column="27" selection-end-line="1501" selection-end-column="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/android-src/cellevo-en-web-iost/js/game.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="168" column="9" selection-start-line="168" selection-start-column="9" selection-end-line="168" selection-end-column="9" />
+        <state relative-caret-position="215">
+          <caret line="1505" column="27" selection-start-line="1505" selection-start-column="27" selection-end-line="1505" selection-end-column="27" />
         </state>
       </provider>
     </entry>
