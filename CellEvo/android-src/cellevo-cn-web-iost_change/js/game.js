@@ -13,9 +13,9 @@ var apoptosis = document.getElementById('apoptosis');
 
 // import IOST from './iost';
 let IOST = require('iost');
-let testglobalAdd = "ContractHBMiwQMZ1JEktwCkTQkXExgLLmMjyvgcYgegP668LpCA";
+let testglobalAdd = "Contract3DNCg3B6bRmCM6gKUHnxyNyM9t3py7QZH6f6KFm12HaZ";
 let testglobalNode = "http://13.115.202.226:30001/getContractStorage";
-let globalAdd = "Contract6sGG1pBi42HYNrVZB2YDkMzKASiFeNCQ8PWmrTkTGdCZ";
+let globalAdd = "Contract2cmV63Mr7t8UQWdLJUDRYMMhLxW1F1yPTJMbaWhVjdmV";
 let globalNode ="http://api.iost.io/getContractStorage";
 
 let currentAdd=globalAdd;
@@ -774,16 +774,716 @@ const defaultConfig = {
 
 function iostrealsave(totalcell){
     console.log("enter iost save");
+
+    let fd = "\"use strict\";\n" +
+        "\n" +
+        "class CellDB{\n" +
+        "    constructor () {\n" +
+        "        this.data = null;\n" +
+        "        \n" +
+        "    }\n" +
+        "    init(){\n" +
+        "    }\n" +
+        "    \n" +
+        "    set (uri, data) {\n" +
+        "        this.data[uri] = data\n" +
+        "    }\n" +
+        "    \n" +
+        "    get (uri) {\n" +
+        "        if (this.data[uri]) {\n" +
+        "            return this.data[uri]\n" +
+        "        }\n" +
+        "        return false\n" +
+        "    }\n" +
+        "}\n" +
+        "class WorldDB{\n" +
+        "    constructor () {\n" +
+        "        this.data = null;\n" +
+        "    }\n" +
+        "    init(){\n" +
+        "    }\n" +
+        "    set (uri, data) {\n" +
+        "        this.data[uri] = data\n" +
+        "        \n" +
+        "    }\n" +
+        "    \n" +
+        "    get (uri) {\n" +
+        "        if (this.data[uri]) {\n" +
+        "            return this.data[uri]\n" +
+        "        }\n" +
+        "        return false\n" +
+        "    }\n" +
+        "}\n" +
+        "class CellHistory {\n" +
+        "    constructor (text) {\n" +
+        "        if (text) {\n" +
+        "            var obj = JSON.parse(text);\n" +
+        "            //World id\n" +
+        "            this.id = obj.id;\n" +
+        "            //World cell info\n" +
+        "            this.cellno = obj.cellno;\n" +
+        "            this.adaption = obj.adaption;\n" +
+        "            this.surviveability = obj.surviveability;\n" +
+        "            this.division = obj.division;\n" +
+        "            this.environment = obj.environment;\n" +
+        "            this.day = obj.day;\n" +
+        "            this.totoalscore = obj.totoalscore;\n" +
+        "            this.worldtitle = obj.worldtitle;\n" +
+        "            this.startcellid = obj.startcellid;\n" +
+        "            this.endcellid = obj.endcellid;\n" +
+        "            this.cellsdetail = obj.cellsdetail;\n" +
+        "            this.version = obj.version;\n" +
+        "            \n" +
+        "        } else {\n" +
+        "            this.id = 0;\n" +
+        "            this.cellno = 0;\n" +
+        "            this.adaption = 0;\n" +
+        "            this.surviveability = 0;\n" +
+        "            this.division = 0;\n" +
+        "            this.environment = 0;\n" +
+        "            this.day = 0;\n" +
+        "            this.totoalscore = 0;\n" +
+        "            this.worldtitle = \"\";\n" +
+        "            this.startcellid = 0;\n" +
+        "            this.endcellid = 0;\n" +
+        "            this.cellsdetail = \"\";\n" +
+        "            this.version = 2;\n" +
+        "        }\n" +
+        "    }\n" +
+        "    \n" +
+        "    init () {\n" +
+        "        \n" +
+        "    }\n" +
+        "    \n" +
+        "    \n" +
+        "}\n" +
+        "\n" +
+        "class CellEvolution {\n" +
+        "    constructor (text) {\n" +
+        "        if (text) {\n" +
+        "            var obj = JSON.parse(text);\n" +
+        "            // Cell id\n" +
+        "            this.id = obj.id;\n" +
+        "            //\n" +
+        "            this.creator = obj.creator;\n" +
+        "            //cell info\n" +
+        "            this.cellno = obj.cellno;\n" +
+        "            this.adaption = obj.adaption;\n" +
+        "            this.surviveability = obj.surviveability;\n" +
+        "            this.division = obj.division;\n" +
+        "            this.environment = obj.environment;\n" +
+        "            this.day = obj.day;\n" +
+        "            this.totoalscore = obj.totoalscore;\n" +
+        "            this.finaltitle = obj.finaltitle;\n" +
+        "            this.belong = obj.belong;\n" +
+        "            this.version = obj.version;\n" +
+        "        } else {\n" +
+        "            this.id = 0;\n" +
+        "            this.creator =  \"\";\n" +
+        "            this.cellno = 0;\n" +
+        "            this.adaption = 0;\n" +
+        "            this.surviveability = 0;\n" +
+        "            this.division = 0;\n" +
+        "            this.environment = 0;\n" +
+        "            this.day = 0;\n" +
+        "            this.totoalscore = 0;\n" +
+        "            this.finaltitle = \"\";\n" +
+        "            this.belong=0;\n" +
+        "            this.version=2;\n" +
+        "        }\n" +
+        "    }\n" +
+        "    \n" +
+        "    init () {\n" +
+        "        \n" +
+        "    }\n" +
+        "    \n" +
+        "}\n" +
+        "\n" +
+        "\n" +
+        "\n" +
+        "class CellEvolutionMainContract {\n" +
+        "    init() {\n" +
+        "        this.CellDB = new CellDB();\n" +
+        "        \n" +
+        "//        this.WorldDB = new WorldDB();\n" +
+        "        \n" +
+        "        let admAdd=\"whitematrix\";\n" +
+        "        let isOpen = true;\n" +
+        "//        let totalcell = 0;\n" +
+        "        let historyno = 1;\n" +
+        "        storage.put(\"totalcell\",\"0\");\n" +
+        "        storage.mapPut(\"nonce\", \"newtest\", JSON.stringify(0));\n" +
+        "        storage.put(\"currentworld\",\"0\");\n" +
+        "        storage.put(\"inheritno\",\"1000\");\n" +
+        "        let world0 = new CellHistory();\n" +
+        "        storage.mapPut(\"WorldHistory\",\"0\",JSON.stringify(world0));\n" +
+        "        \n" +
+        "//        storage.put(\"nonce\", JSON.stringify(0));\n" +
+        "\n" +
+        "        // var cellworld =new CellHistory();\n" +
+        "        // this.cellhistory.put(this.historyno,cellworld);\n" +
+        "        // this.version = 2;\n" +
+        "    }\n" +
+        "    \n" +
+        "    gethistoryno() {\n" +
+        "        return this.historyno;\n" +
+        "    }\n" +
+        "    \n" +
+        "    getIsOpen() {\n" +
+        "        return this.isOpen;\n" +
+        "    }\n" +
+        "    \n" +
+        "    gettotalcell() {\n" +
+        "        return this.totalcell;\n" +
+        "    }\n" +
+        "    \n" +
+        "    getAdminAddress() {\n" +
+        "        return this.admAdd;\n" +
+        "    }\n" +
+        "    \n" +
+        "    setIsOpen(isopen) {\n" +
+        "        if (tx.publisher === this.admAdd) {\n" +
+        "            this.isOpen = isopen;\n" +
+        "        } else {\n" +
+        "            throw new Error(\"Admin only\");\n" +
+        "        }\n" +
+        "    }\n" +
+        "    \n" +
+        "    setCellno(cellno) {\n" +
+        "        if (tx.publisher === this.admAdd) {\n" +
+        "            this.totalcell = cellno;\n" +
+        "        } else {\n" +
+        "            throw new Error(\"Admin only\");\n" +
+        "        }\n" +
+        "    }\n" +
+        "    sethistoryno(historyno) {\n" +
+        "        if (tx.publisher === this.admAdd) {\n" +
+        "            this.historyno = historyno;\n" +
+        "        } else {\n" +
+        "            throw new Error(\"Admin only\");\n" +
+        "        }\n" +
+        "    }\n" +
+        "    setVersion(versionno) {\n" +
+        "        if (Blockchain.transaction.from === this.admAdd) {\n" +
+        "            this.isOpen = versionno;\n" +
+        "        } else {\n" +
+        "            throw new Error(\"Admin only\");\n" +
+        "        }\n" +
+        "    }\n" +
+        "    \n" +
+        "    \n" +
+        "    donate(){\n" +
+        "        \n" +
+        "        var bvalue = new BigNumber(Blockchain.transaction.value);\n" +
+        "        this.balance = bvalue.add(this.balance);\n" +
+        "        \n" +
+        "    }\n" +
+        "    //, cellno, adaption, surviveability, division, environment, day, totoalscore, finaltitle\n" +
+        "    dnamerge(id, cellno, adaption, surviveability, division, environment, day, totoalscore, finaltitle) {\n" +
+        "        //鉴定开始\n" +
+        "//        if (!this.isOpen) {\n" +
+        "//            throw new Error(\"Game is currently closed\");\n" +
+        "//        }\n" +
+        "     \n" +
+        "        id = id.trim();\n" +
+        "        cellno = cellno.trim();\n" +
+        "        adaption = adaption.trim();\n" +
+        "        surviveability = surviveability.trim();\n" +
+        "        division = division.trim();\n" +
+        "        environment = environment.trim();\n" +
+        "        day = day.trim();\n" +
+        "        totoalscore = totoalscore.trim();\n" +
+        "        finaltitle = finaltitle.trim();\n" +
+        "        \n" +
+        "        \n" +
+        "        if (id === \"\"){\n" +
+        "            throw new Error(\"empty id\");\n" +
+        "        }\n" +
+        "        \n" +
+        "        let cell = new CellEvolution();\n" +
+        "        \n" +
+        "        \n" +
+        "        cell.id = id;\n" +
+        "        cell.creator = tx.publisher;\n" +
+        "        \n" +
+        "        cell.cellno = cellno;\n" +
+        "        cell.adaption = adaption;\n" +
+        "        cell.surviveability = surviveability;\n" +
+        "        cell.division = division;\n" +
+        "        cell.environment = environment;\n" +
+        "        cell.day = day;\n" +
+        "        cell.totoalscore = totoalscore;\n" +
+        "        cell.finaltitle = finaltitle;\n" +
+        "        cell.belong = storage.get(\"currentworld\");\n" +
+        "        cell.version = this.version;\n" +
+        "       \n" +
+        "        let totalcellno = Number(storage.get(\"totalcell\"));\n" +
+        "        totalcellno++;\n" +
+        "        \n" +
+        "        storage.mapPut(\"CellHistory\", totalcellno.toString(), JSON.stringify(cell));\n" +
+        "        storage.put(\"totalcell\",totalcellno.toString());\n" +
+        "        \n" +
+        "\n" +
+        "        let newcellworld =new CellHistory(storage.mapGet(\"WorldHistory\",storage.get(\"currentworld\")));\n" +
+        "//        storage.mapPut(\"WorldHistory\",\"0\",JSON.stringify(world0));\n" +
+        "//        this.CellDB.set(totoalcell,cell);\n" +
+        "        // this.celldb.put(id, cell);\n" +
+        "        \n" +
+        "        // var newcellworld = WorldDB.get(this.historyno);\n" +
+        "         newcellworld.id = storage.get(\"currentworld\");\n" +
+        "         newcellworld.cellno = Number(newcellworld.cellno) + Number(cellno);\n" +
+        "         newcellworld.adaption = Number(newcellworld.adaption) + Number(adaption);\n" +
+        "         newcellworld.surviveability = Number(newcellworld.surviveability) + Number(surviveability);\n" +
+        "         newcellworld.division = Number(newcellworld.division) + Number(division);\n" +
+        "         newcellworld.environment = Number(newcellworld.environment) + Number(environment);\n" +
+        "         newcellworld.day = Number(newcellworld.day) + Number(day);\n" +
+        "         newcellworld.totoalscore = Number(newcellworld.totoalscore) + Number(totoalscore);\n" +
+        "         newcellworld.worldtitle = \"World in Evolution\";\n" +
+        "        \n" +
+        "         newcellworld.cellsdetail = newcellworld.cellsdetail.toString()+id.toString()+\",\"+tx.publisher.toString()+\",\"+cellno.toString()+\",\"+adaption.toString()+\",\"+surviveability.toString()+\",\"+division.toString()+\",\"+environment.toString()+\",\"+day.toString()+\",\"+totoalscore.toString()+\",\"+finaltitle.toString()+\",\"+ newcellworld.id+\"|\";\n" +
+        "        \n" +
+        "        \n" +
+        "         newcellworld.endcellid = Number(id);\n" +
+        "        storage.mapPut(\"WorldHistory\",storage.get(\"currentworld\"),JSON.stringify(newcellworld));\n" +
+        "        // this.cellhistory.set(this.historyno,newcellworld);\n" +
+        "        \n" +
+        "        \n" +
+        "         this.checkdeath(Number(newcellworld.cellno),Number(newcellworld.adaption),Number(newcellworld.surviveability),Number(newcellworld.division));\n" +
+        "        \n" +
+        "        \n" +
+        "    }\n" +
+        "    newinheritance(){\n" +
+        "        \n" +
+        "        let inheritnoN = Number(storage.get(\"inheritno\"));\n" +
+        "        inheritnoN++;\n" +
+        "        \n" +
+        "        storage.put(\"inheritno\",inheritnoN.toString());\n" +
+        "\n" +
+        "        \n" +
+        "        \n" +
+        "    }\n" +
+        "    \n" +
+        "     worldtitlecheck(){\n" +
+        "          let newcellworld =new CellHistory(storage.mapGet(\"WorldHistory\",storage.get(\"currentworld\")));\n" +
+        "         \n" +
+        "         var inworldno = Number(newcellworld.endcellid) - Number(newcellworld.startcellid);\n" +
+        "         if(inworldno > 100){\n" +
+        "             newcellworld.worldtitle = \"Highly evolved\";\n" +
+        "         }else if(inworldno > 50){\n" +
+        "             newcellworld.worldtitle = \"Lively\";\n" +
+        "    \n" +
+        "         }else{\n" +
+        "             newcellworld.worldtitle = \"Quiet\";\n" +
+        "         }\n" +
+        "    \n" +
+        "         if(newcellworld.adaption > 10000000000){\n" +
+        "             newcellworld.worldtitle = newcellworld.worldtitle + \" High adaption\";\n" +
+        "    \n" +
+        "         }else if(newcellworld.adaption >1000000000){\n" +
+        "             newcellworld.worldtitle = newcellworld.worldtitle + \" Normal adaption\";\n" +
+        "    \n" +
+        "         }else{\n" +
+        "             newcellworld.worldtitle = newcellworld.worldtitle + \" Low adaption\";\n" +
+        "         }\n" +
+        "    \n" +
+        "    \n" +
+        "         if(newcellworld.surviveability > 10000000000){\n" +
+        "             newcellworld.worldtitle = newcellworld.worldtitle + \" High surviveability\";\n" +
+        "    \n" +
+        "         }else if(newcellworld.surviveability >1000000000){\n" +
+        "             newcellworld.worldtitle = newcellworld.worldtitle + \" Normal surviveability\";\n" +
+        "    \n" +
+        "         }else{\n" +
+        "             newcellworld.worldtitle = newcellworld.worldtitle + \" Low surviveability\";\n" +
+        "         }\n" +
+        "    \n" +
+        "    \n" +
+        "         if(newcellworld.division > 10000000000){\n" +
+        "             newcellworld.worldtitle = newcellworld.worldtitle + \" High division\";\n" +
+        "    \n" +
+        "         }else if(newcellworld.division >1000000000){\n" +
+        "             newcellworld.worldtitle = newcellworld.worldtitle + \" Normal division\";\n" +
+        "    \n" +
+        "         }else{\n" +
+        "             newcellworld.worldtitle = newcellworld.worldtitle + \" Low division\";\n" +
+        "         }\n" +
+        "    \n" +
+        "         if(newcellworld.environment > 1000){\n" +
+        "             newcellworld.worldtitle = newcellworld.worldtitle + \" Severe environment\";\n" +
+        "    \n" +
+        "         }else if(newcellworld.division >500){\n" +
+        "             newcellworld.worldtitle = newcellworld.worldtitle + \" Normal environment\";\n" +
+        "    \n" +
+        "         }else{\n" +
+        "             newcellworld.worldtitle = newcellworld.worldtitle + \" Gental environment\";\n" +
+        "         }\n" +
+        "    \n" +
+        "    \n" +
+        "         var worldtype = \"\";\n" +
+        "         worldtype = \" Human World\";\n" +
+        "         if((newcellworld.cellno < 100000) && (newcellworld.day >5000)){\n" +
+        "             worldtype= \" Spirit World\";\n" +
+        "    \n" +
+        "    \n" +
+        "         }\n" +
+        "    \n" +
+        "         if((newcellworld.cellno >1000000000000) && (newcellworld.day >999)){\n" +
+        "             worldtype= \" Zerg's World\";\n" +
+        "    \n" +
+        "         }\n" +
+        "    \n" +
+        "         if((newcellworld.surviveability >100000000000) && (newcellworld.day >999) && (newcellworld.surviveability >newcellworld.adaption)&& (newcellworld.surviveability >newcellworld.division)){\n" +
+        "             worldtype= \" Machanical World\";\n" +
+        "    \n" +
+        "         }\n" +
+        "    \n" +
+        "         if((newcellworld.division >100000000000) && (newcellworld.day >999) && (newcellworld.division >newcellworld.adaption)&& (newcellworld.division >newcellworld.surviveability)){\n" +
+        "             worldtype= \" Ocean World\";\n" +
+        "    \n" +
+        "         }\n" +
+        "         if((newcellworld.adaption >100000000000) && (newcellworld.day >999) && (newcellworld.adaption >newcellworld.surviveability)&& (newcellworld.adaption >newcellworld.division)){\n" +
+        "             worldtype= \" Rock World\";\n" +
+        "    \n" +
+        "         }\n" +
+        "    \n" +
+        "//         var ran=this.randomize(0,100);\n" +
+        "    \n" +
+        "         if((newcellworld.day >5000) && (newcellworld.surviveability == newcellworld.adaption) && (newcellworld.adaption == newcellworld.division)){\n" +
+        "             worldtype= \" Gaea\";\n" +
+        "         }\n" +
+        "    \n" +
+        "         if((newcellworld.day >8000)){\n" +
+        "             worldtype= \" Dark Matter\";\n" +
+        "    \n" +
+        "         }\n" +
+        "    \n" +
+        "         newcellworld.worldtitle = newcellworld.worldtitle + worldtype;\n" +
+        "    \n" +
+        "    \n" +
+        "    \n" +
+        "    \n" +
+        "    \n" +
+        "         storage.mapPut(\"WorldHistory\",storage.get(\"currentworld\"),JSON.stringify(newcellworld));\n" +
+        "         \n" +
+        "    \n" +
+        "     }\n" +
+        "    \n" +
+        "//     randomize(lower,upper) {\n" +
+        "//         return Math.floor((Math.random() * (upper - lower) + lower));\n" +
+        "//     }\n" +
+        "//\n" +
+        "     inheritance() {\n" +
+        "    \n" +
+        "//\n" +
+        "//         var newcellworld = this.cellhistory.get(this.historyno);\n" +
+        "//         var inheritancearray=[];\n" +
+        "//         inheritancearray.push(this.randomize(0,100));\n" +
+        "//         inheritancearray.push(this.randomize(0,100));\n" +
+        "//         inheritancearray.push(this.randomize(0,100));\n" +
+        "//         inheritancearray.push(this.randomize(0,100));\n" +
+        "//         if( newcellworld.adaption > 1000000000){\n" +
+        "//             inheritancearray.push(this.randomize(0,100));\n" +
+        "//         }else if(newcellworld.adaption > 100000000){\n" +
+        "//             inheritancearray.push(this.randomize(0,50));\n" +
+        "//         }else{\n" +
+        "//             inheritancearray.push(this.randomize(0,10));\n" +
+        "//         }\n" +
+        "//\n" +
+        "//         if( newcellworld.surviveability > 1000000000){\n" +
+        "//             inheritancearray.push(this.randomize(0,100));\n" +
+        "//         }else if(newcellworld.surviveability > 100000000){\n" +
+        "//             inheritancearray.push(this.randomize(0,50));\n" +
+        "//         }else{\n" +
+        "//             inheritancearray.push(this.randomize(0,10));\n" +
+        "//         }\n" +
+        "//\n" +
+        "//         if( newcellworld.division > 1000000000){\n" +
+        "//             inheritancearray.push(this.randomize(0,100));\n" +
+        "//         }else if(newcellworld.division > 100000000){\n" +
+        "//             inheritancearray.push(this.randomize(0,50));\n" +
+        "//         }else{\n" +
+        "//             inheritancearray.push(this.randomize(0,10));\n" +
+        "//         }\n" +
+        "//         inheritancearray.push(this.inheritanceno);\n" +
+        "//\n" +
+        "    \n" +
+        "//         return inheritancearray;\n" +
+        "    \n" +
+        "     }\n" +
+        "    \n" +
+        "     checkdeath(cellno,adaption,surviveability,division){\n" +
+        "         if(cellno > 10000){\n" +
+        "             //如果没有平衡发展\n" +
+        "             var balancecheck = (adaption+ surviveability+ division)/3;\n" +
+        "             if( (adaption <= balancecheck*1.5) && (adaption >= balancecheck*0.5) && (surviveability <= balancecheck*1.5) &&\n" +
+        "    \n" +
+        "                (surviveability >= balancecheck*0.5) && (division <= balancecheck * 1.5) && (division >= balancecheck*0.5) ){\n" +
+        "                 //平衡发展，很OK, Update\n" +
+        "    \n" +
+        "             }else{\n" +
+        "                 //die\n" +
+        "                 this.worldtitlecheck();\n" +
+        "                 \n" +
+        "                 let newworldno =  Number(storage.get(\"currentworld\"))+1;\n" +
+        "                 storage.put(\"currentworld\",newworldno.toString());\n" +
+        "                 \n" +
+        "                 let newworld = new CellHistory();\n" +
+        "                 newworld.worldtitle = \"World in Evolution\";\n" +
+        "                 newworld.startcellid = storage.get(\"totalcell\");\n" +
+        "                 storage.mapPut(\"WorldHistory\",newworldno.toString(),JSON.stringify(newworld));\n" +
+        "                 \n" +
+        "//                 this.historyno++;\n" +
+        "//                 var cellworld =new CellHistory();\n" +
+        "//                 cellworld.id = this.historyno;\n" +
+        "//                 cellworld.cellno = 0;\n" +
+        "//                 cellworld.adaption = 0;\n" +
+        "//                 cellworld.surviveability = 0;\n" +
+        "//                 cellworld.division =0;\n" +
+        "//                 cellworld.environment =0;\n" +
+        "//                 cellworld.day = 0;\n" +
+        "//                 cellworld.totoalscore = 0;\n" +
+        "//                 cellworld.worldtitle = \"World in Evolution\";\n" +
+        "//                 cellworld.startcellid = parseInt(this.totalcell)+1;\n" +
+        "//                 this.cellhistory.put(this.historyno,cellworld);\n" +
+        "             }\n" +
+        "         }\n" +
+        "    \n" +
+        "     }\n" +
+        "    // setHomeworld(worldid,newtitle){\n" +
+        "    //     if (Blockchain.transaction.from === this.admAdd) {\n" +
+        "    \n" +
+        "    //         var newcellworld = this.cellhistory.get(worldid);\n" +
+        "    //         newcellworld.worldtitle = newtitle;\n" +
+        "    //         this.cellhistory.set(this.historyno,newcellworld);\n" +
+        "    \n" +
+        "    //     } else {\n" +
+        "    //         throw new Error(\"Admin only\");\n" +
+        "    //     }\n" +
+        "    // }\n" +
+        "    \n" +
+        "    // getbalance() {\n" +
+        "    \n" +
+        "    //     return this.balance;\n" +
+        "    \n" +
+        "    // }\n" +
+        "    \n" +
+        "    getworld(historyno) {\n" +
+        "        historyno = historyno.trim();\n" +
+        "        if ( historyno === \"\" ) {\n" +
+        "            throw new Error(\"empty key\")\n" +
+        "        }\n" +
+        "        return this.WorldDB.get(historyno);\n" +
+        "    }\n" +
+        "    \n" +
+        "    getcurrentworld() {\n" +
+        "        return this.WorldDB.get(this.historyno);\n" +
+        "    }\n" +
+        "    \n" +
+        "    get(id) {\n" +
+        "        id = id.trim();\n" +
+        "        if ( id === \"\" ) {\n" +
+        "            throw new Error(\"empty key\")\n" +
+        "        }\n" +
+        "        return this.CellDB.get(id);\n" +
+        "    }\n" +
+        "    \n" +
+        "}\n" +
+        "module.exports = CellEvolutionMainContract;\n";
+    let abi = "{\n" +
+        "    \"lang\": \"javascript\",\n" +
+        "    \"version\": \"1.0.0\",\n" +
+        "    \"abi\": [\n" +
+        "        {\n" +
+        "            \"name\": \"gethistoryno\",\n" +
+        "            \"args\": [],\n" +
+        "            \"amountLimit\": [],\n" +
+        "            \"description\": \"\"\n" +
+        "        },\n" +
+        "        {\n" +
+        "            \"name\": \"getIsOpen\",\n" +
+        "            \"args\": [],\n" +
+        "            \"amountLimit\": [],\n" +
+        "            \"description\": \"\"\n" +
+        "        },\n" +
+        "        {\n" +
+        "            \"name\": \"gettotalcell\",\n" +
+        "            \"args\": [],\n" +
+        "            \"amountLimit\": [],\n" +
+        "            \"description\": \"\"\n" +
+        "        },\n" +
+        "        {\n" +
+        "            \"name\": \"getAdminAddress\",\n" +
+        "            \"args\": [],\n" +
+        "            \"amountLimit\": [],\n" +
+        "            \"description\": \"\"\n" +
+        "        },\n" +
+        "        {\n" +
+        "            \"name\": \"setIsOpen\",\n" +
+        "            \"args\": [\n" +
+        "                \"string\"\n" +
+        "            ],\n" +
+        "            \"amountLimit\": [],\n" +
+        "            \"description\": \"\"\n" +
+        "        },\n" +
+        "        {\n" +
+        "            \"name\": \"setCellno\",\n" +
+        "            \"args\": [\n" +
+        "                \"string\"\n" +
+        "            ],\n" +
+        "            \"amountLimit\": [],\n" +
+        "            \"description\": \"\"\n" +
+        "        },\n" +
+        "        {\n" +
+        "            \"name\": \"sethistoryno\",\n" +
+        "            \"args\": [\n" +
+        "                \"string\"\n" +
+        "            ],\n" +
+        "            \"amountLimit\": [],\n" +
+        "            \"description\": \"\"\n" +
+        "        },\n" +
+        "        {\n" +
+        "            \"name\": \"setVersion\",\n" +
+        "            \"args\": [\n" +
+        "                \"string\"\n" +
+        "            ],\n" +
+        "            \"amountLimit\": [],\n" +
+        "            \"description\": \"\"\n" +
+        "        },\n" +
+        "        {\n" +
+        "            \"name\": \"donate\",\n" +
+        "            \"args\": [],\n" +
+        "            \"amountLimit\": [],\n" +
+        "            \"description\": \"\"\n" +
+        "        },\n" +
+        "        {\n" +
+        "            \"name\": \"dnamerge\",\n" +
+        "            \"args\": [\n" +
+        "                \"string\",\n" +
+        "                \"string\",\n" +
+        "                \"string\",\n" +
+        "                \"string\",\n" +
+        "                \"string\",\n" +
+        "                \"string\",\n" +
+        "                \"string\",\n" +
+        "                \"string\",\n" +
+        "                \"string\"\n" +
+        "            ],\n" +
+        "            \"amountLimit\": [],\n" +
+        "            \"description\": \"\"\n" +
+        "        },\n" +
+        "        {\n" +
+        "            \"name\": \"newinheritance\",\n" +
+        "            \"args\": [],\n" +
+        "            \"amountLimit\": [],\n" +
+        "            \"description\": \"\"\n" +
+        "        },\n" +
+        "        {\n" +
+        "            \"name\": \"worldtitlecheck\",\n" +
+        "            \"args\": [],\n" +
+        "            \"amountLimit\": [],\n" +
+        "            \"description\": \"\"\n" +
+        "        },\n" +
+        "        {\n" +
+        "            \"name\": \"inheritance\",\n" +
+        "            \"args\": [],\n" +
+        "            \"amountLimit\": [],\n" +
+        "            \"description\": \"\"\n" +
+        "        },\n" +
+        "        {\n" +
+        "            \"name\": \"checkdeath\",\n" +
+        "            \"args\": [\n" +
+        "                \"number\",\n" +
+        "                \"number\",\n" +
+        "                \"number\",\n" +
+        "                \"number\"\n" +
+        "            ],\n" +
+        "            \"amountLimit\": [],\n" +
+        "            \"description\": \"\"\n" +
+        "        },\n" +
+        "        {\n" +
+        "            \"name\": \"getworld\",\n" +
+        "            \"args\": [\n" +
+        "                \"string\"\n" +
+        "            ],\n" +
+        "            \"amountLimit\": [],\n" +
+        "            \"description\": \"\"\n" +
+        "        },\n" +
+        "        {\n" +
+        "            \"name\": \"getcurrentworld\",\n" +
+        "            \"args\": [],\n" +
+        "            \"amountLimit\": [],\n" +
+        "            \"description\": \"\"\n" +
+        "        },\n" +
+        "        {\n" +
+        "            \"name\": \"get\",\n" +
+        "            \"args\": [\n" +
+        "                \"string\"\n" +
+        "            ],\n" +
+        "            \"amountLimit\": [],\n" +
+        "            \"description\": \"\"\n" +
+        "        }\n" +
+        "    ]\n" +
+        "}\n";
+
     const contractAddress = globalAdd;
     let nid = parseInt(totalcell)+1;
+    var nameofide="iostide";
+    var idofide="pcj5r5i4u1";
+    var amountofide="0.416";
     var test=new Array(nid.toString(),cellno.toString(),adaption.toString(),surviveability.toString(),division.toString(),environment.toString(),day.toString(),totoalscore.toString(),renderAndTranslate(finaltitle).toString());
+    //  var newtest=new Array(nameofide.toString(),idofide.toString(),amountofide.toString());
+    // var newtest=["{\"info\":{\"lang\":\"javascript\",\"version\":\"1.0.0\",\"abi\":[{\"name\":\"gethistoryno\"},{\"name\":\"getIsOpen\"},{\"name\":\"gettotalcell\"},{\"name\":\"getAdminAddress\"},{\"name\":\"setIsOpen\",\"args\":[\"string\"]},{\"name\":\"setCellno\",\"args\":[\"string\"]},{\"name\":\"sethistoryno\",\"args\":[\"string\"]},{\"name\":\"setVersion\",\"args\":[\"string\"]},{\"name\":\"donate\"},{\"name\":\"dnamerge\",\"args\":[\"string\",\"string\",\"string\",\"string\",\"string\",\"string\",\"string\",\"string\",\"string\"]},{\"name\":\"newinheritance\"},{\"name\":\"worldtitlecheck\"},{\"name\":\"inheritance\"},{\"name\":\"checkdeath\",\"args\":[\"number\",\"number\",\"number\",\"number\"]},{\"name\":\"getworld\",\"args\":[\"string\"]},{\"name\":\"getcurrentworld\"},{\"name\":\"get\",\"args\":[\"string\"]}]},\"code\":\"\\\"use strict\\\";\\n\\nclass CellDB{\\n constructor () {\\n this.data = null;\\n \\n }\\n init(){\\n }\\n \\n set (uri, data) {\\n this.data[uri] = data\\n }\\n \\n get (uri) {\\n if (this.data[uri]) {\\n return this.data[uri]\\n }\\n return false\\n }\\n}\\nclass WorldDB{\\n constructor () {\\n this.data = null;\\n }\\n init(){\\n }\\n set (uri, data) {\\n this.data[uri] = data\\n \\n }\\n \\n get (uri) {\\n if (this.data[uri]) {\\n return this.data[uri]\\n }\\n return false\\n }\\n}\\nclass CellHistory {\\n constructor (text) {\\n if (text) {\\n var obj = JSON.parse(text);\\n //World id\\n this.id = obj.id;\\n //World cell info\\n this.cellno = obj.cellno;\\n this.adaption = obj.adaption;\\n this.surviveability = obj.surviveability;\\n this.division = obj.division;\\n this.environment = obj.environment;\\n this.day = obj.day;\\n this.totoalscore = obj.totoalscore;\\n this.worldtitle = obj.worldtitle;\\n this.startcellid = obj.startcellid;\\n this.endcellid = obj.endcellid;\\n this.cellsdetail = obj.cellsdetail;\\n this.version = obj.version;\\n \\n } else {\\n this.id = 0;\\n this.cellno = 0;\\n this.adaption = 0;\\n this.surviveability = 0;\\n this.division = 0;\\n this.environment = 0;\\n this.day = 0;\\n this.totoalscore = 0;\\n this.worldtitle = \\\"\\\";\\n this.startcellid = 0;\\n this.endcellid = 0;\\n this.cellsdetail = \\\"\\\";\\n this.version = 2;\\n }\\n }\\n \\n init () {\\n \\n }\\n \\n \\n}\\n\\nclass CellEvolution {\\n constructor (text) {\\n if (text) {\\n var obj = JSON.parse(text);\\n // Cell id\\n this.id = obj.id;\\n //\\n this.creator = obj.creator;\\n //cell info\\n this.cellno = obj.cellno;\\n this.adaption = obj.adaption;\\n this.surviveability = obj.surviveability;\\n this.division = obj.division;\\n this.environment = obj.environment;\\n this.day = obj.day;\\n this.totoalscore = obj.totoalscore;\\n this.finaltitle = obj.finaltitle;\\n this.belong = obj.belong;\\n this.version = obj.version;\\n } else {\\n this.id = 0;\\n this.creator = \\\"\\\";\\n this.cellno = 0;\\n this.adaption = 0;\\n this.surviveability = 0;\\n this.division = 0;\\n this.environment = 0;\\n this.day = 0;\\n this.totoalscore = 0;\\n this.finaltitle = \\\"\\\";\\n this.belong=0;\\n this.version=2;\\n }\\n }\\n \\n init () {\\n \\n }\\n \\n}\\n\\n\\n\\nclass CellEvolutionMainContract {\\n init() {\\n this.CellDB = new CellDB();\\n \\n// this.WorldDB = new WorldDB();\\n \\n let admAdd=\\\"n1NJaHRXpe49fc98GtuxxYVFyq1xsYCHx9d\\\";\\n let isOpen = true;\\n// let totalcell = 0;\\n let historyno = 1;\\n storage.put(\\\"totalcell\\\",\\\"0\\\");\\n storage.mapPut(\\\"nonce\\\", \\\"newtest\\\", JSON.stringify(0));\\n storage.put(\\\"currentworld\\\",\\\"0\\\");\\n storage.put(\\\"inheritno\\\",\\\"1000\\\");\\n let world0 = new CellHistory();\\n storage.mapPut(\\\"WorldHistory\\\",\\\"0\\\",JSON.stringify(world0));\\n \\n// storage.put(\\\"nonce\\\", JSON.stringify(0));\\n\\n // var cellworld =new CellHistory();\\n // this.cellhistory.put(this.historyno,cellworld);\\n // this.version = 2;\\n }\\n \\n gethistoryno() {\\n return this.historyno;\\n }\\n \\n getIsOpen() {\\n return this.isOpen;\\n }\\n \\n gettotalcell() {\\n return this.totalcell;\\n }\\n \\n getAdminAddress() {\\n return this.admAdd;\\n }\\n \\n setIsOpen(isopen) {\\n if (Blockchain.transaction.from === this.admAdd) {\\n this.isOpen = isopen;\\n } else {\\n throw new Error(\\\"Admin only\\\");\\n }\\n }\\n \\n setCellno(cellno) {\\n if (Blockchain.transaction.from === this.admAdd) {\\n this.totalcell = cellno;\\n } else {\\n throw new Error(\\\"Admin only\\\");\\n }\\n }\\n sethistoryno(historyno) {\\n if (Blockchain.transaction.from === this.admAdd) {\\n this.historyno = historyno;\\n } else {\\n throw new Error(\\\"Admin only\\\");\\n }\\n }\\n setVersion(versionno) {\\n if (Blockchain.transaction.from === this.admAdd) {\\n this.isOpen = versionno;\\n } else {\\n throw new Error(\\\"Admin only\\\");\\n }\\n }\\n \\n \\n donate(){\\n \\n var bvalue = new BigNumber(Blockchain.transaction.value);\\n this.balance = bvalue.add(this.balance);\\n \\n }\\n //, cellno, adaption, surviveability, division, environment, day, totoalscore, finaltitle\\n dnamerge(id, cellno, adaption, surviveability, division, environment, day, totoalscore, finaltitle) {\\n //鉴定开始\\n// if (!this.isOpen) {\\n// throw new Error(\\\"Game is currently closed\\\");\\n// }\\n \\n id = id.trim();\\n cellno = cellno.trim();\\n adaption = adaption.trim();\\n surviveability = surviveability.trim();\\n division = division.trim();\\n environment = environment.trim();\\n day = day.trim();\\n totoalscore = totoalscore.trim();\\n finaltitle = finaltitle.trim();\\n \\n \\n if (id === \\\"\\\"){\\n throw new Error(\\\"empty id\\\");\\n }\\n \\n let cell = new CellEvolution();\\n \\n \\n cell.id = id;\\n// cell.creator = from;\\n \\n cell.cellno = cellno;\\n cell.adaption = adaption;\\n cell.surviveability = surviveability;\\n cell.division = division;\\n cell.environment = environment;\\n cell.day = day;\\n cell.totoalscore = totoalscore;\\n cell.finaltitle = finaltitle;\\n cell.belong = storage.get(\\\"currentworld\\\");\\n cell.version = this.version;\\n \\n let totalcellno = Number(storage.get(\\\"totalcell\\\"));\\n totalcellno++;\\n \\n storage.mapPut(\\\"CellHistory\\\", totalcellno.toString(), JSON.stringify(cell));\\n storage.put(\\\"totalcell\\\",totalcellno.toString());\\n \\n\\n let newcellworld =new CellHistory(storage.mapGet(\\\"WorldHistory\\\",storage.get(\\\"currentworld\\\")));\\n// storage.mapPut(\\\"WorldHistory\\\",\\\"0\\\",JSON.stringify(world0));\\n// this.CellDB.set(totoalcell,cell);\\n // this.celldb.put(id, cell);\\n \\n // var newcellworld = WorldDB.get(this.historyno);\\n newcellworld.id = storage.get(\\\"currentworld\\\");\\n newcellworld.cellno = Number(newcellworld.cellno) + Number(cellno);\\n newcellworld.adaption = Number(newcellworld.adaption) + Number(adaption);\\n newcellworld.surviveability = Number(newcellworld.surviveability) + Number(surviveability);\\n newcellworld.division = Number(newcellworld.division) + Number(division);\\n newcellworld.environment = Number(newcellworld.environment) + Number(environment);\\n newcellworld.day = Number(newcellworld.day) + Number(day);\\n newcellworld.totoalscore = Number(newcellworld.totoalscore) + Number(totoalscore);\\n newcellworld.worldtitle = \\\"World in Evolution\\\";\\n \\n newcellworld.cellsdetail = newcellworld.cellsdetail.toString()+id.toString()+\\\",\\\"+\\\"from\\\"+\\\",\\\"+cellno.toString()+\\\",\\\"+adaption.toString()+\\\",\\\"+surviveability.toString()+\\\",\\\"+division.toString()+\\\",\\\"+environment.toString()+\\\",\\\"+day.toString()+\\\",\\\"+totoalscore.toString()+\\\",\\\"+finaltitle.toString()+\\\",\\\"+ newcellworld.id+\\\"|\\\";\\n \\n \\n newcellworld.endcellid = Number(id);\\n storage.mapPut(\\\"WorldHistory\\\",storage.get(\\\"currentworld\\\"),JSON.stringify(newcellworld));\\n // this.cellhistory.set(this.historyno,newcellworld);\\n \\n \\n this.checkdeath(Number(newcellworld.cellno),Number(newcellworld.adaption),Number(newcellworld.surviveability),Number(newcellworld.division));\\n \\n \\n }\\n newinheritance(){\\n \\n let inheritnoN = Number(storage.get(\\\"inheritno\\\"));\\n inheritnoN++;\\n \\n storage.put(\\\"inheritno\\\",inheritnoN.toString());\\n\\n \\n \\n }\\n \\n worldtitlecheck(){\\n let newcellworld =new CellHistory(storage.mapGet(\\\"WorldHistory\\\",storage.get(\\\"currentworld\\\")));\\n \\n var inworldno = Number(newcellworld.endcellid) - Number(newcellworld.startcellid);\\n if(inworldno \\u003e 100){\\n newcellworld.worldtitle = \\\"Highly evolved\\\";\\n }else if(inworldno \\u003e 50){\\n newcellworld.worldtitle = \\\"Lively\\\";\\n \\n }else{\\n newcellworld.worldtitle = \\\"Quiet\\\";\\n }\\n \\n if(newcellworld.adaption \\u003e 10000000000){\\n newcellworld.worldtitle = newcellworld.worldtitle + \\\" High adaption\\\";\\n \\n }else if(newcellworld.adaption \\u003e1000000000){\\n newcellworld.worldtitle = newcellworld.worldtitle + \\\" Normal adaption\\\";\\n \\n }else{\\n newcellworld.worldtitle = newcellworld.worldtitle + \\\" Low adaption\\\";\\n }\\n \\n \\n if(newcellworld.surviveability \\u003e 10000000000){\\n newcellworld.worldtitle = newcellworld.worldtitle + \\\" High surviveability\\\";\\n \\n }else if(newcellworld.surviveability \\u003e1000000000){\\n newcellworld.worldtitle = newcellworld.worldtitle + \\\" Normal surviveability\\\";\\n \\n }else{\\n newcellworld.worldtitle = newcellworld.worldtitle + \\\" Low surviveability\\\";\\n }\\n \\n \\n if(newcellworld.division \\u003e 10000000000){\\n newcellworld.worldtitle = newcellworld.worldtitle + \\\" High division\\\";\\n \\n }else if(newcellworld.division \\u003e1000000000){\\n newcellworld.worldtitle = newcellworld.worldtitle + \\\" Normal division\\\";\\n \\n }else{\\n newcellworld.worldtitle = newcellworld.worldtitle + \\\" Low division\\\";\\n }\\n \\n if(newcellworld.environment \\u003e 1000){\\n newcellworld.worldtitle = newcellworld.worldtitle + \\\" Severe environment\\\";\\n \\n }else if(newcellworld.division \\u003e500){\\n newcellworld.worldtitle = newcellworld.worldtitle + \\\" Normal environment\\\";\\n \\n }else{\\n newcellworld.worldtitle = newcellworld.worldtitle + \\\" Gental environment\\\";\\n }\\n \\n \\n var worldtype = \\\"\\\";\\n worldtype = \\\" Human World\\\";\\n if((newcellworld.cellno \\u003c 100000) \\u0026\\u0026 (newcellworld.day \\u003e5000)){\\n worldtype= \\\" Spirit World\\\";\\n \\n \\n }\\n \\n if((newcellworld.cellno \\u003e1000000000000) \\u0026\\u0026 (newcellworld.day \\u003e999)){\\n worldtype= \\\" Zerg's World\\\";\\n \\n }\\n \\n if((newcellworld.surviveability \\u003e100000000000) \\u0026\\u0026 (newcellworld.day \\u003e999) \\u0026\\u0026 (newcellworld.surviveability \\u003enewcellworld.adaption)\\u0026\\u0026 (newcellworld.surviveability \\u003enewcellworld.division)){\\n worldtype= \\\" Machanical World\\\";\\n \\n }\\n \\n if((newcellworld.division \\u003e100000000000) \\u0026\\u0026 (newcellworld.day \\u003e999) \\u0026\\u0026 (newcellworld.division \\u003enewcellworld.adaption)\\u0026\\u0026 (newcellworld.division \\u003enewcellworld.surviveability)){\\n worldtype= \\\" Ocean World\\\";\\n \\n }\\n if((newcellworld.adaption \\u003e100000000000) \\u0026\\u0026 (newcellworld.day \\u003e999) \\u0026\\u0026 (newcellworld.adaption \\u003enewcellworld.surviveability)\\u0026\\u0026 (newcellworld.adaption \\u003enewcellworld.division)){\\n worldtype= \\\" Rock World\\\";\\n \\n }\\n \\n// var ran=this.randomize(0,100);\\n \\n if((newcellworld.day \\u003e5000) \\u0026\\u0026 (newcellworld.surviveability == newcellworld.adaption) \\u0026\\u0026 (newcellworld.adaption == newcellworld.division)){\\n worldtype= \\\" Gaea\\\";\\n }\\n \\n if((newcellworld.day \\u003e8000)){\\n worldtype= \\\" Dark Matter\\\";\\n \\n }\\n \\n newcellworld.worldtitle = newcellworld.worldtitle + worldtype;\\n \\n \\n \\n \\n \\n storage.mapPut(\\\"WorldHistory\\\",storage.get(\\\"currentworld\\\"),JSON.stringify(newcellworld));\\n \\n \\n }\\n \\n// randomize(lower,upper) {\\n// return Math.floor((Math.random() * (upper - lower) + lower));\\n// }\\n//\\n inheritance() {\\n \\n//\\n// var newcellworld = this.cellhistory.get(this.historyno);\\n// var inheritancearray=[];\\n// inheritancearray.push(this.randomize(0,100));\\n// inheritancearray.push(this.randomize(0,100));\\n// inheritancearray.push(this.randomize(0,100));\\n// inheritancearray.push(this.randomize(0,100));\\n// if( newcellworld.adaption \\u003e 1000000000){\\n// inheritancearray.push(this.randomize(0,100));\\n// }else if(newcellworld.adaption \\u003e 100000000){\\n// inheritancearray.push(this.randomize(0,50));\\n// }else{\\n// inheritancearray.push(this.randomize(0,10));\\n// }\\n//\\n// if( newcellworld.surviveability \\u003e 1000000000){\\n// inheritancearray.push(this.randomize(0,100));\\n// }else if(newcellworld.surviveability \\u003e 100000000){\\n// inheritancearray.push(this.randomize(0,50));\\n// }else{\\n// inheritancearray.push(this.randomize(0,10));\\n// }\\n//\\n// if( newcellworld.division \\u003e 1000000000){\\n// inheritancearray.push(this.randomize(0,100));\\n// }else if(newcellworld.division \\u003e 100000000){\\n// inheritancearray.push(this.randomize(0,50));\\n// }else{\\n// inheritancearray.push(this.randomize(0,10));\\n// }\\n// inheritancearray.push(this.inheritanceno);\\n//\\n \\n// return inheritancearray;\\n \\n }\\n \\n checkdeath(cellno,adaption,surviveability,division){\\n if(cellno \\u003e 10000){\\n //如果没有平衡发展\\n var balancecheck = (adaption+ surviveability+ division)/3;\\n if( (adaption \\u003c= balancecheck*1.5) \\u0026\\u0026 (adaption \\u003e= balancecheck*0.5) \\u0026\\u0026 (surviveability \\u003c= balancecheck*1.5) \\u0026\\u0026\\n \\n (surviveability \\u003e= balancecheck*0.5) \\u0026\\u0026 (division \\u003c= balancecheck * 1.5) \\u0026\\u0026 (division \\u003e= balancecheck*0.5) ){\\n //平衡发展，很OK, Update\\n \\n }else{\\n //die\\n this.worldtitlecheck();\\n \\n let newworldno = Number(storage.get(\\\"currentworld\\\"))+1;\\n storage.put(\\\"currentworld\\\",newworldno.toString());\\n \\n let newworld = new CellHistory();\\n newworld.worldtitle = \\\"World in Evolution\\\";\\n newworld.startcellid = storage.get(\\\"totalcell\\\");\\n storage.mapPut(\\\"WorldHistory\\\",newworldno.toString(),JSON.stringify(newworld));\\n \\n// this.historyno++;\\n// var cellworld =new CellHistory();\\n// cellworld.id = this.historyno;\\n// cellworld.cellno = 0;\\n// cellworld.adaption = 0;\\n// cellworld.surviveability = 0;\\n// cellworld.division =0;\\n// cellworld.environment =0;\\n// cellworld.day = 0;\\n// cellworld.totoalscore = 0;\\n// cellworld.worldtitle = \\\"World in Evolution\\\";\\n// cellworld.startcellid = parseInt(this.totalcell)+1;\\n// this.cellhistory.put(this.historyno,cellworld);\\n }\\n }\\n \\n }\\n // setHomeworld(worldid,newtitle){\\n // if (Blockchain.transaction.from === this.admAdd) {\\n \\n // var newcellworld = this.cellhistory.get(worldid);\\n // newcellworld.worldtitle = newtitle;\\n // this.cellhistory.set(this.historyno,newcellworld);\\n \\n // } else {\\n // throw new Error(\\\"Admin only\\\");\\n // }\\n // }\\n \\n // getbalance() {\\n \\n // return this.balance;\\n \\n // }\\n \\n getworld(historyno) {\\n historyno = historyno.trim();\\n if ( historyno === \\\"\\\" ) {\\n throw new Error(\\\"empty key\\\")\\n }\\n return this.WorldDB.get(historyno);\\n }\\n \\n getcurrentworld() {\\n return this.WorldDB.get(this.historyno);\\n }\\n \\n get(id) {\\n id = id.trim();\\n if ( id === \\\"\\\" ) {\\n throw new Error(\\\"empty key\\\")\\n }\\n return this.CellDB.get(id);\\n }\\n \\n}\\nmodule.exports = CellEvolutionMainContract;\\n\"}"];
+    // var ctest=["{\"info\":{\"lang\":\"javascript\",\"version\":\"1.0.0\",\"abi\":[{\"name\":\"gethistoryno\"},{\"name\":\"getIsOpen\"},{\"name\":\"gettotalcell\"},{\"name\":\"getAdminAddress\"},{\"name\":\"setIsOpen\",\"args\":[\"string\"]},{\"name\":\"setCellno\",\"args\":[\"string\"]},{\"name\":\"sethistoryno\",\"args\":[\"string\"]},{\"name\":\"setVersion\",\"args\":[\"string\"]},{\"name\":\"donate\"},{\"name\":\"dnamerge\",\"args\":[\"string\",\"string\",\"string\",\"string\",\"string\",\"string\",\"string\",\"string\",\"string\"]},{\"name\":\"newinheritance\"},{\"name\":\"worldtitlecheck\"},{\"name\":\"inheritance\"},{\"name\":\"checkdeath\",\"args\":[\"number\",\"number\",\"number\",\"number\"]},{\"name\":\"getworld\",\"args\":[\"string\"]},{\"name\":\"getcurrentworld\"},{\"name\":\"get\",\"args\":[\"string\"]}]},\"code\":\"\\\"use strict\\\";\\n\\nclass CellDB{\\n constructor () {\\n this.data = null;\\n \\n }\\n init(){\\n }\\n \\n set (uri, data) {\\n this.data[uri] = data\\n }\\n \\n get (uri) {\\n if (this.data[uri]) {\\n return this.data[uri]\\n }\\n return false\\n }\\n}\\nclass WorldDB{\\n constructor () {\\n this.data = null;\\n }\\n init(){\\n }\\n set (uri, data) {\\n this.data[uri] = data\\n \\n }\\n \\n get (uri) {\\n if (this.data[uri]) {\\n return this.data[uri]\\n }\\n return false\\n }\\n}\\nclass CellHistory {\\n constructor (text) {\\n if (text) {\\n var obj = JSON.parse(text);\\n //World id\\n this.id = obj.id;\\n //World cell info\\n this.cellno = obj.cellno;\\n this.adaption = obj.adaption;\\n this.surviveability = obj.surviveability;\\n this.division = obj.division;\\n this.environment = obj.environment;\\n this.day = obj.day;\\n this.totoalscore = obj.totoalscore;\\n this.worldtitle = obj.worldtitle;\\n this.startcellid = obj.startcellid;\\n this.endcellid = obj.endcellid;\\n this.cellsdetail = obj.cellsdetail;\\n this.version = obj.version;\\n \\n } else {\\n this.id = 0;\\n this.cellno = 0;\\n this.adaption = 0;\\n this.surviveability = 0;\\n this.division = 0;\\n this.environment = 0;\\n this.day = 0;\\n this.totoalscore = 0;\\n this.worldtitle = \\\"\\\";\\n this.startcellid = 0;\\n this.endcellid = 0;\\n this.cellsdetail = \\\"\\\";\\n this.version = 2;\\n }\\n }\\n \\n init () {\\n \\n }\\n \\n \\n}\\n\\nclass CellEvolution {\\n constructor (text) {\\n if (text) {\\n var obj = JSON.parse(text);\\n // Cell id\\n this.id = obj.id;\\n //\\n this.creator = obj.creator;\\n //cell info\\n this.cellno = obj.cellno;\\n this.adaption = obj.adaption;\\n this.surviveability = obj.surviveability;\\n this.division = obj.division;\\n this.environment = obj.environment;\\n this.day = obj.day;\\n this.totoalscore = obj.totoalscore;\\n this.finaltitle = obj.finaltitle;\\n this.belong = obj.belong;\\n this.version = obj.version;\\n } else {\\n this.id = 0;\\n this.creator = \\\"\\\";\\n this.cellno = 0;\\n this.adaption = 0;\\n this.surviveability = 0;\\n this.division = 0;\\n this.environment = 0;\\n this.day = 0;\\n this.totoalscore = 0;\\n this.finaltitle = \\\"\\\";\\n this.belong=0;\\n this.version=2;\\n }\\n }\\n \\n init () {\\n \\n }\\n \\n}\\n\\n\\n\\nclass CellEvolutionMainContract {\\n init() {\\n this.CellDB = new CellDB();\\n \\n// this.WorldDB = new WorldDB();\\n \\n let admAdd=\\\"n1NJaHRXpe49fc98GtuxxYVFyq1xsYCHx9d\\\";\\n let isOpen = true;\\n// let totalcell = 0;\\n let historyno = 1;\\n storage.put(\\\"totalcell\\\",\\\"0\\\");\\n storage.mapPut(\\\"nonce\\\", \\\"newtest\\\", JSON.stringify(0));\\n storage.put(\\\"currentworld\\\",\\\"0\\\");\\n storage.put(\\\"inheritno\\\",\\\"1000\\\");\\n let world0 = new CellHistory();\\n storage.mapPut(\\\"WorldHistory\\\",\\\"0\\\",JSON.stringify(world0));\\n \\n// storage.put(\\\"nonce\\\", JSON.stringify(0));\\n\\n // var cellworld =new CellHistory();\\n // this.cellhistory.put(this.historyno,cellworld);\\n // this.version = 2;\\n }\\n \\n gethistoryno() {\\n return this.historyno;\\n }\\n \\n getIsOpen() {\\n return this.isOpen;\\n }\\n \\n gettotalcell() {\\n return this.totalcell;\\n }\\n \\n getAdminAddress() {\\n return this.admAdd;\\n }\\n \\n setIsOpen(isopen) {\\n if (Blockchain.transaction.from === this.admAdd) {\\n this.isOpen = isopen;\\n } else {\\n throw new Error(\\\"Admin only\\\");\\n }\\n }\\n \\n setCellno(cellno) {\\n if (Blockchain.transaction.from === this.admAdd) {\\n this.totalcell = cellno;\\n } else {\\n throw new Error(\\\"Admin only\\\");\\n }\\n }\\n sethistoryno(historyno) {\\n if (Blockchain.transaction.from === this.admAdd) {\\n this.historyno = historyno;\\n } else {\\n throw new Error(\\\"Admin only\\\");\\n }\\n }\\n setVersion(versionno) {\\n if (Blockchain.transaction.from === this.admAdd) {\\n this.isOpen = versionno;\\n } else {\\n throw new Error(\\\"Admin only\\\");\\n }\\n }\\n \\n \\n donate(){\\n \\n var bvalue = new BigNumber(Blockchain.transaction.value);\\n this.balance = bvalue.add(this.balance);\\n \\n }\\n //, cellno, adaption, surviveability, division, environment, day, totoalscore, finaltitle\\n dnamerge(id, cellno, adaption, surviveability, division, environment, day, totoalscore, finaltitle) {\\n //鉴定开始\\n// if (!this.isOpen) {\\n// throw new Error(\\\"Game is currently closed\\\");\\n// }\\n \\n id = id.trim();\\n cellno = cellno.trim();\\n adaption = adaption.trim();\\n surviveability = surviveability.trim();\\n division = division.trim();\\n environment = environment.trim();\\n day = day.trim();\\n totoalscore = totoalscore.trim();\\n finaltitle = finaltitle.trim();\\n \\n \\n if (id === \\\"\\\"){\\n throw new Error(\\\"empty id\\\");\\n }\\n \\n let cell = new CellEvolution();\\n \\n \\n cell.id = id;\\n// cell.creator = from;\\n \\n cell.cellno = cellno;\\n cell.adaption = adaption;\\n cell.surviveability = surviveability;\\n cell.division = division;\\n cell.environment = environment;\\n cell.day = day;\\n cell.totoalscore = totoalscore;\\n cell.finaltitle = finaltitle;\\n cell.belong = storage.get(\\\"currentworld\\\");\\n cell.version = this.version;\\n \\n let totalcellno = Number(storage.get(\\\"totalcell\\\"));\\n totalcellno++;\\n \\n storage.mapPut(\\\"CellHistory\\\", totalcellno.toString(), JSON.stringify(cell));\\n storage.put(\\\"totalcell\\\",totalcellno.toString());\\n \\n\\n let newcellworld =new CellHistory(storage.mapGet(\\\"WorldHistory\\\",storage.get(\\\"currentworld\\\")));\\n// storage.mapPut(\\\"WorldHistory\\\",\\\"0\\\",JSON.stringify(world0));\\n// this.CellDB.set(totoalcell,cell);\\n // this.celldb.put(id, cell);\\n \\n // var newcellworld = WorldDB.get(this.historyno);\\n newcellworld.id = storage.get(\\\"currentworld\\\");\\n newcellworld.cellno = Number(newcellworld.cellno) + Number(cellno);\\n newcellworld.adaption = Number(newcellworld.adaption) + Number(adaption);\\n newcellworld.surviveability = Number(newcellworld.surviveability) + Number(surviveability);\\n newcellworld.division = Number(newcellworld.division) + Number(division);\\n newcellworld.environment = Number(newcellworld.environment) + Number(environment);\\n newcellworld.day = Number(newcellworld.day) + Number(day);\\n newcellworld.totoalscore = Number(newcellworld.totoalscore) + Number(totoalscore);\\n newcellworld.worldtitle = \\\"World in Evolution\\\";\\n \\n newcellworld.cellsdetail = newcellworld.cellsdetail.toString()+id.toString()+\\\",\\\"+\\\"from\\\"+\\\",\\\"+cellno.toString()+\\\",\\\"+adaption.toString()+\\\",\\\"+surviveability.toString()+\\\",\\\"+division.toString()+\\\",\\\"+environment.toString()+\\\",\\\"+day.toString()+\\\",\\\"+totoalscore.toString()+\\\",\\\"+finaltitle.toString()+\\\",\\\"+ newcellworld.id+\\\"|\\\";\\n \\n \\n newcellworld.endcellid = Number(id);\\n storage.mapPut(\\\"WorldHistory\\\",storage.get(\\\"currentworld\\\"),JSON.stringify(newcellworld));\\n // this.cellhistory.set(this.historyno,newcellworld);\\n \\n \\n this.checkdeath(Number(newcellworld.cellno),Number(newcellworld.adaption),Number(newcellworld.surviveability),Number(newcellworld.division));\\n \\n \\n }\\n newinheritance(){\\n \\n let inheritnoN = Number(storage.get(\\\"inheritno\\\"));\\n inheritnoN++;\\n \\n storage.put(\\\"inheritno\\\",inheritnoN.toString());\\n\\n \\n \\n }\\n \\n worldtitlecheck(){\\n let newcellworld =new CellHistory(storage.mapGet(\\\"WorldHistory\\\",storage.get(\\\"currentworld\\\")));\\n \\n var inworldno = Number(newcellworld.endcellid) - Number(newcellworld.startcellid);\\n if(inworldno \\u003e 100){\\n newcellworld.worldtitle = \\\"Highly evolved\\\";\\n }else if(inworldno \\u003e 50){\\n newcellworld.worldtitle = \\\"Lively\\\";\\n \\n }else{\\n newcellworld.worldtitle = \\\"Quiet\\\";\\n }\\n \\n if(newcellworld.adaption \\u003e 10000000000){\\n newcellworld.worldtitle = newcellworld.worldtitle + \\\" High adaption\\\";\\n \\n }else if(newcellworld.adaption \\u003e1000000000){\\n newcellworld.worldtitle = newcellworld.worldtitle + \\\" Normal adaption\\\";\\n \\n }else{\\n newcellworld.worldtitle = newcellworld.worldtitle + \\\" Low adaption\\\";\\n }\\n \\n \\n if(newcellworld.surviveability \\u003e 10000000000){\\n newcellworld.worldtitle = newcellworld.worldtitle + \\\" High surviveability\\\";\\n \\n }else if(newcellworld.surviveability \\u003e1000000000){\\n newcellworld.worldtitle = newcellworld.worldtitle + \\\" Normal surviveability\\\";\\n \\n }else{\\n newcellworld.worldtitle = newcellworld.worldtitle + \\\" Low surviveability\\\";\\n }\\n \\n \\n if(newcellworld.division \\u003e 10000000000){\\n newcellworld.worldtitle = newcellworld.worldtitle + \\\" High division\\\";\\n \\n }else if(newcellworld.division \\u003e1000000000){\\n newcellworld.worldtitle = newcellworld.worldtitle + \\\" Normal division\\\";\\n \\n }else{\\n newcellworld.worldtitle = newcellworld.worldtitle + \\\" Low division\\\";\\n }\\n \\n if(newcellworld.environment \\u003e 1000){\\n newcellworld.worldtitle = newcellworld.worldtitle + \\\" Severe environment\\\";\\n \\n }else if(newcellworld.division \\u003e500){\\n newcellworld.worldtitle = newcellworld.worldtitle + \\\" Normal environment\\\";\\n \\n }else{\\n newcellworld.worldtitle = newcellworld.worldtitle + \\\" Gental environment\\\";\\n }\\n \\n \\n var worldtype = \\\"\\\";\\n worldtype = \\\" Human World\\\";\\n if((newcellworld.cellno \\u003c 100000) \\u0026\\u0026 (newcellworld.day \\u003e5000)){\\n worldtype= \\\" Spirit World\\\";\\n \\n \\n }\\n \\n if((newcellworld.cellno \\u003e1000000000000) \\u0026\\u0026 (newcellworld.day \\u003e999)){\\n worldtype= \\\" Zerg's World\\\";\\n \\n }\\n \\n if((newcellworld.surviveability \\u003e100000000000) \\u0026\\u0026 (newcellworld.day \\u003e999) \\u0026\\u0026 (newcellworld.surviveability \\u003enewcellworld.adaption)\\u0026\\u0026 (newcellworld.surviveability \\u003enewcellworld.division)){\\n worldtype= \\\" Machanical World\\\";\\n \\n }\\n \\n if((newcellworld.division \\u003e100000000000) \\u0026\\u0026 (newcellworld.day \\u003e999) \\u0026\\u0026 (newcellworld.division \\u003enewcellworld.adaption)\\u0026\\u0026 (newcellworld.division \\u003enewcellworld.surviveability)){\\n worldtype= \\\" Ocean World\\\";\\n \\n }\\n if((newcellworld.adaption \\u003e100000000000) \\u0026\\u0026 (newcellworld.day \\u003e999) \\u0026\\u0026 (newcellworld.adaption \\u003enewcellworld.surviveability)\\u0026\\u0026 (newcellworld.adaption \\u003enewcellworld.division)){\\n worldtype= \\\" Rock World\\\";\\n \\n }\\n \\n// var ran=this.randomize(0,100);\\n \\n if((newcellworld.day \\u003e5000) \\u0026\\u0026 (newcellworld.surviveability == newcellworld.adaption) \\u0026\\u0026 (newcellworld.adaption == newcellworld.division)){\\n worldtype= \\\" Gaea\\\";\\n }\\n \\n if((newcellworld.day \\u003e8000)){\\n worldtype= \\\" Dark Matter\\\";\\n \\n }\\n \\n newcellworld.worldtitle = newcellworld.worldtitle + worldtype;\\n \\n \\n \\n \\n \\n storage.mapPut(\\\"WorldHistory\\\",storage.get(\\\"currentworld\\\"),JSON.stringify(newcellworld));\\n \\n \\n }\\n \\n// randomize(lower,upper) {\\n// return Math.floor((Math.random() * (upper - lower) + lower));\\n// }\\n//\\n inheritance() {\\n \\n//\\n// var newcellworld = this.cellhistory.get(this.historyno);\\n// var inheritancearray=[];\\n// inheritancearray.push(this.randomize(0,100));\\n// inheritancearray.push(this.randomize(0,100));\\n// inheritancearray.push(this.randomize(0,100));\\n// inheritancearray.push(this.randomize(0,100));\\n// if( newcellworld.adaption \\u003e 1000000000){\\n// inheritancearray.push(this.randomize(0,100));\\n// }else if(newcellworld.adaption \\u003e 100000000){\\n// inheritancearray.push(this.randomize(0,50));\\n// }else{\\n// inheritancearray.push(this.randomize(0,10));\\n// }\\n//\\n// if( newcellworld.surviveability \\u003e 1000000000){\\n// inheritancearray.push(this.randomize(0,100));\\n// }else if(newcellworld.surviveability \\u003e 100000000){\\n// inheritancearray.push(this.randomize(0,50));\\n// }else{\\n// inheritancearray.push(this.randomize(0,10));\\n// }\\n//\\n// if( newcellworld.division \\u003e 1000000000){\\n// inheritancearray.push(this.randomize(0,100));\\n// }else if(newcellworld.division \\u003e 100000000){\\n// inheritancearray.push(this.randomize(0,50));\\n// }else{\\n// inheritancearray.push(this.randomize(0,10));\\n// }\\n// inheritancearray.push(this.inheritanceno);\\n//\\n \\n// return inheritancearray;\\n \\n }\\n \\n checkdeath(cellno,adaption,surviveability,division){\\n if(cellno \\u003e 10000){\\n //如果没有平衡发展\\n var balancecheck = (adaption+ surviveability+ division)/3;\\n if( (adaption \\u003c= balancecheck*1.5) \\u0026\\u0026 (adaption \\u003e= balancecheck*0.5) \\u0026\\u0026 (surviveability \\u003c= balancecheck*1.5) \\u0026\\u0026\\n \\n (surviveability \\u003e= balancecheck*0.5) \\u0026\\u0026 (division \\u003c= balancecheck * 1.5) \\u0026\\u0026 (division \\u003e= balancecheck*0.5) ){\\n //平衡发展，很OK, Update\\n \\n }else{\\n //die\\n this.worldtitlecheck();\\n \\n let newworldno = Number(storage.get(\\\"currentworld\\\"))+1;\\n storage.put(\\\"currentworld\\\",newworldno.toString());\\n \\n let newworld = new CellHistory();\\n newworld.worldtitle = \\\"World in Evolution\\\";\\n newworld.startcellid = storage.get(\\\"totalcell\\\");\\n storage.mapPut(\\\"WorldHistory\\\",newworldno.toString(),JSON.stringify(newworld));\\n \\n// this.historyno++;\\n// var cellworld =new CellHistory();\\n// cellworld.id = this.historyno;\\n// cellworld.cellno = 0;\\n// cellworld.adaption = 0;\\n// cellworld.surviveability = 0;\\n// cellworld.division =0;\\n// cellworld.environment =0;\\n// cellworld.day = 0;\\n// cellworld.totoalscore = 0;\\n// cellworld.worldtitle = \\\"World in Evolution\\\";\\n// cellworld.startcellid = parseInt(this.totalcell)+1;\\n// this.cellhistory.put(this.historyno,cellworld);\\n }\\n }\\n \\n }\\n // setHomeworld(worldid,newtitle){\\n // if (Blockchain.transaction.from === this.admAdd) {\\n \\n // var newcellworld = this.cellhistory.get(worldid);\\n // newcellworld.worldtitle = newtitle;\\n // this.cellhistory.set(this.historyno,newcellworld);\\n \\n // } else {\\n // throw new Error(\\\"Admin only\\\");\\n // }\\n // }\\n \\n // getbalance() {\\n \\n // return this.balance;\\n \\n // }\\n \\n getworld(historyno) {\\n historyno = historyno.trim();\\n if ( historyno === \\\"\\\" ) {\\n throw new Error(\\\"empty key\\\")\\n }\\n return this.WorldDB.get(historyno);\\n }\\n \\n getcurrentworld() {\\n return this.WorldDB.get(this.historyno);\\n }\\n \\n get(id) {\\n id = id.trim();\\n if ( id === \\\"\\\" ) {\\n throw new Error(\\\"empty key\\\")\\n }\\n return this.CellDB.get(id);\\n }\\n \\n}\\nmodule.exports = CellEvolutionMainContract;\\n\"}"];
+    // var newtest1=["{\"info\":+JSON.stringify(abi)+\",code:\"+JSON.stringify(fd)];
+    // var abis=JSON.stringify(abi);
+    // var codes=JSON.stringify(fd);
+    var abi2="{\n" +
+        "    \"lang\": \"javascript\",\n" +
+        "    \"version\": \"1.0.0\",\n" +
+        "    \"abi\": [\n" +
+        "        {\n" +
+        "            \"name\": \"hello\",\n" +
+        "            \"args\": [\n" +
+        "                \"string\"\n" +
+        "            ],\n" +
+        "            \"amountLimit\": [],\n" +
+        "            \"description\": \"\"\n" +
+        "        }\n" +
+        "    ]\n" +
+        "}\n";
+    var code2="class HelloWorld {\n" +
+        "    init() {} // needs to provide an init function that will be called during deployment\n" +
+        "    hello(someone) {\n" +
+        "        return \"hello, \"+ someone\n" +
+        "    }\n" +
+        "}\n" +
+        "\n" +
+        "module.exports = HelloWorld;\n";
+    var infot="\"info\"";
+    var codet="\"code\"";
+    var newtest1="{"+infot+":"+abi2+","+codet+":"+JSON.stringify(code2)+"}";
+    var newtest1t=[newtest1];
+    var newtest2t=new Array("test");
+    // console.log("cetest");
+    console.log(newtest1t);
+    // for (let i in newtest){
+    // console.log(JSON.stringify(newtest1));
+    // var newtest1t=[JSON.stringify(newtest1)];
 
-    window.IWalletJS.enable().then((account) => {
+    // var finaltest=["{\"info\":"+abi+","+"\"code\":"+fd+"}"];
+    // var finaltest=["{\"info\":"+abi+","+"\"code\":"+fd+"}"];
+    // console.log(finaltest);
+    // console.log(newtest[0]);
+    // console.log(newtest[1]);
+    // }
+
+     window.IWalletJS.enable().then((account) => {
         if(!account) return; // not login
 
         const iost = window.IWalletJS.newIOST(IOST);
 
-        //transfer
+
+         //transfer
         // const tx = iost.transfer('iost', account, "testiost1", "1.000", "this is memo")
         //
         // iost.signAndSend(tx)
@@ -797,11 +1497,18 @@ function iostrealsave(totalcell){
         //         console.log(failed, 'failed')
         //     })
 
-        const ctx = iost.callABI(contractAddress, "dnamerge", test);
+        // const ctx = iost.callABI(contractAddress, "dnamerge", test);
+        let contractAddress1= "system.iost";
+         const ctx1 = iost.callABI(contractAddress1, "setCode",newtest1t);
 
+         const ctx = iost.setCode(contractAddress, "hello",newtest2t);
+
+        // let rpgre = iost.currentRPC;
+        //  console.log(rpgre);
         iost.signAndSend(ctx).on('pending', (trx) => {
-            console.log(trx, 'trx')
-            reset();
+            console.log(trx, 'trx');
+            // reset();
+
         })
             .on('success', (result) => {
                 console.log(result, 'result')
@@ -814,37 +1521,7 @@ function iostrealsave(totalcell){
 
     })
 
-    // const contractAddress = 'Contract5wgC5xMMp1akMTgxLVE2zEhDu3bNPJ7ke5mWPVcCJ3qD';
-    // console.log(finaltitle);
-    // var test=new Array("1",cellno.toString(),adaption.toString(),surviveability.toString(),division.toString(),environment.toString(),day.toString(),totoalscore.toString(),renderAndTranslate(finaltitle).toString());
-    // console.log(renderAndTranslate(finaltitle));
-    // console.log("test: " + test);
-    // window.iost.callABI(
-    //                     contractAddress,
-    //                     'dnamerge',
-    //                     test
-    //                     ).onPending((pending) => {
-    //                                 console.log(pending, 'pending')
-    //                                 // this.setState({
-    //                                 //     isLoading: true,
-    //                                 //     txHash: pending.hash,
-    //                                 //     result: ''
-    //                                 // })
-    //                                 }).onSuccess((result) => {
-    //                                              console.log("successful");
-    //                                              // this.setState({
-    //                                              //     isLoading: false,
-    //                                              //     result: result.returns[0]
-    //                                              // })
-    //     layer.msg("DNA Merge Successfully!");
-    //                                              }).onFailed((failed) => {
-    //                                                          console.log("failed");
-    //
-    //                                                          // this.setState({
-    //                                                          //         isLoading: false,
-    //                                                          //     })
-    //                                                          })
-    
+
 }
 
 function realsave() {
@@ -12305,6 +12982,15 @@ class IOST {
         return t
     }
 
+    setCode(contract,abi,contract){
+        {contract,compile(contract)}
+        const t = new Tx(this.config.gasRatio, 4000000);
+        t.addAction(contract, abi, JSON.stringify(args));
+        t.setTime(this.config.expiration, this.config.delay);
+        t.addApprove("*", this.config.defaultLimit);
+        return t
+
+    }
     /**
      * 转账
      * @param {string}token - token名
