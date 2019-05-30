@@ -76,7 +76,7 @@ var lifecycletx = document.getElementById('lifecycletx');
 var surviveabilitytx = document.getElementById('surviveabilitytx');
 var divisiontx = document.getElementById('divisiontx');
 var lifecycletx = document.getElementById('lifecycletx');
-var dappAddress = "n1gFbEA3c8W6fAHgEhCNYoYBDyN7jCNmG7T";
+var dappAddress = "n1obU14f6Cp4Wv7zANVbtmXKNkpKCqQDgDM";
 var totoalscore = 0;
 var finaltitle = "";
 var inputid = 0;
@@ -397,12 +397,14 @@ function realsave() {
 
     var nextid = parseInt(inputid) + 1;
     var to = dappAddress;
-    var value = 0.0001;
+    var value = 2000;
     console.log("********* call smart contract \"sendTransaction\" *****************")
 
-    var func = "dnamerge"
+    var func = "pledge"
+    // var func = "cancelPledge"
     //var args = "[\"" + nextid + "\",\"" +1+ "\"]";
-    var args = "[\"" + nextid + "\",\"" + cellno + "\",\"" + adaption + "\",\"" + surviveability + "\",\"" + division + "\",\"" + environment + "\",\"" + day + "\",\"" + totoalscore + "\",\"" + finaltitle + "\"]"
+    var args ="[]";
+    // var args = "[\"" + nextid + "\",\"" + cellno + "\",\"" + adaption + "\",\"" + surviveability + "\",\"" + division + "\",\"" + environment + "\",\"" + day + "\",\"" + totoalscore + "\",\"" + finaltitle + "\"]"
     console.log(args);
 
 
