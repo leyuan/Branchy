@@ -1,2 +1,6 @@
 .DS_Store
 **vscode/
+CellEvo/.idea/workspace.xml
+CellEvo/android-src/cellevo-cn-web-iost/js/game.js
+CellEvo/android-src/cellevo-cn-web/js/game.js
+CellEvo/android-src/cellevo-cn-web/js/nebPay.js
