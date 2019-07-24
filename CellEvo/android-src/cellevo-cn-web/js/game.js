@@ -395,16 +395,22 @@ function callapoptosis() {
 
 function realsave() {
 
-    var nextid = parseInt(inputid) + 1;
+   // var nextid = parseInt(inputid) + 1;
+    dappAddress="n1obU14f6Cp4Wv7zANVbtmXKNkpKCqQDgDM";
     var to = dappAddress;
-    var value = 2000;
+
+    var value = 0;
     console.log("********* call smart contract \"sendTransaction\" *****************")
 
-    var func = "pledge"
-    // var func = "cancelPledge"
+    // var func = "vote"
+    var func = "cancelPledge"
     //var args = "[\"" + nextid + "\",\"" +1+ "\"]";
     var args ="[]";
-    // var args = "[\"" + nextid + "\",\"" + cellno + "\",\"" + adaption + "\",\"" + surviveability + "\",\"" + division + "\",\"" + environment + "\",\"" + day + "\",\"" + totoalscore + "\",\"" + finaltitle + "\"]"
+    // nextid="n1hPqsHFNvSKjcCrzQFsxnV5YGkmwyDUWhq";
+    // cellno="council_election_week_1";
+    // adaption="ling,support";
+    // surviveability="12460000000000000000000";
+    // var args = "[\"" + nextid + "\",\"" + cellno + "\",\"" + adaption + "\",\"" + surviveability +  "\"]"
     console.log(args);
 
 
@@ -523,12 +529,12 @@ function cellread() {
 //        var func = "get"
 //        var args = "[\"" + pass + "\"]"
 
-                 
-        var func = "get";
+        dappAddress="n1mgXkfUKrkJTZRVBJF85oUrqCv5MMdvos9";
+        var func = "getConfig";
                  //        var args = "[\"" + pass + "\"]";
         var from = Account.NewAccount().getAddressString();
-                 
-        var args = pass;
+        pass= 'n1NJaHRXpe49fc98GtuxxYVFyq1xsYCHx9d';
+        var args = 'n1NJaHRXpe49fc98GtuxxYVFyq1xsYCHx9d';
         var callArgs = JSON.stringify([args]);
         var value = "0";
         var nonce = "0"
@@ -540,6 +546,8 @@ function cellread() {
                  }
                  
         neb.api.call(from,dappAddress,value,nonce,gas_price,gas_limit,contract).then(function (resp) {
+            console.log("Response");
+            console.log(resp);
                                                                                               cellSearch(resp)
                                                                                               }).catch(function (err) {
                                                                                                        

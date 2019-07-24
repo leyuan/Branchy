@@ -34,6 +34,34 @@ const colorMap = {
     '凋亡的': 'grey'
 };
 
+const EngMap = {
+    '极少': 'Very little&#44 ',
+    '少数': 'Little&#44 ',
+    '较少': 'Few&#44 ',
+    '中等数量': 'Minimum&#44 ',
+    '较多': 'Many&#44 ',
+    '很多': 'Much&#44 ',
+    '超级多': 'Numerous&#44 ',
+    '数以亿计': 'Billions of&#44 ',
+    '超级细胞': 'Supercells&#44 ',
+    '真核细胞': 'Eukaryotes&#44 ',
+    '原核细胞': 'Prokaryotes&#44 ',
+    '古核细胞': 'Archaea&#44 ',
+    '单细胞': 'Monoplast&#44 ',
+    '正常': 'Normal&#44 ',
+    '僵尸亚种': 'Zombie Subtype&#44 ',
+    '僵尸': 'Zombie&#44 ',
+    '超强环境抵抗': 'Superstrong environmental resistance&#44 ',
+    '较强环境抵抗': 'Strong environmental resistance&#44 ',
+    '较弱环境抵抗': 'Weak environmental resistance&#44 ',
+    '弱环境抵抗': 'Weak environmental resistance&#44 ',
+    '超强适应': 'Super adaptability&#44 ',
+    '超强生存': 'Super survivability&#44 ',
+    '超强繁殖': 'Super reproductivity&#44 ',
+    '超强适应': 'Super adaptability&#44 ',
+    '凋亡的': 'Apoptosis&#44 '
+};
+
 fanzhiimg.onclick = celldivision;
 mutimg.onclick = mutation;
 xiumianimg.onclick = sleep;
@@ -1144,6 +1172,7 @@ function worldSearch(resp) {
               "        </div>\n" +
               "    </div>"
               newdatacollect = newdatacollect + info;
+              newdatacollect = renderAndTranslate(newdatacollect);
 
               
               
@@ -1294,3 +1323,28 @@ $(".action-btn").mouseenter(function() {
     fileNames[fileNames.length-1] = 'png';
     this.src = fileNames.join('.');
 });
+
+function renderAndTranslate(cellStr) {
+    var retCellStr = cellStr.replace(/<\/font(.*?)>/g, '')
+    .replace(/<font(.*?)>/g, '');
+    
+    for (var key in colorMap) {
+        var regex = new RegExp(key, 'g');
+        if (key == '僵尸亚种') {
+            retCellStr = retCellStr.replace(regex, '僵123尸亚种');
+        } else {
+            retCellStr = retCellStr.replace(regex, "<font color='" + colorMap[key] + "'>" + key + "</font>");
+        }
+    }
+    
+    for (var key in EngMap) {
+        var regex = new RegExp(key, 'g');
+        if (key == '僵尸亚种') {
+            retCellStr = retCellStr.replace(regex, '僵123尸亚种');
+        } else {
+            retCellStr = retCellStr.replace(regex, EngMap[key]);
+        }
+    }
+    
+    return retCellStr.replace(new RegExp('僵123尸亚种', 'g'), "Zombie Subtype");
+}

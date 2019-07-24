@@ -6487,7 +6487,7 @@ var Pay = require("./libs/pay");
 
 var BigNumber = require("bignumber.js");
 
-var NAS = "NAS";
+var NAS = "NAT";
 
 var NebPay = function (appKey, appSecret) {
 	this._pay = new Pay(appKey, appSecret);
